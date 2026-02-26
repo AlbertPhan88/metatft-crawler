@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metatft-crawler"
+version = "0.1.0"
+description = "Extract competitive Teamfight Tactics meta data from MetaTFT.com"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "albertphan"}
+]
+keywords = ["tft", "teamfight-tactics", "metatft", "crawler", "scraper"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Games/Entertainment",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "playwright>=1.40.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/albertphan/metatft-crawler"
+Repository = "https://github.com/albertphan/metatft-crawler.git"
+Issues = "https://github.com/albertphan/metatft-crawler/issues"
+
+[project.scripts]
+metatft-crawler = "metatft_crawler.cli:main"
+
+[tool.setuptools]
+packages = ["metatft_crawler"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.package-data]
+metatft_crawler = ["py.typed"]
