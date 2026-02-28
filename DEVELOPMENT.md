@@ -9,11 +9,15 @@ cd /home/albertphan/Projects/metatft-crawler
 pip install -e .
 playwright install chromium
 
-# Run demo
+# Run units demo
 python3 tools/test_crawl_demo.py
+
+# Run items demo (NEW)
+python3 tools/test_items_demo.py 5 en
 
 # View output
 jq '.units[0]' demo_output/units_demo_10.json
+jq '.items[0]' demo_output/items_demo_3.json
 ```
 
 ## Project Structure
@@ -24,7 +28,9 @@ src/metatft_crawler/
 ├── cli.py                      # Command-line interface
 ├── crawlers/
 │   ├── comps.py               # Comps crawler
-│   └── units.py               # Units crawler (MAIN FILE)
+│   ├── units.py               # Units crawler (complex)
+│   ├── items.py               # Items crawler (NEW)
+│   └── augments.py            # Augments crawler
 └── utils/
     ├── browser.py             # Browser utilities
     ├── csv_export.py          # CSV formatting
@@ -32,16 +38,17 @@ src/metatft_crawler/
 
 tools/
 ├── test_crawl_demo.py          # Run 10-unit demo
+├── test_items_demo.py          # Run items demo (NEW)
+├── test_item_extraction.py     # Test item extraction (NEW)
 ├── debug_tooltip_structure.py  # Inspect HTML structure
 ├── debug_exact_html.py         # DOM inspection
 ├── debug_mapping.py            # Test mapping extraction
-├── debug_full_tooltip_html.py  # Node sequence inspection
-├── test_contextual_mapping.py  # Verify scalelevel mappings
 └── check_ziggs.py              # Unit-specific debugging
 
 demo_output/
 ├── units_demo_10.json          # JSON output (10 units)
-└── units_demo_10.csv           # CSV output (10 units)
+├── units_demo_10.csv           # CSV output (10 units)
+└── items_demo_3.json           # JSON output (3 items)
 ```
 
 ## Debugging Workflow
