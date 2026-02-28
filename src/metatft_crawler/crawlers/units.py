@@ -306,6 +306,35 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             abilityOthers = damageLines.join(' ').trim();
                         }
 
+                        // Also extract damage->stats mapping while on ability tab
+                        const damageStatsMapping = {};
+                        const damagePattern = /\\d+\\/\\d+\\/\\d+/;
+                        const walker = document.createTreeWalker(
+                            document.body,
+                            NodeFilter.SHOW_ELEMENT,
+                            null
+                        );
+
+                        let node;
+                        const processed = new Set();
+
+                        while (node = walker.nextNode()) {
+                            const text = node.textContent;
+                            const match = text.match(damagePattern);
+
+                            if (match) {
+                                const damage = match[0];
+                                if (!processed.has(damage)) {
+                                    const imgs = Array.from(node.querySelectorAll('img[alt="AP"], img[alt="AD"]'));
+                                    if (imgs.length > 0) {
+                                        const stats = imgs.map(img => img.getAttribute('alt'));
+                                        damageStatsMapping[damage] = stats;
+                                        processed.add(damage);
+                                    }
+                                }
+                            }
+                        }
+
                         return {
                             cost: cost,
                             type: type,
@@ -313,10 +342,14 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             ability_name: abilityName,
                             ability_description: abilityDescription,
                             unlock_condition: unlockCondition,
-                            ability_others: abilityOthers
+                            ability_others: abilityOthers,
+                            damage_stats_mapping: damageStatsMapping
                         };
                     }
                 """)
+
+                # Extract the damage stats mapping from the returned data
+                damage_stats_mapping = initial_data.get('damage_stats_mapping', {})
 
                 # Now click Stats tab to get base stats
                 try:
@@ -406,50 +439,38 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                 """)
 
                 # Post-process damage info to add stat abbreviations (AD/AP) to empty ()
-                if initial_data.get('ability_others'):
+                if (initial_data.get('ability_others') or initial_data.get('ability_description')) and damage_stats_mapping:
                     import re
-                    damage_text = initial_data['ability_others']
 
-                    # Get stat image counts from the page to match patterns
-                    stat_counts = await page.evaluate("""
-                        () => {
-                            const apImgs = Array.from(document.querySelectorAll('img[alt="AP"]'));
-                            const adImgs = Array.from(document.querySelectorAll('img[alt="AD"]'));
-                            return { ap: apImgs.length, ad: adImgs.length };
-                        }
-                    """)
+                    # Helper function to replace () with appropriate stats
+                    def replace_with_stats(text):
+                        import re
 
-                    # Strategy: Replace () based on patterns and context
-                    # Heuristic: alternate between stats, starting with AP for first damage
-                    # "physical damage" usually indicates AD
+                        # Find all () and preceding damage values
+                        # Pattern: number/number/number followed by whitespace and ()
+                        pattern = r'(\d+/\d+/\d+)\s*\(\)'
 
-                    # Replace specific patterns based on context
-                    # 1. "Damage:" damage is usually AP damage (ability related)
-                    # 2. "physical damage" indicates AD
-                    # 3. For multiplier lines, infer from position
+                        def replacer(match):
+                            damage_val = match.group(1)
+                            if damage_val in damage_stats_mapping:
+                                stats = damage_stats_mapping[damage_val]
+                                stats_str = '/'.join(stats)
+                                return f'{damage_val} ({stats_str})'
+                            return match.group(0)  # Keep original if no mapping found
 
-                    # Find all () and replace them
-                    paren_count = 0
-                    stat_order = ['AP', 'AD', 'AP', 'AD', 'AP', 'AD', 'AP']  # Likely pattern
+                        return re.sub(pattern, replacer, text)
 
-                    def replace_paren(match):
-                        nonlocal paren_count
-                        if paren_count < len(stat_order):
-                            stat = stat_order[paren_count]
-                            paren_count += 1
-                            return f'({stat})'
-                        return match.group(0)
+                    # Replace in ability_others
+                    if initial_data.get('ability_others'):
+                        original_others = initial_data['ability_others']
+                        initial_data['ability_others'] = replace_with_stats(initial_data['ability_others'])
+                        # Stats have been successfully replaced
 
-                    # Replace all () with stat abbreviations in damage_text
-                    damage_text = re.sub(r'\(\)', replace_paren, damage_text)
-                    initial_data['ability_others'] = damage_text
-
-                    # Also replace () in ability description with the same pattern
+                    # Replace in ability_description
                     if initial_data.get('ability_description'):
-                        paren_count = 0  # Reset counter for description
-                        desc_text = initial_data['ability_description']
-                        desc_text = re.sub(r'\(\)', replace_paren, desc_text)
-                        initial_data['ability_description'] = desc_text
+                        original_desc = initial_data['ability_description']
+                        initial_data['ability_description'] = replace_with_stats(initial_data['ability_description'])
+                        # Stats have been successfully replaced
 
                 # Extract recommended builds (all 5) and top items
                 recommended_builds_data = await page.evaluate("""
