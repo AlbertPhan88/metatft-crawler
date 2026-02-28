@@ -177,6 +177,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         let type = null;  // e.g., "Attack Fighter"
                         let traits = [];
                         let abilityName = null;
+                        let abilityMana = '';  // e.g., "0/50"
                         let abilityDescription = '';
                         let abilityOthers = '';
                         let unlockCondition = '';
@@ -234,12 +235,37 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             }
 
                             // Extract ability name: Look after "Ability" tab for first non-empty, non-number line
+                            let abilityNameIndex = -1;
                             for (let i = abilityTabIndex + 1; i < Math.min(abilityTabIndex + 5, lines.length); i++) {
                                 const line = lines[i];
                                 if (line && !line.match(/^\\d/) && line !== 'Key' && line !== 'Stats' && line.length < 100) {
                                     abilityName = line;
+                                    abilityNameIndex = i;
                                     break;
                                 }
+                            }
+
+                            // Extract ability mana cost: Simple approach - get next two lines after ability name
+                            let abilityMana = '';
+                            try {
+                                if (abilityNameIndex >= 0 && abilityNameIndex + 2 < lines.length) {
+                                    const line1 = lines[abilityNameIndex + 1];
+                                    const line2 = lines[abilityNameIndex + 2];
+
+                                    // Build mana from next two lines (e.g., "0/50")
+                                    if (line1 && line2) {
+                                        // If line1 starts with digit and line2 starts with /, concatenate
+                                        if (/^\\d/.test(line1) && /^\\//.test(line2)) {
+                                            abilityMana = line1 + line2;
+                                        }
+                                        // Or if line1 is full mana format
+                                        else if (/^\\d+\\/\\d/.test(line1)) {
+                                            abilityMana = line1;
+                                        }
+                                    }
+                                }
+                            } catch (e) {
+                                // Silently catch any errors
                             }
 
                             // Extract ability description, damage info, and unlock condition
@@ -382,6 +408,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             type: type,
                             traits: traits,
                             ability_name: abilityName,
+                            ability_mana: abilityMana,
                             ability_description: abilityDescription,
                             unlock_condition: unlockCondition,
                             ability_others: abilityOthers,
@@ -620,6 +647,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     'traits': initial_data.get('traits', []),
                     'ability': {
                         'name': initial_data.get('ability_name'),
+                        'mana': initial_data.get('ability_mana', ''),
                         'description': initial_data.get('ability_description', ''),
                         'unlock_condition': initial_data.get('unlock_condition', ''),
                         'others': initial_data.get('ability_others', '')
