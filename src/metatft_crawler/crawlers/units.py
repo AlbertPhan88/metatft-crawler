@@ -306,8 +306,50 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             abilityOthers = damageLines.join(' ').trim();
                         }
 
-                        // Also extract damage->stats mapping while on ability tab
+                        // Extract damage->stats mapping with context awareness, preferring scalelevel
                         const damageStatsMapping = {};
+                        const scaleMapping = {};  // Specific mapping from scalelevel elements
+
+                        // First, extract from scalelevel elements (these are the most specific)
+                        const scalelevels = Array.from(document.querySelectorAll('scalelevel'));
+                        scalelevels.forEach((sl) => {
+                            const text = sl.textContent.trim();
+                            const match = text.match(/(\\d+\\/\\d+\\/\\d+)/);
+
+                            if (match) {
+                                const damageVal = match[1];
+                                const imgs = Array.from(sl.querySelectorAll('img[alt="AP"], img[alt="AD"]'));
+                                const stats = imgs.length > 0 ? imgs.map(img => img.getAttribute('alt')) : [];
+
+                                if (stats.length > 0) {
+                                    // Store scalelevel mapping with position tracking
+                                    if (!scaleMapping[damageVal]) {
+                                        scaleMapping[damageVal] = [];
+                                    }
+                                    scaleMapping[damageVal].push(stats);
+                                    damageStatsMapping[damageVal] = stats;
+                                }
+                            }
+                        });
+
+                        // Then extract from tooltipcalculation for first damage (AP label)
+                        const tooltips = Array.from(document.querySelectorAll('tooltipcalculation'));
+                        tooltips.forEach((tt, i) => {
+                            const text = tt.textContent.trim();
+                            const match = text.match(/(\\d+\\/\\d+\\/\\d+)/);
+
+                            if (match && i === 0) {  // Only for first tooltip
+                                const damageVal = match[1];
+                                const imgs = Array.from(tt.querySelectorAll('img[alt="AP"], img[alt="AD"]'));
+                                const stats = imgs.length > 0 ? imgs.map(img => img.getAttribute('alt')) : [];
+
+                                if (stats.length > 0 && !damageStatsMapping[damageVal]) {
+                                    damageStatsMapping[damageVal] = stats;
+                                }
+                            }
+                        });
+
+                        // Also check other elements for unmapped values
                         const damagePattern = /\\d+\\/\\d+\\/\\d+/;
                         const walker = document.createTreeWalker(
                             document.body,
@@ -324,13 +366,13 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
 
                             if (match) {
                                 const damage = match[0];
-                                if (!processed.has(damage)) {
+                                if (!processed.has(damage) && !damageStatsMapping[damage]) {
                                     const imgs = Array.from(node.querySelectorAll('img[alt="AP"], img[alt="AD"]'));
                                     if (imgs.length > 0) {
                                         const stats = imgs.map(img => img.getAttribute('alt'));
                                         damageStatsMapping[damage] = stats;
-                                        processed.add(damage);
                                     }
+                                    processed.add(damage);
                                 }
                             }
                         }
@@ -443,8 +485,25 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     import re
 
                     # Helper function to replace () with appropriate stats
-                    def replace_with_stats(text):
+                    def replace_with_stats(text, is_others_field=False):
                         import re
+
+                        # For the ability_others field, check if first Damage value should have inline label
+                        if is_others_field:
+                            # Pattern: "Damage:" followed by optional whitespace and damage value
+                            # Check if there's a single-stat damage value right after "Damage:"
+                            first_damage_pattern = r'(Damage:)\s+(\d+/\d+/\d+)(?=\s|$)'
+                            match = re.search(first_damage_pattern, text)
+
+                            if match:
+                                damage_val = match.group(2)
+                                if damage_val in damage_stats_mapping:
+                                    stats = damage_stats_mapping[damage_val]
+                                    # If this damage has exactly one stat (AP or AD), show it inline
+                                    if len(stats) == 1:
+                                        inline_label = stats[0]
+                                        replacement = f'{match.group(1)} {inline_label} {damage_val}'
+                                        text = text[:match.start()] + replacement + text[match.end():]
 
                         # Find all () and preceding damage values
                         # Pattern: number/number/number followed by whitespace and ()
@@ -460,16 +519,16 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
 
                         return re.sub(pattern, replacer, text)
 
-                    # Replace in ability_others
+                    # Replace in ability_others with special handling for inline labels
                     if initial_data.get('ability_others'):
                         original_others = initial_data['ability_others']
-                        initial_data['ability_others'] = replace_with_stats(initial_data['ability_others'])
+                        initial_data['ability_others'] = replace_with_stats(initial_data['ability_others'], is_others_field=True)
                         # Stats have been successfully replaced
 
                     # Replace in ability_description
                     if initial_data.get('ability_description'):
                         original_desc = initial_data['ability_description']
-                        initial_data['ability_description'] = replace_with_stats(initial_data['ability_description'])
+                        initial_data['ability_description'] = replace_with_stats(initial_data['ability_description'], is_others_field=False)
                         # Stats have been successfully replaced
 
                 # Extract recommended builds (all 5) and top items
