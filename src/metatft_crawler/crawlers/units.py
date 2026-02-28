@@ -440,10 +440,16 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             return f'({stat})'
                         return match.group(0)
 
-                    # Replace all () with stat abbreviations
+                    # Replace all () with stat abbreviations in damage_text
                     damage_text = re.sub(r'\(\)', replace_paren, damage_text)
-
                     initial_data['ability_others'] = damage_text
+
+                    # Also replace () in ability description with the same pattern
+                    if initial_data.get('ability_description'):
+                        paren_count = 0  # Reset counter for description
+                        desc_text = initial_data['ability_description']
+                        desc_text = re.sub(r'\(\)', replace_paren, desc_text)
+                        initial_data['ability_description'] = desc_text
 
                 # Extract recommended builds (all 5) and top items
                 recommended_builds_data = await page.evaluate("""
