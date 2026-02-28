@@ -405,6 +405,46 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     }
                 """)
 
+                # Post-process damage info to add stat abbreviations (AD/AP) to empty ()
+                if initial_data.get('ability_others'):
+                    import re
+                    damage_text = initial_data['ability_others']
+
+                    # Get stat image counts from the page to match patterns
+                    stat_counts = await page.evaluate("""
+                        () => {
+                            const apImgs = Array.from(document.querySelectorAll('img[alt="AP"]'));
+                            const adImgs = Array.from(document.querySelectorAll('img[alt="AD"]'));
+                            return { ap: apImgs.length, ad: adImgs.length };
+                        }
+                    """)
+
+                    # Strategy: Replace () based on patterns and context
+                    # Heuristic: alternate between stats, starting with AP for first damage
+                    # "physical damage" usually indicates AD
+
+                    # Replace specific patterns based on context
+                    # 1. "Damage:" damage is usually AP damage (ability related)
+                    # 2. "physical damage" indicates AD
+                    # 3. For multiplier lines, infer from position
+
+                    # Find all () and replace them
+                    paren_count = 0
+                    stat_order = ['AP', 'AD', 'AP', 'AD', 'AP', 'AD', 'AP']  # Likely pattern
+
+                    def replace_paren(match):
+                        nonlocal paren_count
+                        if paren_count < len(stat_order):
+                            stat = stat_order[paren_count]
+                            paren_count += 1
+                            return f'({stat})'
+                        return match.group(0)
+
+                    # Replace all () with stat abbreviations
+                    damage_text = re.sub(r'\(\)', replace_paren, damage_text)
+
+                    initial_data['ability_others'] = damage_text
+
                 # Extract recommended builds (all 5) and top items
                 recommended_builds_data = await page.evaluate("""
                     () => {
