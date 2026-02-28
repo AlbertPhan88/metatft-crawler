@@ -12,6 +12,7 @@ from typing import Optional
 
 from .crawlers.comps import crawl_tft_meta
 from .crawlers.units import crawl_all_units
+from .crawlers.items import crawl_all_items
 from .utils.csv_export import units_to_csv
 
 
@@ -23,6 +24,7 @@ MetaTFT Crawler - Extract competitive TFT meta data
 Usage:
   python -m metatft_crawler comps [OPTIONS]     Crawl comps from MetaTFT.com
   python -m metatft_crawler units [OPTIONS]     Crawl units from MetaTFT.com
+  python -m metatft_crawler items [OPTIONS]     Crawl items from MetaTFT.com
   python -m metatft_crawler --help              Show this help message
 
 Options:
@@ -38,6 +40,9 @@ Examples:
 
   # Crawl all units and save as JSON
   python -m metatft_crawler units -o units.json
+
+  # Crawl all items (with stats, traits, descriptions)
+  python -m metatft_crawler items -o items.json
 
   # Crawl all units and export to CSV
   python -m metatft_crawler units -l vi -o units.csv
@@ -106,6 +111,26 @@ async def run_units(language: str = "en", output: Optional[str] = None, format_t
     return result
 
 
+async def run_items(language: str = "en", output: Optional[str] = None, verbose: bool = False):
+    """Run items crawler."""
+    if verbose:
+        print(f"[INFO] Starting items crawler (language={language})")
+
+    result = await crawl_all_items(language=language)
+
+    if output:
+        output_path = Path(output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+        if verbose:
+            print(f"[INFO] Results saved to {output_path}")
+    else:
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+
+    return result
+
+
 def main():
     """Main CLI entry point."""
     if len(sys.argv) < 2:
@@ -158,6 +183,8 @@ def main():
         asyncio.run(run_comps(language=language, output=output, verbose=verbose))
     elif command == 'units':
         asyncio.run(run_units(language=language, output=output, format_type=format_type, verbose=verbose))
+    elif command == 'items':
+        asyncio.run(run_items(language=language, output=output, verbose=verbose))
     else:
         print(f"Error: Unknown command '{command}'")
         print_help()
