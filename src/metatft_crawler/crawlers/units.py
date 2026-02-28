@@ -178,6 +178,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         let traits = [];
                         let abilityName = null;
                         let abilityDescription = '';
+                        let abilityOthers = '';
                         let unlockCondition = '';
 
                         // Known trait names to look for (exact matches)
@@ -241,8 +242,9 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                                 }
                             }
 
-                            // Extract ability description and unlock condition
+                            // Extract ability description, damage info, and unlock condition
                             let descriptionLines = [];
+                            let damageLines = [];
                             let inDescription = false;
                             let unlockIndex = -1;
 
@@ -266,13 +268,14 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
 
                                 // Collect lines while in description section (until Unlock)
                                 if (inDescription && unlockIndex === -1) {
-                                    // Skip pure damage calculation lines
+                                    // Collect damage calculation lines separately
                                     if (line === 'Damage:' || line === 'Acid Damage:' ||
                                         line === '+' || line === 'of' ||
                                         line.match(/^\\d+[\\/\\d%]*\\s*$/) ||  // Just numbers like "30/45/500"
                                         line.match(/^[\\d\\(\\)\\/]*$/) ||     // Numbers and parens
                                         line.match(/\\(\\)\\s*$/) ||           // Ends with ()
                                         line.match(/^%/)) {                     // Starts with %
+                                        damageLines.push(line);
                                         continue;
                                     }
 
@@ -300,6 +303,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             }
 
                             abilityDescription = descriptionLines.join(' ').trim();
+                            abilityOthers = damageLines.join(' ').trim();
                         }
 
                         return {
@@ -308,7 +312,8 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             traits: traits,
                             ability_name: abilityName,
                             ability_description: abilityDescription,
-                            unlock_condition: unlockCondition
+                            unlock_condition: unlockCondition,
+                            ability_others: abilityOthers
                         };
                     }
                 """)
@@ -490,7 +495,8 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     'ability': {
                         'name': initial_data.get('ability_name'),
                         'description': initial_data.get('ability_description', ''),
-                        'unlock_condition': initial_data.get('unlock_condition', '')
+                        'unlock_condition': initial_data.get('unlock_condition', ''),
+                        'others': initial_data.get('ability_others', '')
                     },
                     'stats': {
                         'health': base_stats.get('health'),
