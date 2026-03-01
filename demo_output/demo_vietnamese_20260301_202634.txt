@@ -16,22 +16,22 @@ Starting detailed crawl of all 50 units...
 ======================================================================
 
 [░░░░░░░░░░░░░░░░░░░░]  1/50 (  2.0%) | Baron Nashor              | ⏱ 0:00:00 | 🕐 ETA: 0:00:00
-[░░░░░░░░░░░░░░░░░░░░]  2/50 (  4.0%) | Renekton                  | ⏱ 0:00:02 | 🕐 ETA: 0:01:04
-[█░░░░░░░░░░░░░░░░░░░]  3/50 (  6.0%) | Sylas                     | ⏱ 0:00:05 | 🕐 ETA: 0:01:25
-[█░░░░░░░░░░░░░░░░░░░]  4/50 (  8.0%) | Ziggs                     | ⏱ 0:00:08 | 🕐 ETA: 0:01:40
-[██░░░░░░░░░░░░░░░░░░]  5/50 ( 10.0%) | Zaahen                    | ⏱ 0:00:11 | 🕐 ETA: 0:01:46
-[██░░░░░░░░░░░░░░░░░░]  6/50 ( 12.0%) | Volibear                  | ⏱ 0:00:14 | 🕐 ETA: 0:01:48
-[██░░░░░░░░░░░░░░░░░░]  7/50 ( 14.0%) | Mel                       | ⏱ 0:00:17 | 🕐 ETA: 0:01:50
-[███░░░░░░░░░░░░░░░░░]  8/50 ( 16.0%) | Lucian & Senna            | ⏱ 0:00:20 | 🕐 ETA: 0:01:49
-[███░░░░░░░░░░░░░░░░░]  9/50 ( 18.0%) | Aatrox                    | ⏱ 0:00:22 | 🕐 ETA: 0:01:41
-[████░░░░░░░░░░░░░░░░] 10/50 ( 20.0%) | Fiddlesticks              | ⏱ 0:00:25 | 🕐 ETA: 0:01:41
+[░░░░░░░░░░░░░░░░░░░░]  2/50 (  4.0%) | Renekton                  | ⏱ 0:00:02 | 🕐 ETA: 0:01:00
+[█░░░░░░░░░░░░░░░░░░░]  3/50 (  6.0%) | Sylas                     | ⏱ 0:00:05 | 🕐 ETA: 0:01:19
+[█░░░░░░░░░░░░░░░░░░░]  4/50 (  8.0%) | Ziggs                     | ⏱ 0:00:07 | 🕐 ETA: 0:01:26
+[██░░░░░░░░░░░░░░░░░░]  5/50 ( 10.0%) | Zaahen                    | ⏱ 0:00:10 | 🕐 ETA: 0:01:31
+[██░░░░░░░░░░░░░░░░░░]  6/50 ( 12.0%) | Volibear                  | ⏱ 0:00:12 | 🕐 ETA: 0:01:32
+[██░░░░░░░░░░░░░░░░░░]  7/50 ( 14.0%) | Mel                       | ⏱ 0:00:15 | 🕐 ETA: 0:01:32
+[███░░░░░░░░░░░░░░░░░]  8/50 ( 16.0%) | Lucian & Senna            | ⏱ 0:00:17 | 🕐 ETA: 0:01:31
+[███░░░░░░░░░░░░░░░░░]  9/50 ( 18.0%) | Aatrox                    | ⏱ 0:00:18 | 🕐 ETA: 0:01:25
+[████░░░░░░░░░░░░░░░░] 10/50 ( 20.0%) | Shyvana                   | ⏱ 0:00:21 | 🕐 ETA: 0:01:25
 
 ======================================================================
 ✅ Crawling Complete!
 ======================================================================
   Total units crawled: 10/50
-  Total time: 0:00:28
-  Average time per unit: 2.87s
+  Total time: 0:00:23
+  Average time per unit: 2.39s
 ======================================================================
 
 
@@ -82,6 +82,7 @@ Unit #2: Renekton
 🎯 Ability (Kỹ Năng):
   • Name (Tên):          Cắt và Xắt
   • Mana Cost (Chi Phí): 0/30
+  • Description (Mô Tả): Lướt tới kẻ địch thấp Máu nhất trong phạm vi 2 ô, gây 80/120/360 (AD) sát thương vật lý lên tất cả kẻ địch trên đường đi. Sau đó, chém 4 lần, mỗi nhát...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
   • HP: 1400/2520/4536
@@ -113,6 +114,7 @@ Unit #3: Sylas
 🎯 Ability (Kỹ Năng):
   • Name (Tên):          Chiếm Đoạt Uy Lực
   • Mana Cost (Chi Phí): 0/30
+  • Description (Mô Tả): Thi triển 1 trong 3 kỹ năng: Đại Địa Chấn: Nhảy bổ vào một kẻ địch ở gần. Gây 200/350/1000 (AP) sát thương phép lên tất cả các kẻ địch trong phạm vi 2...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
   • HP: 1600/2880/5184
@@ -138,7 +140,7 @@ Unit #4: Ziggs
 
 📊 Basic Information:
   • Cost (Giá):          5
-  • Type (Loại):         None
+  • Type (Loại):         Xạ Thủ Phép
   • Traits (Đặc Tính):   Zaun, Yordle, Piltover
 
 🎯 Ability (Kỹ Năng):
@@ -176,6 +178,7 @@ Unit #5: Zaahen
 🎯 Ability (Kỹ Năng):
   • Name (Tên):          Thử Thách Thần Thánh
   • Mana Cost (Chi Phí): 0/40
+  • Description (Mô Tả): Lướt xung quanh mục tiêu và chém theo hình tròn, gây 110/165/1700 (AD/AP/AD/AP/AD/AP/AP/AD/AP) sát thương vật lý lên mục tiêu và 44/66/680 (AD/AP) sát...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
   • HP: 1200/2160/3888
@@ -207,6 +210,7 @@ Unit #6: Volibear
 🎯 Ability (Kỹ Năng):
   • Name (Tên):          Bão Tố Cuồng Nộ
   • Mana Cost (Chi Phí): 0/20
+  • Description (Mô Tả): Cắn mục tiêu và đánh dấu chúng, gây 136/215/2117 (AD/AD/AP/AD/AP) sát thương vật lý, tăng lên 60% nếu chúng đã bị đánh dấu. Sau khi thi triển 5/5/2 lầ...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
   • HP: 1200/2160/3888
@@ -232,7 +236,7 @@ Unit #7: Mel
 
 📊 Basic Information:
   • Cost (Giá):          5
-  • Type (Loại):         None
+  • Type (Loại):         Thuật Sư Phép
   • Traits (Đặc Tính):   Noxus, Piltover
 
 🎯 Ability (Kỹ Năng):
@@ -285,6 +289,7 @@ Unit #9: Aatrox
 🎯 Ability (Kỹ Năng):
   • Name (Tên):          Quỷ Kiếm Darkin
   • Mana Cost (Chi Phí): 0/20
+  • Description (Mô Tả): Khi thi triển, luân phiên kích hoạt một trong các kỹ năng sau: Chém theo một đường thẳng, gây 110/210/2500 (AD/AP/AD/AP/AD/AP/AP/AD/AP) sát thương vật...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
   • HP: 1000/1800/3240
@@ -305,34 +310,35 @@ Unit #9: Aatrox
 
 
 ====================================================================================================
-Unit #10: Fiddlesticks
+Unit #10: Shyvana
 ====================================================================================================
 
 📊 Basic Information:
   • Cost (Giá):          5
-  • Type (Loại):         None
+  • Type (Loại):         Đấu Sĩ Vật Lý
   • Traits (Đặc Tính):   Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Bão Quạ
-  • Mana Cost (Chi Phí): 30/70
+  • Name (Tên):          Hóa Rồng / Hơi Thở Của Rồng
+  • Mana Cost (Chi Phí): 0/30
+  • Description (Mô Tả): Hóa Rồng: Biến thành rồng, nhận thêm 600/1000/9999 Máu tối đa. Nhận 20/20/90% Chống Chịu trong thoáng chốc và lao thẳng vào khu vực có đông kẻ địch nh...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
   • HP: 1200/2160/3888
-  • AD: 50/75/113
+  • AD: 80/120/180
   • AP: 100
   • Armor: 60
   • MR: 60
 
 🎁 Top Items (Trang Bị Hàng Đầu):
-  1. Mũ Thích Nghi
-  2. Vương Miện Hoàng Gia
-  3. Quỷ Thư Morello
-  4. Chùy Đoản Côn
-  5. Mũ Phù Thủy Rabadon
+  1. Móng Vuốt Sterak
+  2. Áo Choàng Bóng Tối
+  3. Giáp Vai Nguyệt Thần
+  4. Lời Thề Hộ Vệ
+  5. Áo Choàng Thủy Ngân
 
 🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
-  1. Găng Bảo Thạch + Quỷ Thư Morello + Mũ Phù Thủy Rabadon
+  1. Huyết Kiếm + Áo Choàng Bóng Tối + Móng Vuốt Sterak
 
 
 ====================================================================================================

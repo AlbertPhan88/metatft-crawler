@@ -106,9 +106,16 @@ class VietnameseConfig(LanguageConfig):
         # Unit types (both English and Vietnamese to support page matching)
         self.unit_types = [
             # English versions (game terms)
-            "Attack", "Fighter", "Caster", "Support", "Tank",
+            "Attack", "Fighter", "Caster", "Support", "Tank", "Marksman", "Oracle",
             # Vietnamese versions (as shown on Vietnamese page)
-            "Đấu Sĩ", "Vật Lý", "Pháp Sư", "Hỗ Trợ", "Quân Áo",
+            "Đấu Sĩ",      # Fighter
+            "Vật Lý",      # Attack
+            "Pháp Sư",     # Mage/Caster
+            "Hỗ Trợ",      # Support
+            "Quân Áo",     # Tank
+            "Xạ Thủ",      # Marksman
+            "Viễn Kích",   # Longshot (also appears as unit type)
+            "Thuật Sư",    # Oracle
         ]
 
         # Items page labels
@@ -146,4 +153,24 @@ class VietnameseConfig(LanguageConfig):
             "Cookie",
             "Liên Hệ",
             "Sơ Đồ",
+        ]
+
+        # Traits page keywords
+        self.traits_back_link = "Quay về"  # Vietnamese for "Back to Traits"
+        self.traits_meta_stat_keywords = [
+            # English keywords (for English pages)
+            "Avg Place",
+            "Pick Rate",
+            "Placements",
+            "Stats",
+            "1st",
+            "2nd",
+            "3rd",
+            "Download",
+            # Vietnamese keywords (for Vietnamese pages)
+            "Hạng TB",
+            "Tỷ Lệ",
+            "Thống kê",
+            "Tải Xuống",
+            "Tộc/Hệ",  # Traits section header in Vietnamese
         ]

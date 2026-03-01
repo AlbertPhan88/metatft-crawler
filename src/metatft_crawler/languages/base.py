@@ -51,6 +51,10 @@ class LanguageConfig:
     navigation_keywords: List[str]
     footer_keywords: List[str]
 
+    # Traits page keywords
+    traits_back_link: str  # e.g., "Back to Traits" or "Quay về"
+    traits_meta_stat_keywords: List[str]  # Keywords that indicate meta stats section
+
     def __init__(self):
         """Initialize with default values - must be overridden in subclasses."""
         raise NotImplementedError(

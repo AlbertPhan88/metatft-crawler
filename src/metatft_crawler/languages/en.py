@@ -103,3 +103,16 @@ class EnglishConfig(LanguageConfig):
             "Discord",
             "Advertise With Us",
         ]
+
+        # Traits page keywords
+        self.traits_back_link = "Back to Traits"
+        self.traits_meta_stat_keywords = [
+            "Avg Place",
+            "Pick Rate",
+            "Placements",
+            "Stats",
+            "1st",
+            "2nd",
+            "3rd",
+            "Download",
+        ]

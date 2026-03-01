@@ -205,9 +205,10 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         }
 
                         if (abilityTabIndex > 0) {
-                            // Look backwards from "Ability" tab for cost, type, and traits
+                            // Look backwards from "Ability" tab for cost, type, and traits (expand search range)
                             let typeLines = [];
-                            for (let i = abilityTabIndex - 1; i >= headerStartIndex; i--) {
+                            let searchStart = Math.max(0, abilityTabIndex - 100);  // Expanded from 20 to 100
+                            for (let i = abilityTabIndex - 1; i >= searchStart; i--) {
                                 const line = lines[i];
 
                                 // Cost is a single digit (1-10)
@@ -280,21 +281,16 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             let damageLines = [];
                             let inDescription = false;
                             let unlockIndex = -1;
-                            let manaFoundIndex = -1;
-
-                            // Find where mana ends so we know where description should start
-                            for (let i = abilityTabIndex + 1; i < lines.length; i++) {
-                                if (lines[i] && lines[i].match(/^\\d+$/) && i + 1 < lines.length && lines[i + 1] === '/') {
-                                    // Found the last digit of mana cost, description should start after next lines
-                                    manaFoundIndex = i + 2;
-                                    break;
-                                }
-                            }
 
                             for (let i = abilityTabIndex + 1; i < lines.length; i++) {
                                 const line = lines[i];
 
-                                // Mark start of description when we see Passive or Active (language-aware)
+                                // Stop at unlock condition
+                                if (line === langConfig.unlock_marker && unlockIndex === -1) {
+                                    unlockIndex = i;
+                                }
+
+                                // Mark start of description when we see Passive or Active markers
                                 const passiveMarker = langConfig.passive_marker;
                                 const activeMarker = langConfig.active_marker;
                                 if ((line.startsWith(passiveMarker) || line.startsWith(activeMarker)) && !inDescription) {
@@ -307,11 +303,19 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                                     continue;
                                 }
 
-                                // Also start description if we've found mana and we see substantial text
-                                if (!inDescription && manaFoundIndex !== -1 && i >= manaFoundIndex) {
-                                    if (line && line.length > 5 && line.length < 300 &&
-                                        !line.match(/^\\d/) && !line.match(/^[\\/\\(\\)]*$/) &&
-                                        line !== langConfig.unlock_marker) {
+                                // If no markers found, start description after ability name + mana cost (roughly 5-10 lines after ability tab)
+                                // Description typically starts with substantial text containing ability info
+                                if (!inDescription && abilityNameIndex !== -1 && i > abilityNameIndex + 2) {
+                                    if (line && line.length > 5 && line.length < 400 &&
+                                        !line.match(/^\\d+$/) &&  // Not a single number
+                                        !line.match(/^\\//) &&  // Not just "/"
+                                        !line.match(/^[\\/\\(\\)%]*$/) &&  // Not just punctuation/symbols
+                                        line !== langConfig.unlock_marker &&
+                                        !line.includes('Damages') &&
+                                        !line.includes('Damage:') &&
+                                        !line.includes('Stats') &&
+                                        !line.includes('Hạng TB') &&  // Vietnamese "Avg Place"
+                                        !line.includes('Tỷ Lệ')) {  // Vietnamese "Pick Rate"
                                         inDescription = true;
                                         descriptionLines.push(line);
                                         continue;

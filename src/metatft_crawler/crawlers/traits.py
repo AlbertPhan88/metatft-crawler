@@ -99,17 +99,17 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
 
                 # Extract trait details
                 trait_details = await page.evaluate("""
-                    () => {
+                    (langConfig) => {
                         const pageText = document.body.innerText;
                         const lines = pageText.split('\\n').map(l => l.trim()).filter(l => l);
 
                         let traitName = null;
                         let description = null;
 
-                        // Strategy 1: Find the line "Back to Traits" (English) or "Quay về Tộc/Hệ" (Vietnamese)
+                        // Strategy 1: Find the back link (language-specific from config)
                         let contentStartIdx = -1;
                         for (let i = 0; i < lines.length; i++) {
-                            if (lines[i].includes('Back to Traits') || lines[i].includes('Quay về')) {
+                            if (lines[i].includes(langConfig.traits_back_link)) {
                                 contentStartIdx = i + 1;
                                 break;
                             }
@@ -127,10 +127,10 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                                 const nextLine = i + 1 < lines.length ? lines[i + 1] : '';
 
                                 // Trait names are typically short (20-40 chars) and followed by longer descriptions
-                                if (line.length > 5 && line.length < 60 &&
-                                    !line.includes('Avg Place') && !line.includes('Pick Rate') &&
-                                    !line.includes('Hạng TB') && !line.includes('Tỷ Lệ') &&
-                                    !line.includes('Stats') && !line.includes('Thống kê') &&
+                                // Skip lines that match known meta stat keywords
+                                let isMetaStat = langConfig.traits_meta_stat_keywords.some(kw => line.includes(kw));
+
+                                if (line.length > 5 && line.length < 60 && !isMetaStat &&
                                     nextLine.length > 50) {
                                     traitName = line;
                                     contentStartIdx = i;
@@ -155,13 +155,9 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                         for (let i = startIdx; i < lines.length; i++) {
                             const line = lines[i];
 
-                            // Stop at known metadata sections (English and Vietnamese)
-                            if (line.includes('Stats') || line.includes('Avg Place') ||
-                                line.includes('Pick Rate') || line.includes('Placements') ||
-                                line.includes('Hạng TB') || line.includes('Tỷ Lệ') ||
-                                line.includes('Thống kê') || line.includes('Download') ||
-                                line === '1st' || line === '2nd' || line === '3rd' ||
-                                line.match(/^\\d+,\\d+$/) || (line.match(/^\\d+$/) && line.length < 3)) {
+                            // Stop at known metadata sections (use language-specific keywords)
+                            let isMetaStat = langConfig.traits_meta_stat_keywords.some(kw => line.includes(kw));
+                            if (isMetaStat || line.match(/^\\d+,\\d+$/) || (line.match(/^\\d+$/) && line.length < 3)) {
                                 // We've hit stats, stop collecting
                                 break;
                             }
@@ -176,7 +172,7 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                                 continue;
                             }
 
-                            // Collect ability description text
+                            // Collect ability description text (but skip generic stat labels)
                             if (line.length > 10 && !line.includes('Stats on how')) {
                                 descriptionLines.push(line);
                             }
@@ -196,7 +192,10 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                             description: description
                         };
                     }
-                """)
+                """, {
+                    'traits_back_link': lang_config.traits_back_link,
+                    'traits_meta_stat_keywords': lang_config.traits_meta_stat_keywords,
+                })
 
                 traits_data.append(trait_details)
                 print(f"  ✓ {trait_details['name']}")
