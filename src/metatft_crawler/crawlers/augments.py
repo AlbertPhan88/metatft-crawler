@@ -182,8 +182,8 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                     elem = elements[0]
                     # Hover over the element using Playwright
                     await elem.hover()
-                    # Wait for tooltip to appear (reduced from 500ms to 100ms)
-                    await page.wait_for_timeout(100)
+                    # Wait for tooltip to appear (reduced from 500ms to 200ms - minimum reliable time)
+                    await page.wait_for_timeout(200)
 
                     # Extract tooltip description
                     description = await page.evaluate(f"""

@@ -144,6 +144,8 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                 break
 
             unit_name = unit_data.get('name', '')
+            unit_url = unit_data.get('url', '')  # Use extracted URL from page
+
             current_progress = i + 1
             percentage = (current_progress / total_units) * 100
 
@@ -162,9 +164,9 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
             print(f"[{progress_bar}] {current_progress:2d}/{total_units} ({percentage:5.1f}%) | {unit_name:25s} | ⏱ {elapsed_str} | 🕐 ETA: {remaining_str}")
 
             try:
-                # Create URL from unit name
-                unit_path = unit_name.replace(' ', '').replace("'", '').replace('&', 'and')
-                unit_url = f"https://www.metatft.com/units/{unit_path}"
+                # Use full URL from page extraction (e.g., "https://www.metatft.com/units/Lucian" for "Lucian & Senna")
+                if not unit_url.startswith('http'):
+                    unit_url = f"https://www.metatft.com{unit_url}"
 
                 await page.goto(unit_url, wait_until="domcontentloaded", timeout=30000)
                 await page.wait_for_timeout(1000)
