@@ -145,49 +145,43 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
         print(f"Extracting descriptions for {len(augments_data)} augments...")
         for i, augment in enumerate(augments_data):
             try:
-                # Try to find and hover over the augment name to trigger tooltip
-                description = await page.evaluate(f"""
-                    async () => {{
-                        const augmentName = {json.dumps(augment['name'])};
+                # Find the element with this augment name and hover over it
+                elements = await page.query_selector_all(f"text={augment['name']}")
 
-                        // Find element containing the augment name
-                        const elements = Array.from(document.querySelectorAll('*'))
-                            .filter(el => el.innerText === augmentName &&
-                                         el.innerText.length === augmentName.length);
+                if elements:
+                    elem = elements[0]
+                    # Hover over the element using Playwright
+                    await elem.hover()
+                    # Wait for tooltip to appear
+                    await page.wait_for_timeout(500)
 
-                        if (elements.length === 0) return '';
+                    # Extract tooltip description
+                    description = await page.evaluate(f"""
+                        () => {{
+                            const augmentName = {json.dumps(augment['name'])};
 
-                        const elem = elements[0];
-
-                        // Hover over it
-                        const event = new MouseEvent('mouseenter', {{
-                            bubbles: true,
-                            cancelable: true,
-                            view: window
-                        }});
-                        elem.dispatchEvent(event);
-
-                        // Wait for tooltip to appear
-                        await new Promise(r => setTimeout(r, 300));
-
-                        // Find tooltip text
-                        const tooltips = document.querySelectorAll('[role="tooltip"], [class*="MuiTooltip-tooltip"]');
-                        for (let tooltip of tooltips) {{
-                            const text = tooltip.innerText || tooltip.textContent;
-                            if (text && text.includes(augmentName)) {{
-                                // Extract just the description part (after augment name)
-                                return text.replace(augmentName, '').trim();
+                            // Find tooltip elements
+                            const tooltips = document.querySelectorAll('[role="tooltip"], [class*="MuiTooltip-tooltip"]');
+                            for (let tooltip of tooltips) {{
+                                const text = tooltip.innerText || tooltip.textContent;
+                                if (text && text.includes(augmentName)) {{
+                                    // Extract just the description part (after augment name)
+                                    const descPart = text.replace(augmentName, '').trim();
+                                    if (descPart.length > 0) {{
+                                        return descPart;
+                                    }}
+                                }}
                             }}
+
+                            return '';
                         }}
+                    """)
 
-                        return '';
-                    }}
-                """)
+                    if description:
+                        augment['description'] = description
 
-                if description:
-                    augment['description'] = description
-                    if (i + 1) % 10 == 0:
-                        print(f"  Extracted {i + 1}/{len(augments_data)} descriptions")
+                if (i + 1) % 50 == 0:
+                    print(f"  Extracted {i + 1}/{len(augments_data)} descriptions")
 
             except Exception as e:
                 # If extraction fails, keep empty description

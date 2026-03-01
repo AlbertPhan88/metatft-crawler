@@ -189,6 +189,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         // Look for pattern: Unit Name, then Type, then Traits, then number (cost), then "Ability"/"Stats" tabs
                         let headerStartIndex = -1;
                         let abilityTabIndex = -1;
+                        let abilityNameIndex = -1;
 
                         // Find where unit header starts (look for tabs)
                         for (let i = 0; i < Math.min(100, lines.length); i++) {
@@ -235,7 +236,6 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             }
 
                             // Extract ability name: Look after "Ability" tab for first non-empty, non-number line
-                            let abilityNameIndex = -1;
                             for (let i = abilityTabIndex + 1; i < Math.min(abilityTabIndex + 5, lines.length); i++) {
                                 const line = lines[i];
                                 if (line && !line.match(/^\\d/) && line !== 'Key' && line !== 'Stats' && line.length < 100) {
@@ -245,23 +245,15 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                                 }
                             }
 
-                            // Extract ability mana cost: Simple approach - get next two lines after ability name
-                            let abilityMana = '';
+                            // Extract ability mana cost from DOM - look for UnitAbilityMana class
                             try {
-                                if (abilityNameIndex >= 0 && abilityNameIndex + 2 < lines.length) {
-                                    const line1 = lines[abilityNameIndex + 1];
-                                    const line2 = lines[abilityNameIndex + 2];
-
-                                    // Build mana from next two lines (e.g., "0/50")
-                                    if (line1 && line2) {
-                                        // If line1 starts with digit and line2 starts with /, concatenate
-                                        if (/^\\d/.test(line1) && /^\\//.test(line2)) {
-                                            abilityMana = line1 + line2;
-                                        }
-                                        // Or if line1 is full mana format
-                                        else if (/^\\d+\\/\\d/.test(line1)) {
-                                            abilityMana = line1;
-                                        }
+                                const manaContainer = document.querySelector('.UnitAbilityMana');
+                                if (manaContainer) {
+                                    const manaText = manaContainer.innerText;
+                                    // Extract all numbers and build mana string (e.g., first/second digits)
+                                    const nums = manaText.match(/\\d+/g);
+                                    if (nums && nums.length >= 2) {
+                                        abilityMana = nums[0] + '/' + nums[1];
                                     }
                                 }
                             } catch (e) {
@@ -416,7 +408,6 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         };
                     }
                 """)
-
                 # Extract the damage stats mapping from the returned data
                 damage_stats_mapping = initial_data.get('damage_stats_mapping', {})
 

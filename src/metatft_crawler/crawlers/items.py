@@ -101,16 +101,33 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                         const pageText = document.body.innerText;
                         const lines = pageText.split('\\n').map(l => l.trim()).filter(l => l);
 
-                        // Find item name - "Name TFT Item Stats" -> extract "Name"
+                        // Find item name - "Name TFT Item Stats" (EN) or "Số Liệu Trang Bị Name" (VI)
                         let itemName = null;
                         let statsData = {};
                         let traitNumber = null;
                         let description = null;
 
-                        // Find the item name from the header that mentions "TFT Item Stats"
+                        // Find the item name from the header that mentions "TFT Item Stats" or Vietnamese equivalent
                         for (let i = 0; i < lines.length; i++) {
-                            if (lines[i].includes('TFT Item Stats')) {
-                                itemName = lines[i].replace(/\\s*TFT Item Stats\\s*/i, '').trim();
+                            const line = lines[i];
+                            // English: "ItemName TFT Item Stats"
+                            if (line.includes('TFT Item Stats')) {
+                                itemName = line.replace(/\\s*TFT Item Stats\\s*/i, '').trim();
+                                break;
+                            }
+                            // Vietnamese: "Số Liệu Trang Bị ItemName" or similar pattern
+                            if (line.includes('Số Liệu Trang Bị') || line.includes('Thống kê')) {
+                                // Item name is in the same line after the stat keyword
+                                itemName = line.replace(/Số Liệu Trang Bị\\s*/i, '').replace(/Thống kê.*$/i, '').trim();
+                                if (!itemName || itemName.includes('hiệu')) {
+                                    // If extraction failed, try next non-empty line
+                                    for (let j = i + 1; j < Math.min(i + 5, lines.length); j++) {
+                                        if (lines[j] && !lines[j].includes('Dữ liệu') && !lines[j].includes('cập nhật')) {
+                                            itemName = lines[j];
+                                            break;
+                                        }
+                                    }
+                                }
                                 break;
                             }
                         }
@@ -134,14 +151,14 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                         // Fallback: If no HTML images found, parse from text
                         if (Object.keys(statsData).length === 0) {
                             for (let i = 0; i < lines.length; i++) {
-                                if (lines[i] === 'Recipe') {
+                                if (lines[i] === 'Recipe' || lines[i] === 'Công Thức' || lines[i] === 'Công thức') {
                                     // Next lines might contain stat values or recipe info
                                     let j = i + 1;
                                     let statIndex = 0;
                                     const statNames = ['AP/AD', 'Armor/MR', 'Health'];
 
-                                    // Skip past recipe indicator (like "Cannot be Crafted" or "+")
-                                    while (j < lines.length && (lines[j] === '+' || lines[j].includes('Crafted'))) {
+                                    // Skip past recipe indicator (like "Cannot be Crafted", "+", "Không Thể Ghép")
+                                    while (j < lines.length && (lines[j] === '+' || lines[j].includes('Crafted') || lines[j].includes('Ghép'))) {
                                         j++;
                                     }
 
@@ -149,16 +166,18 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                                     while (j < lines.length && statIndex < 3) {
                                         const line = lines[j];
 
-                                        // Stop if we hit meta stat labels
+                                        // Stop if we hit meta stat labels (English or Vietnamese)
                                         if (line.includes('Avg Place') || line.includes('Pick Rate') ||
                                             line.includes('Last 7 Days') || line.includes('Place Change') ||
                                             line.includes('Play Rate') || line.includes('Win Rate') ||
-                                            line.includes('Best Item') || line.includes('Performance')) {
+                                            line.includes('Best Item') || line.includes('Performance') ||
+                                            line.includes('Hạng TB') || line.includes('Tỷ Lệ Chọn') ||
+                                            line.includes('Tỷ Lệ Thắng') || line.includes('Tỷ Lệ Top')) {
                                             break;
                                         }
 
                                         // Collect stat values (they look like "+20%", "+20", "+300")
-                                        if (line.match(/^[+\\-][0-9.%]+$/) && !line.includes('Place')) {
+                                        if (line.match(/^[+\\-][0-9.%]+$/) && !line.includes('Place') && !line.includes('Hạng')) {
                                             if (statIndex < statNames.length) {
                                                 statsData[statNames[statIndex]] = line;
                                                 statIndex++;
@@ -176,24 +195,28 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
 
                         // Find the item description (ability/effect text, NOT meta stats)
                         // Look for text that describes what the item does
-                        // Priority: Look near Recipe section, find action verbs
+                        // Priority: Look near Recipe section (English "Recipe" or Vietnamese "Công Thức"), find action verbs
                         for (let i = 0; i < lines.length; i++) {
-                            if (lines[i] === 'Recipe') {
+                            if (lines[i] === 'Recipe' || lines[i] === 'Công Thức' || lines[i] === 'Công thức') {
                                 // Look ahead from Recipe for description
                                 for (let j = i + 1; j < Math.min(i + 15, lines.length); j++) {
                                     const line = lines[j];
-                                    // Skip stat lines and craft indicators
-                                    if (line.match(/^[+\\-][0-9.%]+$/) || line === '+' || line.includes('Crafted')) {
+                                    // Skip stat lines and craft indicators (English & Vietnamese)
+                                    if (line.match(/^[+\\-][0-9.%]+$/) || line === '+' || line.includes('Crafted') ||
+                                        line.includes('Ghép') || line.includes('Không Thể')) {
                                         continue;
                                     }
-                                    // Skip common meta/stats labels
+                                    // Skip common meta/stats labels (English & Vietnamese)
                                     if (line.includes('Stats on how') || line.includes('Avg Place') ||
                                         line.includes('Pick Rate') || line.includes('Best Item') ||
-                                        line.includes('Trait') || line.includes('Rate') || line === '1') {
+                                        line.includes('Trait') || line.includes('Rate') || line === '1' ||
+                                        line.includes('Hạng TB') || line.includes('Tỷ Lệ Chọn') ||
+                                        line.includes('Tỷ Lệ Thắng') || line.includes('Thống kê') ||
+                                        line.includes('hiệu suất') || line.includes('Lần Cập Nhật')) {
                                         continue;
                                     }
-                                    // Check if this looks like an ability description
-                                    const hasActionKeyword = line.includes('deal') || line.includes('grant') ||
+                                    // Check if this looks like an ability description (English)
+                                    const hasActionKeywordEN = line.includes('deal') || line.includes('grant') ||
                                         line.includes('gain') || line.includes('reduce') || line.includes('heal') ||
                                         line.includes('summon') || line.includes('restore') || line.includes('apply') ||
                                         line.includes('trigger') || line.includes('convert') || line.includes('double') ||
@@ -204,7 +227,15 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                                         line.includes('wound') || line.includes('stacking') || line.includes('bonus') ||
                                         line.includes('critical') || line.includes('Attack') || line.includes('Health');
 
-                                    if (hasActionKeyword && line.length > 25) {
+                                    // Check if this looks like an ability description (Vietnamese)
+                                    const hasActionKeywordVI = line.includes('Đòn đánh') || line.includes('Gây') ||
+                                        line.includes('Cộng') || line.includes('Nhận') || line.includes('Giảm') ||
+                                        line.includes('Chữa') || line.includes('Gọi') || line.includes('Gia tăng') ||
+                                        line.includes('Máu') || line.includes('Sức Mạnh') || line.includes('Công Kích') ||
+                                        line.includes('tối đa') || line.includes('bạn') || line.includes('chiến đấu') ||
+                                        line.includes('Đơn vị') || line.includes('Kỹ năng') || line.includes('tuyệt đối');
+
+                                    if ((hasActionKeywordEN || hasActionKeywordVI) && line.length > 25) {
                                         description = line;
                                         break;
                                     }
