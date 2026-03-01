@@ -91,7 +91,8 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
         # Crawl detailed data for each trait
         traits_data = []
         for i, trait_info in enumerate(traits_list, 1):
-            print(f"\n[{i}/{len(traits_list)}] Crawling {trait_info['name']}...")
+            trait_link_name = trait_info['name']  # Save the correct name from the link
+            print(f"\n[{i}/{len(traits_list)}] Crawling {trait_link_name}...")
             try:
                 trait_url = f"https://www.metatft.com{trait_info['url']}"
                 await page.goto(trait_url, wait_until="domcontentloaded", timeout=60000)
@@ -99,14 +100,28 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
 
                 # Extract trait details
                 trait_details = await page.evaluate("""
-                    (langConfig) => {
+                    (langConfig, linkName) => {
                         const pageText = document.body.innerText;
                         const lines = pageText.split('\\n').map(l => l.trim()).filter(l => l);
 
                         let traitName = null;
                         let description = null;
 
-                        // Strategy 1: Find the back link (language-specific from config)
+                        // Helper to check if a line looks like UI text (modal, video player, nav)
+                        function isUIText(text) {
+                            const lower = text.toLowerCase();
+                            return lower.includes('muốn thắng') ||
+                                   lower.includes('tải xuống') ||
+                                   lower.includes('quảng cáo') ||
+                                   lower.includes('download') ||
+                                   lower.includes('app') ||
+                                   lower.includes('play video') ||
+                                   lower.includes('up next') ||
+                                   lower.includes('video') ||
+                                   lower.includes('loading');
+                        }
+
+                        // Find the back link first (language-specific from config)
                         let contentStartIdx = -1;
                         for (let i = 0; i < lines.length; i++) {
                             if (lines[i].includes(langConfig.traits_back_link)) {
@@ -115,22 +130,35 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                             }
                         }
 
-                        // If we found the back link, the next non-empty line should be the trait name
+                        // Strategy 0: Primary - If we found the back link, the next non-empty short line should be the trait name
+                        // This is most reliable as it directly uses the page structure
                         if (contentStartIdx > 0 && contentStartIdx < lines.length) {
-                            traitName = lines[contentStartIdx];
+                            const candidate = lines[contentStartIdx];
+                            // Trait names are short and simple, typically < 50 chars
+                            if (candidate && candidate.length > 2 && candidate.length < 50 &&
+                                !isUIText(candidate) && !candidate.match(/^\\(\\d+\\)/) &&
+                                !candidate.includes('Thống kê') && !candidate.includes('Stats')) {
+                                traitName = candidate;
+                            }
                         }
 
-                        // Strategy 2: If not found, look for short lines (likely trait names) followed by longer description
+                        // Strategy 1: If back link approach didn't work, try linkName
+                        if (!traitName && linkName && linkName.length > 2 && linkName.length < 50 && !isUIText(linkName)) {
+                            traitName = linkName;
+                        }
+
+                        // Strategy 3: If not found, look for short lines (likely trait names) followed by longer description
                         if (!traitName) {
                             for (let i = 5; i < lines.length && i < 50; i++) {
                                 const line = lines[i];
                                 const nextLine = i + 1 < lines.length ? lines[i + 1] : '';
 
                                 // Trait names are typically short (20-40 chars) and followed by longer descriptions
-                                // Skip lines that match known meta stat keywords
+                                // Skip lines that match known meta stat keywords, UI text, or stat bonus lines
                                 let isMetaStat = langConfig.traits_meta_stat_keywords.some(kw => line.includes(kw));
+                                let isStatBonus = line.match(/^\\(\\d+\\)/);  // Lines like "(5) ..." are stat bonuses
 
-                                if (line.length > 5 && line.length < 60 && !isMetaStat &&
+                                if (line.length > 5 && line.length < 60 && !isMetaStat && !isUIText(line) && !isStatBonus &&
                                     nextLine.length > 50) {
                                     traitName = line;
                                     contentStartIdx = i;
@@ -139,12 +167,20 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                             }
                         }
 
-                        // Strategy 3: Fallback to h2 or h3 headings
+                        // Strategy 4: Fallback to h2 or h3 headings
                         if (!traitName) {
                             const heading = document.querySelector('h2, h3');
                             if (heading) {
-                                traitName = heading.innerText.trim();
+                                const candidate = heading.innerText.trim();
+                                if (!isUIText(candidate)) {
+                                    traitName = candidate;
+                                }
                             }
+                        }
+
+                        // Strategy 5: Last resort - use the trait name from the link
+                        if (!traitName && linkName) {
+                            traitName = linkName;
                         }
 
                         // Extract trait description - look for ability text
@@ -162,23 +198,24 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                                 break;
                             }
 
-                            // Skip short placeholder lines
-                            if (line.length < 5) {
+                            // Skip short placeholder lines or UI text
+                            if (line.length < 5 || isUIText(line)) {
                                 continue;
                             }
 
-                            // Skip long content summaries that look like page intro text
-                            if (line.length > 100) {
-                                continue;
-                            }
-
-                            // Collect ability description text (but skip generic stat labels)
-                            if (line.length > 10 && !line.includes('Stats on how')) {
+                            // Collect ability description text
+                            // For description lines, accept longer text (trait descriptions can be multi-sentence)
+                            // but avoid obvious page summaries (Stats on how X performs...)
+                            if (line.length > 10 &&
+                                !line.includes('Stats on how') &&
+                                !line.includes('performs in the current') &&
+                                !line.includes('hiệu suất')) {
                                 descriptionLines.push(line);
                             }
 
-                            // Stop after we have collected ability description (usually 2-5 lines max)
-                            if (descriptionLines.length >= 5) {
+                            // Stop after collecting enough description lines
+                            // Increased from 5 to 8 to capture longer Vietnamese descriptions
+                            if (descriptionLines.length >= 8) {
                                 break;
                             }
                         }
@@ -195,6 +232,7 @@ async def crawl_all_traits(language: str = "en", limit_traits: int = None) -> Di
                 """, {
                     'traits_back_link': lang_config.traits_back_link,
                     'traits_meta_stat_keywords': lang_config.traits_meta_stat_keywords,
+                    'linkName': trait_link_name,
                 })
 
                 traits_data.append(trait_details)

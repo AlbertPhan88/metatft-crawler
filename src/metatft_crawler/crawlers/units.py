@@ -70,6 +70,9 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                 const lines = pageText.split('\\n');
                 const tierPattern = /^([SABCDF])\\s*$/;
 
+                // Map to track which units we've found with tier
+                const unitsWithTier = new Map();
+
                 let i = 0;
                 while (i < lines.length) {
                     const line = lines[i].trim();
@@ -77,31 +80,35 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     // Look for tier indicators
                     if (tierPattern.test(line)) {
                         const tier = line;
-                        // The unit name should be above or around this line
+                        // The unit name should be immediately above this line
                         let unitName = null;
 
-                        // Check previous lines for unit name
-                        for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
-                            const prevLine = lines[j].trim();
-                            if (prevLine && !tierPattern.test(prevLine) && prevLine.length < 40 && prevLine.length > 2) {
+                        // Check previous line first (most common case)
+                        if (i > 0) {
+                            const prevLine = lines[i - 1].trim();
+                            if (prevLine && prevLine.length < 40 && prevLine.length > 2 && !tierPattern.test(prevLine)) {
                                 unitName = prevLine;
-                                break;
                             }
                         }
 
-                        // Check next lines for stats
-                        if (i + 1 < lines.length) {
-                            const statsLine = lines[i + 1].trim();
-                            const statsMatch = statsLine.match(/([\\d.]+)\\s+([\\d.]+)\\s+([\\d,]+)\\s+([\\d.]+)/);
+                        // If not found, check more lines back
+                        if (!unitName) {
+                            for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
+                                const prevLine = lines[j].trim();
+                                if (prevLine && !tierPattern.test(prevLine) && prevLine.length < 40 && prevLine.length > 2) {
+                                    unitName = prevLine;
+                                    break;
+                                }
+                            }
+                        }
 
-                            if (unitName && statsMatch) {
-                                units.push({
+                        // Store the unit with tier
+                        if (unitName) {
+                            if (!unitsWithTier.has(unitName)) {
+                                unitsWithTier.set(unitName, {
                                     name: unitName,
                                     tier: tier,
-                                    avg_placement: parseFloat(statsMatch[1]),
-                                    win_rate_percent: parseFloat(statsMatch[2]),
-                                    pick_count: parseInt(statsMatch[3].replace(/,/g, '')),
-                                    frequency_percent: parseFloat(statsMatch[4])
+                                    url: null
                                 });
                             }
                         }
@@ -109,22 +116,31 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     i++;
                 }
 
-                // Also extract from unit links as fallback
+                // Extract unit links and add tier if we found it
                 unitLinks.forEach(link => {
                     const unitName = link.textContent.trim();
+                    const unitUrl = link.getAttribute('href');
                     if (unitName && unitName.length > 1 && unitName.length < 40) {
-                        // Check if we already have this unit
-                        if (!units.find(u => u.name === unitName)) {
-                            units.push({
+                        if (unitsWithTier.has(unitName)) {
+                            // Update existing entry with URL
+                            unitsWithTier.get(unitName).url = unitUrl;
+                        } else {
+                            // New unit without tier (shouldn't happen on units list)
+                            unitsWithTier.set(unitName, {
                                 name: unitName,
                                 tier: 'Unknown',
-                                url: link.getAttribute('href')
+                                url: unitUrl
                             });
                         }
                     }
                 });
 
-                return units.slice(0, 50); // Return top 50 units
+                // Convert map to array
+                unitsWithTier.forEach((unitData) => {
+                    units.push(unitData);
+                });
+
+                return units; // Return all units
             }
         """)
 
@@ -614,7 +630,17 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         initial_data['ability_description'] = replace_with_stats(initial_data['ability_description'], is_others_field=False)
                         # Stats have been successfully replaced
 
+                # Wait a moment to ensure all content is loaded
+                await page.wait_for_timeout(2000)
+
                 # Extract recommended builds (all 5) and top items
+                # First try to navigate back to English temporarily to get items, then switch back
+                original_language = language
+                if language != "en":
+                    # Temporarily switch to English to get items (they're not visible in Vietnamese)
+                    await switch_language(page, "en")
+                    await page.wait_for_timeout(1500)
+
                 recommended_builds_data = await page.evaluate("""
                     (langConfig) => {
                         const pageText = document.body.innerText;
@@ -711,6 +737,11 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     'recommended_builds_label': lang_config.recommended_builds_label,
                 })
 
+                # Switch back to original language if we switched to English for items extraction
+                if language != "en":
+                    await switch_language(page, language)
+                    await page.wait_for_timeout(1000)
+
                 # Merge all extracted data with proper structure
                 unit_detail = {
                     'cost': initial_data.get('cost'),
@@ -723,7 +754,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         'unlock_condition': initial_data.get('unlock_condition', ''),
                         'others': initial_data.get('ability_others', '')
                     },
-                    'stats': {
+                    'stats': {k: v for k, v in {
                         'health': base_stats.get('health'),
                         'mana': base_stats.get('mana'),
                         'attack_damage': base_stats.get('attack_damage'),
@@ -734,7 +765,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         'crit_chance': base_stats.get('crit_chance'),
                         'crit_damage': base_stats.get('crit_damage'),
                         'range': base_stats.get('range')
-                    },
+                    }.items() if v is not None and v != ''},
                     'top_items': recommended_builds_data.get('top_items', []),
                     'recommended_builds': recommended_builds_data.get('recommended_builds', [])
                 }

@@ -116,15 +116,19 @@ class VietnameseConfig(LanguageConfig):
             "Xạ Thủ",      # Marksman
             "Viễn Kích",   # Longshot (also appears as unit type)
             "Thuật Sư",    # Oracle
+            # Compound Vietnamese types
+            "Sát Thủ Phép",     # Assassin Mage
+            "Đỡ Đòn Phép",      # Tank Mage / Support Mage
+            "Đặc Thù Phép",     # Special/Unique Mage
         ]
 
         # Items page labels
         self.tft_item_stats = "Số Liệu Trang Bị"
         self.item_stats_labels = ["Số Liệu Trang Bị", "Thống kê"]
 
-        # Unit page build/items labels (Vietnamese translations)
-        self.top_items_label = "Trang Bị Hàng Đầu"  # Vietnamese for "Top Items"
-        self.recommended_builds_label = "Lối Chơi Đề Xuất"  # Vietnamese for "Recommended Builds"
+        # Unit page build/items labels (English on both English and Vietnamese pages)
+        self.top_items_label = "Top Items"  # Stays English on Vietnamese page
+        self.recommended_builds_label = "Recommended Builds"  # Stays English on Vietnamese page
 
         # Augments page keywords
         self.navigation_keywords = [
@@ -156,7 +160,9 @@ class VietnameseConfig(LanguageConfig):
         ]
 
         # Traits page keywords
-        self.traits_back_link = "Quay về"  # Vietnamese for "Back to Traits"
+        # Vietnamese back link can be "Quay về" (regular traits) or "Quay Lại Tộc/Hệ" (region traits)
+        # Use generic pattern that matches both
+        self.traits_back_link = "Quay"  # Matches "Quay về" and "Quay Lại"
         self.traits_meta_stat_keywords = [
             # English keywords (for English pages)
             "Avg Place",
