@@ -171,19 +171,25 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
             'footer_keywords': lang_config.footer_keywords,
         })
 
-        # Now extract descriptions by hovering over each augment (sequential with 100ms wait)
-        print(f"Extracting descriptions for {len(augments_data)} augments (100ms wait)...")
+        # Apply limit before extracting descriptions to save time
+        if limit_augments is not None:
+            augments_data = augments_data[:limit_augments]
+            print(f"Limited to {len(augments_data)} augments for demo")
+
+        # Now extract descriptions by hovering over each augment (sequential with 500ms wait)
+        print(f"Extracting descriptions for {len(augments_data)} augments (500ms wait)...")
         for i, augment in enumerate(augments_data):
             try:
-                # Find the element with this augment name and hover over it
-                elements = await page.query_selector_all(f"text={augment['name']}")
+                # Find elements with the augment name
+                # First try to find in table cells only
+                elements = await page.query_selector_all(f"table tr >> text={augment['name']}")
 
                 if elements:
                     elem = elements[0]
                     # Hover over the element using Playwright
                     await elem.hover()
-                    # Wait for tooltip to appear (reduced from 500ms to 200ms - minimum reliable time)
-                    await page.wait_for_timeout(200)
+                    # Wait for tooltip to appear
+                    await page.wait_for_timeout(500)
 
                     # Extract tooltip description
                     description = await page.evaluate(f"""
@@ -219,11 +225,6 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
 
         # Print what we found
         print(f"Found {len(augments_data)} augments")
-
-        # Apply limit if specified
-        if limit_augments is not None:
-            augments_data = augments_data[:limit_augments]
-            print(f"Limited to {len(augments_data)} augments for demo")
 
         await browser.close()
 
