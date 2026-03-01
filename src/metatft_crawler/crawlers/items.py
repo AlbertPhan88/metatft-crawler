@@ -145,11 +145,20 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                                         j++;
                                     }
 
-                                    // Now try to collect stat values
+                                    // Now try to collect stat values, but stop at meta stat labels
                                     while (j < lines.length && statIndex < 3) {
                                         const line = lines[j];
+
+                                        // Stop if we hit meta stat labels
+                                        if (line.includes('Avg Place') || line.includes('Pick Rate') ||
+                                            line.includes('Last 7 Days') || line.includes('Place Change') ||
+                                            line.includes('Play Rate') || line.includes('Win Rate') ||
+                                            line.includes('Best Item') || line.includes('Performance')) {
+                                            break;
+                                        }
+
                                         // Collect stat values (they look like "+20%", "+20", "+300")
-                                        if (line.match(/^[+\\-][0-9.%]+$/)) {
+                                        if (line.match(/^[+\\-][0-9.%]+$/) && !line.includes('Place')) {
                                             if (statIndex < statNames.length) {
                                                 statsData[statNames[statIndex]] = line;
                                                 statIndex++;
