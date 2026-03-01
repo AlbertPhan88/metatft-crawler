@@ -9,6 +9,7 @@ from .crawlers.comps import crawl_tft_meta
 from .crawlers.units import crawl_all_units
 from .crawlers.items import crawl_all_items
 from .crawlers.augments import crawl_all_augments
+from .crawlers.traits import crawl_all_traits
 from .languages.loader import get_language_config, get_supported_languages
 
 __all__ = [
@@ -16,6 +17,7 @@ __all__ = [
     "crawl_all_units",
     "crawl_all_items",
     "crawl_all_augments",
+    "crawl_all_traits",
     "get_language_config",
     "get_supported_languages",
 ]

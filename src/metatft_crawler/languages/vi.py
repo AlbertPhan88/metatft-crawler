@@ -20,12 +20,12 @@ class VietnameseConfig(LanguageConfig):
         self.stats_label = "Số Liệu"  # Vietnamese for "Stats"
 
         # Unit base stats labels (shown in Stats tab)
-        self.health = "Health"  # May be same or translated
-        self.mana = "Mana"  # May be same or translated
-        self.attack_damage = "Attack Damage"  # May be same or translated
-        self.ability_power = "Ability Power"  # May be same or translated
-        self.armor = "Armor"  # May be same or translated
-        self.magic_resist = "Magic Resist"  # May be same or translated
+        self.health = "Máu"  # Vietnamese for "Health"
+        self.mana = "Mana"  # Stays English on Vietnamese page
+        self.attack_damage = "Sát thương tấn công"  # Vietnamese for "Attack Damage"
+        self.ability_power = "Sát thương kỹ năng"  # Vietnamese for "Ability Power"
+        self.armor = "Giáp"  # Vietnamese for "Armor"
+        self.magic_resist = "Kháng phép"  # Vietnamese for "Magic Resist"
         self.attack_speed = "Attack Speed"  # May be same or translated
         self.crit_chance = "Crit Chance"  # May be same or translated
         self.crit_damage = "Crit Damage"  # May be same or translated
@@ -132,6 +132,7 @@ class VietnameseConfig(LanguageConfig):
         ]
 
         self.footer_keywords = [
+            # English footer keywords (for English pages)
             "Privacy",
             "Cookies",
             "Sitemap",
@@ -140,4 +141,9 @@ class VietnameseConfig(LanguageConfig):
             "Twitter",
             "Discord",
             "Advertise With Us",
+            # Vietnamese footer keywords (for Vietnamese pages)
+            "Bảo Mật",
+            "Cookie",
+            "Liên Hệ",
+            "Sơ Đồ",
         ]

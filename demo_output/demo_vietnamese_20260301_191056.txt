@@ -1,0 +1,300 @@
+====================================================================================================
+MetaTFT CRAWLER - DEMO TIẾNG VIỆT (Vietnamese Demo)
+====================================================================================================
+
+🌍 Crawling 10 units in Vietnamese from metatft.com/units...
+----------------------------------------------------------------------------------------------------
+Navigating to https://www.metatft.com/units (Language: vi)...
+Waiting for page to fully render...
+Switching to Vietnamese...
+✓ Switched to vi
+Extracting all units and their links...
+✓ Found 50 units to crawl
+
+======================================================================
+Starting detailed crawl of all 50 units...
+======================================================================
+
+[░░░░░░░░░░░░░░░░░░░░]  1/50 (  2.0%) | Baron Nashor              | ⏱ 0:00:00 | 🕐 ETA: 0:00:00
+[░░░░░░░░░░░░░░░░░░░░]  2/50 (  4.0%) | Renekton                  | ⏱ 0:00:01 | 🕐 ETA: 0:00:36
+[█░░░░░░░░░░░░░░░░░░░]  3/50 (  6.0%) | Sylas                     | ⏱ 0:00:02 | 🕐 ETA: 0:00:44
+[█░░░░░░░░░░░░░░░░░░░]  4/50 (  8.0%) | Ziggs                     | ⏱ 0:00:04 | 🕐 ETA: 0:00:49
+[██░░░░░░░░░░░░░░░░░░]  5/50 ( 10.0%) | Zaahen                    | ⏱ 0:00:05 | 🕐 ETA: 0:00:51
+[██░░░░░░░░░░░░░░░░░░]  6/50 ( 12.0%) | Volibear                  | ⏱ 0:00:07 | 🕐 ETA: 0:00:52
+[██░░░░░░░░░░░░░░░░░░]  7/50 ( 14.0%) | Mel                       | ⏱ 0:00:08 | 🕐 ETA: 0:00:54
+[███░░░░░░░░░░░░░░░░░]  8/50 ( 16.0%) | Lucian & Senna            | ⏱ 0:00:10 | 🕐 ETA: 0:00:53
+[███░░░░░░░░░░░░░░░░░]  9/50 ( 18.0%) | Aatrox                    | ⏱ 0:00:11 | 🕐 ETA: 0:00:52
+[████░░░░░░░░░░░░░░░░] 10/50 ( 20.0%) | Fiddlesticks              | ⏱ 0:00:12 | 🕐 ETA: 0:00:51
+
+======================================================================
+✅ Crawling Complete!
+======================================================================
+  Total units crawled: 10/50
+  Total time: 0:00:14
+  Average time per unit: 1.44s
+======================================================================
+
+
+✅ Successfully crawled 10 units!
+
+
+====================================================================================================
+Unit #1: Baron Nashor
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          7
+  • Type (Loại):         Đấu Sĩ Vật Lý
+  • Traits (Đặc Tính):   Hư Không, Tai Ương
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 0/50
+  • Description (Mô Tả): Miễn nhiễm với các hiệu ứng Khống Chế. Các đòn đánh gây sát thương lên mục tiêu trên đường thẳng. Nếu không có kẻ địch nào trong tầm ảnh hưởng, lướt t...
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Huyết Kiếm
+  2. Móng Vuốt Sterak
+  3. Kiếm Tử Thần
+  4. Vô Cực Kiếm
+  5. Áo Choàng Bóng Tối
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Huyết Kiếm + Vô Cực Kiếm + Móng Vuốt Sterak
+
+
+====================================================================================================
+Unit #2: Renekton
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          4
+  • Type (Loại):         Đấu Sĩ Vật Lý
+  • Traits (Đặc Tính):   Shurima
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 0/30
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Áo Choàng Bóng Tối
+  2. Móng Vuốt Sterak
+  3. Kiếm Tử Thần
+  4. Diệt Khổng Lồ
+  5. Áo Choàng Thủy Ngân
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Huyết Kiếm + Áo Choàng Bóng Tối + Quyền Năng Khổng Lồ
+
+
+====================================================================================================
+Unit #3: Sylas
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          7
+  • Type (Loại):         Đấu Sĩ Phép
+  • Traits (Đặc Tính):   
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 0/30
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Mũ Phù Thủy Rabadon
+  2. Vương Miện Hoàng Gia
+  3. Áo Choàng Bóng Tối
+  4. Kiếm Súng Hextech
+  5. Mũ Thích Nghi
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Áo Choàng Bóng Tối + Kiếm Súng Hextech + Găng Bảo Thạch
+
+
+====================================================================================================
+Unit #4: Ziggs
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          5
+  • Type (Loại):         None
+  • Traits (Đặc Tính):   Zaun, Yordle
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 0/140
+  • Description (Mô Tả): Các đòn đánh được thay thế bởi một quả bom có thể nảy 1 lần, gây 40/65/500 (AP) sát thương phép lên các đơn vị trúng đòn. Kích Hoạt: Ném một quả bom k...
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Mũ Phù Thủy Rabadon
+  2. Trượng Hư Vô
+  3. Bùa Đỏ
+  4. Quyền Trượng Thiên Thần
+  5. Quỷ Thư Morello
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Cuồng Đao Guinsoo + Mũ Phù Thủy Rabadon + Trượng Hư Vô
+
+
+====================================================================================================
+Unit #5: Zaahen
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          7
+  • Type (Loại):         Đấu Sĩ Vật Lý
+  • Traits (Đặc Tính):   
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 0/40
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Quyền Năng Khổng Lồ
+  2. Móng Vuốt Sterak
+  3. Huyết Kiếm
+  4. Vô Cực Kiếm
+  5. Bàn Tay Công Lý
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Huyết Kiếm + Móng Vuốt Sterak + Quyền Năng Khổng Lồ
+
+
+====================================================================================================
+Unit #6: Volibear
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          5
+  • Type (Loại):         Đấu Sĩ Vật Lý
+  • Traits (Đặc Tính):   
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 0/20
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Áo Choàng Bóng Tối
+  2. Rìu Hỏa Ngục
+  3. Rìu Đại Mãng Xà
+  4. Chùy Đoản Côn
+  5. Giáp Máu Warmog
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Rìu Hỏa Ngục + Rìu Hỏa Ngục + Rìu Đại Mãng Xà
+
+
+====================================================================================================
+Unit #7: Mel
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          5
+  • Type (Loại):         None
+  • Traits (Đặc Tính):   Noxus
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 30/200
+  • Description (Mô Tả): Khi nhận Năng Lượng, bắn ra 2/2/9 quả cầu ánh sáng xoay quanh mục tiêu. Chúng gây 65/100/150 (AP) sát thương phép trong phạm vi 1 ô và rút 1 Năng Lượn...
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Bùa Xanh
+  2. Trượng Hư Vô
+  3. Quỷ Thư Morello
+  4. Mũ Phù Thủy Rabadon
+  5. Quyền Trượng Thiên Thần
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Bùa Xanh + Găng Bảo Thạch + Trượng Hư Vô
+
+
+====================================================================================================
+Unit #8: Lucian & Senna
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          None
+  • Type (Loại):         None
+  • Traits (Đặc Tính):   
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          None
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+
+====================================================================================================
+Unit #9: Aatrox
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          5
+  • Type (Loại):         Đấu Sĩ Vật Lý
+  • Traits (Đặc Tính):   
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 0/20
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Diệt Khổng Lồ
+  2. Áo Choàng Thủy Ngân
+  3. Kiếm Súng Hextech
+  4. Áo Choàng Bóng Tối
+  5. Vô Cực Kiếm
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Móng Vuốt Sterak + Quyền Năng Khổng Lồ + Bàn Tay Công Lý
+
+
+====================================================================================================
+Unit #10: Fiddlesticks
+====================================================================================================
+
+📊 Basic Information:
+  • Cost (Giá):          5
+  • Type (Loại):         None
+  • Traits (Đặc Tính):   
+
+🎯 Ability (Kỹ Năng):
+  • Name (Tên):          Số Liệu
+  • Mana Cost (Chi Phí): 30/70
+
+⚔️  Base Stats (Chỉ Số Cơ Bản):
+
+🎁 Top Items (Trang Bị Hàng Đầu):
+  1. Mũ Thích Nghi
+  2. Vương Miện Hoàng Gia
+  3. Quỷ Thư Morello
+  4. Chùy Đoản Côn
+  5. Mũ Phù Thủy Rabadon
+
+🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
+  1. Găng Bảo Thạch + Quỷ Thư Morello + Mũ Phù Thủy Rabadon
+
+
+====================================================================================================
+📈 SUMMARY STATISTICS (THỐNG KÊ TỔNG HỢP)
+====================================================================================================
+
+  • Total Units Crawled: 10
+  • Total Traits Found: 6
+  • Total Top Items: 45
+  • Total Recommended Builds: 9

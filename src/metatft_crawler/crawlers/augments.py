@@ -81,14 +81,19 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
 
                 for (let i = 0; i < lines.length; i++) {
                     const line = lines[i].trim();
-                    // Start after we see the table headers
-                    if (line === 'Type' && contentStartIdx === -1) {
+                    // Start after we see the table headers (look for 'Type' in English or 'Loại' in Vietnamese, or 'Tier' marker)
+                    if ((line === 'Type' || line === 'Loại' || line === 'Bậc') && contentStartIdx === -1) {
                         contentStartIdx = i + 1;
                     }
-                    // Stop when we hit footer content
-                    if (footerKeywords.some(kw => line.includes(kw)) && contentStartIdx !== -1) {
-                        contentEndIdx = i;
-                        break;
+                    // Stop when we hit footer content (only after processing enough content)
+                    // Look for lines that are ONLY footer keywords or multiple keywords together
+                    if (contentStartIdx !== -1 && i > contentStartIdx + 50) {
+                        const keywordMatches = footerKeywords.filter(kw => line.includes(kw));
+                        // Only stop if line contains a footer keyword alone or multiple keywords
+                        if (keywordMatches.length > 0 && (line.length < 20 || keywordMatches.length > 1)) {
+                            contentEndIdx = i;
+                            break;
+                        }
                     }
                 }
 

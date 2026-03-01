@@ -428,13 +428,14 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
 
                 # Now click Stats tab to get base stats
                 try:
+                    # Try both English "Stats" and language-specific label (e.g., "Số Liệu" for Vietnamese)
                     stats_button = await page.query_selector("button:has-text('Stats')")
                     if not stats_button:
-                        # Try finding by text content
+                        # Try finding by text content (support language-specific labels)
                         buttons = await page.query_selector_all("button")
                         for btn in buttons:
                             text = await btn.text_content()
-                            if text and 'Stats' in text:
+                            if text and ('Stats' in text or text.strip() == lang_config.stats_label):
                                 stats_button = btn
                                 break
 
@@ -633,10 +634,12 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                                         if (itemsStr.includes(' recommend ')) {
                                             itemsStr = itemsStr.split(' recommend ')[1].split(' as ')[0];
                                         } else if (itemsStr.includes(' đề xuất ')) {
-                                            // Vietnamese: "Chúng tôi đề xuất ... là ..."
+                                            // Vietnamese: "Chúng tôi đề xuất ... là lối chơi ..."
+                                            // Extract items between " đề xuất " and " là "
                                             itemsStr = itemsStr.split(' đề xuất ')[1];
+                                            // Get the part before " là " (items list)
                                             if (itemsStr.includes(' là ')) {
-                                                itemsStr = itemsStr.split(' là ')[1];
+                                                itemsStr = itemsStr.split(' là ')[0];
                                             }
                                         }
 

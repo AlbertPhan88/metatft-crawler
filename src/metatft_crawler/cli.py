@@ -14,6 +14,7 @@ from .crawlers.comps import crawl_tft_meta
 from .crawlers.units import crawl_all_units
 from .crawlers.items import crawl_all_items
 from .crawlers.augments import crawl_all_augments
+from .crawlers.traits import crawl_all_traits
 from .utils.csv_export import units_to_csv
 
 
@@ -27,6 +28,7 @@ Usage:
   python -m metatft_crawler units [OPTIONS]     Crawl units from MetaTFT.com
   python -m metatft_crawler items [OPTIONS]     Crawl items from MetaTFT.com
   python -m metatft_crawler augments [OPTIONS]  Crawl augments from MetaTFT.com
+  python -m metatft_crawler traits [OPTIONS]    Crawl traits from MetaTFT.com
   python -m metatft_crawler --help              Show this help message
 
 Options:
@@ -50,8 +52,14 @@ Examples:
   # Crawl all augments and save as JSON
   python -m metatft_crawler augments -o augments.json
 
+  # Crawl all traits and save as JSON
+  python -m metatft_crawler traits -o traits.json
+
   # Crawl 10 augments for demo
   python -m metatft_crawler augments -n 10 -o augments_demo.json
+
+  # Crawl 5 traits for demo
+  python -m metatft_crawler traits -n 5 -o traits_demo.json
 
   # Crawl all units and export to CSV
   python -m metatft_crawler units -l vi -o units.csv
@@ -160,6 +168,26 @@ async def run_augments(language: str = "en", output: Optional[str] = None, verbo
     return result
 
 
+async def run_traits(language: str = "en", output: Optional[str] = None, verbose: bool = False, limit: Optional[int] = None):
+    """Run traits crawler."""
+    if verbose:
+        print(f"[INFO] Starting traits crawler (language={language}, limit={limit})")
+
+    result = await crawl_all_traits(language=language, limit_traits=limit)
+
+    if output:
+        output_path = Path(output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+        if verbose:
+            print(f"[INFO] Results saved to {output_path}")
+    else:
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+
+    return result
+
+
 def main():
     """Main CLI entry point."""
     if len(sys.argv) < 2:
@@ -228,6 +256,8 @@ def main():
         asyncio.run(run_items(language=language, output=output, verbose=verbose))
     elif command == 'augments':
         asyncio.run(run_augments(language=language, output=output, verbose=verbose, limit=limit))
+    elif command == 'traits':
+        asyncio.run(run_traits(language=language, output=output, verbose=verbose, limit=limit))
     else:
         print(f"Error: Unknown command '{command}'")
         print_help()
