@@ -100,6 +100,14 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                 // Extract augments from the main content area
                 const tierPattern = /^[SABCD]$/;
 
+                // Known augment type/category values to filter out
+                const typeValues = new Set([
+                    'Combat', 'Econ', 'Items', 'Scaling', 'Strategic', 'Traits',
+                    'Attack', 'Fighter', 'Caster', 'Support', 'Tank',
+                    'Void', 'Magic', 'Marksman', 'Zaun', 'Yordle', 'Duelist',
+                    'Visionary', 'Knight', 'Assassin', 'Mage', 'Ranger'
+                ]);
+
                 // Handle case where contentStartIdx was never set (no headers found)
                 if (contentStartIdx === -1) {
                     // Vietnamese version - look for first tier marker
@@ -121,6 +129,11 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
 
                     // Skip tier markers
                     if (tierPattern.test(line)) {
+                        continue;
+                    }
+
+                    // Skip known type/category values
+                    if (typeValues.has(line)) {
                         continue;
                     }
 
