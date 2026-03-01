@@ -33,6 +33,7 @@ Options:
   -l, --language LANG     Target language (en, vi) [default: en]
   -o, --output FILE       Output file path (format: json or csv) [default: stdout]
   -f, --format FORMAT     Output format (json, csv) [default: auto-detect from file]
+  -n, --limit NUM         Limit results to N items (useful for demos/testing)
   -v, --verbose           Enable verbose output
   -h, --help             Show this help message
 
@@ -48,6 +49,9 @@ Examples:
 
   # Crawl all augments and save as JSON
   python -m metatft_crawler augments -o augments.json
+
+  # Crawl 10 augments for demo
+  python -m metatft_crawler augments -n 10 -o augments_demo.json
 
   # Crawl all units and export to CSV
   python -m metatft_crawler units -l vi -o units.csv
@@ -136,12 +140,12 @@ async def run_items(language: str = "en", output: Optional[str] = None, verbose:
     return result
 
 
-async def run_augments(language: str = "en", output: Optional[str] = None, verbose: bool = False):
+async def run_augments(language: str = "en", output: Optional[str] = None, verbose: bool = False, limit: Optional[int] = None):
     """Run augments crawler."""
     if verbose:
-        print(f"[INFO] Starting augments crawler (language={language})")
+        print(f"[INFO] Starting augments crawler (language={language}, limit={limit})")
 
-    result = await crawl_all_augments(language=language)
+    result = await crawl_all_augments(language=language, limit_augments=limit)
 
     if output:
         output_path = Path(output)
@@ -167,6 +171,7 @@ def main():
     output = None
     format_type = None
     verbose = False
+    limit = None
 
     # Parse arguments
     i = 2
@@ -196,6 +201,17 @@ def main():
             else:
                 print("Error: --format requires a value")
                 sys.exit(1)
+        elif arg in ['-n', '--limit']:
+            if i + 1 < len(sys.argv):
+                try:
+                    limit = int(sys.argv[i + 1])
+                    i += 2
+                except ValueError:
+                    print(f"Error: --limit requires an integer value")
+                    sys.exit(1)
+            else:
+                print("Error: --limit requires a value")
+                sys.exit(1)
         elif arg in ['-v', '--verbose']:
             verbose = True
             i += 1
@@ -211,7 +227,7 @@ def main():
     elif command == 'items':
         asyncio.run(run_items(language=language, output=output, verbose=verbose))
     elif command == 'augments':
-        asyncio.run(run_augments(language=language, output=output, verbose=verbose))
+        asyncio.run(run_augments(language=language, output=output, verbose=verbose, limit=limit))
     else:
         print(f"Error: Unknown command '{command}'")
         print_help()
