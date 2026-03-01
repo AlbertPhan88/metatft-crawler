@@ -115,36 +115,53 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                             }
                         }
 
-                        // Find Recipe section and extract stats
-                        // The pattern seems to be: "Recipe" followed by stat values like "+20%", "+20", "+300"
-                        for (let i = 0; i < lines.length; i++) {
-                            if (lines[i] === 'Recipe') {
-                                // Next lines might contain stat values or recipe info
-                                let j = i + 1;
-                                let statIndex = 0;
-                                const statNames = ['AP/AD', 'Armor/MR', 'Health'];
-
-                                // Skip past recipe indicator (like "Cannot be Crafted" or "+")
-                                while (j < lines.length && (lines[j] === '+' || lines[j].includes('Crafted'))) {
-                                    j++;
+                        // Extract stats from HTML alt text (most accurate)
+                        // Look for stat bonus images with alt text like "AD Bonus: +20%"
+                        const statImages = Array.from(document.querySelectorAll('img[alt*="Bonus"]'));
+                        if (statImages.length > 0) {
+                            statImages.forEach(img => {
+                                const alt = img.getAttribute('alt') || '';
+                                // Parse alt text like "AD Bonus: +20%" or "AS Bonus: +20"
+                                const match = alt.match(/^([A-Za-z\\s]+?)\\s*Bonus:\\s*([+\\-]?[0-9.%]+)/);
+                                if (match) {
+                                    const statType = match[1].trim(); // "AD", "AS", "Health", etc
+                                    const statValue = match[2];       // "+20%", "+20", etc
+                                    statsData[statType] = statValue;
                                 }
+                            });
+                        }
 
-                                // Now try to collect stat values
-                                while (j < lines.length && statIndex < 3) {
-                                    const line = lines[j];
-                                    // Collect stat values (they look like "+20%", "+20", "+300")
-                                    if (line.match(/^[+\\-][0-9.%]+$/)) {
-                                        if (statIndex < statNames.length) {
-                                            statsData[statNames[statIndex]] = line;
-                                            statIndex++;
-                                        }
-                                    } else if (line && !line.match(/^[+\\-][0-9.%]+$/) && statIndex > 0) {
-                                        // We hit a non-stat line after collecting stats
-                                        break;
+                        // Fallback: If no HTML images found, parse from text
+                        if (Object.keys(statsData).length === 0) {
+                            for (let i = 0; i < lines.length; i++) {
+                                if (lines[i] === 'Recipe') {
+                                    // Next lines might contain stat values or recipe info
+                                    let j = i + 1;
+                                    let statIndex = 0;
+                                    const statNames = ['AP/AD', 'Armor/MR', 'Health'];
+
+                                    // Skip past recipe indicator (like "Cannot be Crafted" or "+")
+                                    while (j < lines.length && (lines[j] === '+' || lines[j].includes('Crafted'))) {
+                                        j++;
                                     }
-                                    j++;
+
+                                    // Now try to collect stat values
+                                    while (j < lines.length && statIndex < 3) {
+                                        const line = lines[j];
+                                        // Collect stat values (they look like "+20%", "+20", "+300")
+                                        if (line.match(/^[+\\-][0-9.%]+$/)) {
+                                            if (statIndex < statNames.length) {
+                                                statsData[statNames[statIndex]] = line;
+                                                statIndex++;
+                                            }
+                                        } else if (line && !line.match(/^[+\\-][0-9.%]+$/) && statIndex > 0) {
+                                            // We hit a non-stat line after collecting stats
+                                            break;
+                                        }
+                                        j++;
+                                    }
+                                    break;
                                 }
-                                break;
                             }
                         }
 
