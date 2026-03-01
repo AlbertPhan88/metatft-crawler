@@ -228,9 +228,19 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                                     if (hasTypeWord) continue;
                                 }
 
-                                // Traits are exact word matches (but not type words)
+                                // Traits: check for exact match first, then check if line contains multiple traits
                                 if (knownTraits.includes(line) && !typeWords.includes(line) && !traits.includes(line)) {
                                     traits.unshift(line);  // add to front to preserve order
+                                } else if (!typeWords.includes(line)) {
+                                    // Check if line contains multiple traits (split by spaces and check each word)
+                                    const words = line.split(/\\s+/);
+                                    if (words.length > 1) {
+                                        for (const word of words) {
+                                            if (word && knownTraits.includes(word) && !traits.includes(word)) {
+                                                traits.push(word);
+                                            }
+                                        }
+                                    }
                                 }
                             }
 
@@ -242,7 +252,8 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             // Extract ability name: Look after "Ability" tab for first non-empty, non-number line
                             for (let i = abilityTabIndex + 1; i < Math.min(abilityTabIndex + 5, lines.length); i++) {
                                 const line = lines[i];
-                                if (line && !line.match(/^\\d/) && line !== 'Key' && line !== 'Stats' && line.length < 100) {
+                                // Skip tabs, keys, and numbers
+                                if (line && !line.match(/^\\d/) && line !== 'Key' && line !== 'Stats' && line !== langConfig.stats_label && line !== langConfig.ability_label && line.length < 100) {
                                     abilityName = line;
                                     abilityNameIndex = i;
                                     break;
@@ -269,6 +280,16 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             let damageLines = [];
                             let inDescription = false;
                             let unlockIndex = -1;
+                            let manaFoundIndex = -1;
+
+                            // Find where mana ends so we know where description should start
+                            for (let i = abilityTabIndex + 1; i < lines.length; i++) {
+                                if (lines[i] && lines[i].match(/^\\d+$/) && i + 1 < lines.length && lines[i + 1] === '/') {
+                                    // Found the last digit of mana cost, description should start after next lines
+                                    manaFoundIndex = i + 2;
+                                    break;
+                                }
+                            }
 
                             for (let i = abilityTabIndex + 1; i < lines.length; i++) {
                                 const line = lines[i];
@@ -284,6 +305,17 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                                         descriptionLines.push(textAfterLabel);
                                     }
                                     continue;
+                                }
+
+                                // Also start description if we've found mana and we see substantial text
+                                if (!inDescription && manaFoundIndex !== -1 && i >= manaFoundIndex) {
+                                    if (line && line.length > 5 && line.length < 300 &&
+                                        !line.match(/^\\d/) && !line.match(/^[\\/\\(\\)]*$/) &&
+                                        line !== langConfig.unlock_marker) {
+                                        inDescription = true;
+                                        descriptionLines.push(line);
+                                        continue;
+                                    }
                                 }
 
                                 // Track where Unlock starts

@@ -16,22 +16,22 @@ Starting detailed crawl of all 50 units...
 ======================================================================
 
 [░░░░░░░░░░░░░░░░░░░░]  1/50 (  2.0%) | Baron Nashor              | ⏱ 0:00:00 | 🕐 ETA: 0:00:00
-[░░░░░░░░░░░░░░░░░░░░]  2/50 (  4.0%) | Renekton                  | ⏱ 0:00:01 | 🕐 ETA: 0:00:36
-[█░░░░░░░░░░░░░░░░░░░]  3/50 (  6.0%) | Sylas                     | ⏱ 0:00:03 | 🕐 ETA: 0:00:47
-[█░░░░░░░░░░░░░░░░░░░]  4/50 (  8.0%) | Ziggs                     | ⏱ 0:00:04 | 🕐 ETA: 0:00:51
-[██░░░░░░░░░░░░░░░░░░]  5/50 ( 10.0%) | Zaahen                    | ⏱ 0:00:05 | 🕐 ETA: 0:00:53
-[██░░░░░░░░░░░░░░░░░░]  6/50 ( 12.0%) | Volibear                  | ⏱ 0:00:07 | 🕐 ETA: 0:00:53
-[██░░░░░░░░░░░░░░░░░░]  7/50 ( 14.0%) | Mel                       | ⏱ 0:00:08 | 🕐 ETA: 0:00:53
-[███░░░░░░░░░░░░░░░░░]  8/50 ( 16.0%) | Lucian & Senna            | ⏱ 0:00:10 | 🕐 ETA: 0:00:52
-[███░░░░░░░░░░░░░░░░░]  9/50 ( 18.0%) | Aatrox                    | ⏱ 0:00:11 | 🕐 ETA: 0:00:51
-[████░░░░░░░░░░░░░░░░] 10/50 ( 20.0%) | Shyvana                   | ⏱ 0:00:12 | 🕐 ETA: 0:00:50
+[░░░░░░░░░░░░░░░░░░░░]  2/50 (  4.0%) | Renekton                  | ⏱ 0:00:02 | 🕐 ETA: 0:01:04
+[█░░░░░░░░░░░░░░░░░░░]  3/50 (  6.0%) | Sylas                     | ⏱ 0:00:05 | 🕐 ETA: 0:01:25
+[█░░░░░░░░░░░░░░░░░░░]  4/50 (  8.0%) | Ziggs                     | ⏱ 0:00:08 | 🕐 ETA: 0:01:40
+[██░░░░░░░░░░░░░░░░░░]  5/50 ( 10.0%) | Zaahen                    | ⏱ 0:00:11 | 🕐 ETA: 0:01:46
+[██░░░░░░░░░░░░░░░░░░]  6/50 ( 12.0%) | Volibear                  | ⏱ 0:00:14 | 🕐 ETA: 0:01:48
+[██░░░░░░░░░░░░░░░░░░]  7/50 ( 14.0%) | Mel                       | ⏱ 0:00:17 | 🕐 ETA: 0:01:50
+[███░░░░░░░░░░░░░░░░░]  8/50 ( 16.0%) | Lucian & Senna            | ⏱ 0:00:20 | 🕐 ETA: 0:01:49
+[███░░░░░░░░░░░░░░░░░]  9/50 ( 18.0%) | Aatrox                    | ⏱ 0:00:22 | 🕐 ETA: 0:01:41
+[████░░░░░░░░░░░░░░░░] 10/50 ( 20.0%) | Fiddlesticks              | ⏱ 0:00:25 | 🕐 ETA: 0:01:41
 
 ======================================================================
 ✅ Crawling Complete!
 ======================================================================
   Total units crawled: 10/50
-  Total time: 0:00:14
-  Average time per unit: 1.43s
+  Total time: 0:00:28
+  Average time per unit: 2.87s
 ======================================================================
 
 
@@ -45,20 +45,25 @@ Unit #1: Baron Nashor
 📊 Basic Information:
   • Cost (Giá):          7
   • Type (Loại):         Đấu Sĩ Vật Lý
-  • Traits (Đặc Tính):   Hư Không, Tai Ương
+  • Traits (Đặc Tính):   Hư Không, Tai Ương, Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Hư Không Cuồng Nộ
   • Mana Cost (Chi Phí): 0/50
   • Description (Mô Tả): Miễn nhiễm với các hiệu ứng Khống Chế. Các đòn đánh gây sát thương lên mục tiêu trên đường thẳng. Nếu không có kẻ địch nào trong tầm ảnh hưởng, lướt t...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 3000/5400/9720
+  • AD: 120/180/270
+  • AP: 100
+  • Armor: 85
+  • MR: 85
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Huyết Kiếm
   2. Móng Vuốt Sterak
-  3. Vô Cực Kiếm
-  4. Kiếm Tử Thần
+  3. Kiếm Tử Thần
+  4. Vô Cực Kiếm
   5. Áo Choàng Bóng Tối
 
 🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
@@ -72,13 +77,18 @@ Unit #2: Renekton
 📊 Basic Information:
   • Cost (Giá):          4
   • Type (Loại):         Đấu Sĩ Vật Lý
-  • Traits (Đặc Tính):   Shurima
+  • Traits (Đặc Tính):   Shurima, Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Cắt và Xắt
   • Mana Cost (Chi Phí): 0/30
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 1400/2520/4536
+  • AD: 75/113/169
+  • AP: 100
+  • Armor: 70
+  • MR: 70
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Áo Choàng Bóng Tối
@@ -98,23 +108,28 @@ Unit #3: Sylas
 📊 Basic Information:
   • Cost (Giá):          7
   • Type (Loại):         Đấu Sĩ Phép
-  • Traits (Đặc Tính):   
+  • Traits (Đặc Tính):   Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Chiếm Đoạt Uy Lực
   • Mana Cost (Chi Phí): 0/30
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 1600/2880/5184
+  • AD: 65/98/146
+  • AP: 100
+  • Armor: 80
+  • MR: 80
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Mũ Phù Thủy Rabadon
-  2. Vương Miện Hoàng Gia
-  3. Áo Choàng Bóng Tối
+  2. Áo Choàng Bóng Tối
+  3. Vương Miện Hoàng Gia
   4. Kiếm Súng Hextech
   5. Mũ Thích Nghi
 
 🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
-  1. Áo Choàng Bóng Tối + Kiếm Súng Hextech + Găng Bảo Thạch
+  1. Găng Bảo Thạch + Mũ Phù Thủy Rabadon + Bàn Tay Công Lý
 
 
 ====================================================================================================
@@ -124,14 +139,19 @@ Unit #4: Ziggs
 📊 Basic Information:
   • Cost (Giá):          5
   • Type (Loại):         None
-  • Traits (Đặc Tính):   Zaun, Yordle
+  • Traits (Đặc Tính):   Zaun, Yordle, Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Siêu Bom Địa Ngục
   • Mana Cost (Chi Phí): 0/140
   • Description (Mô Tả): Các đòn đánh được thay thế bởi một quả bom có thể nảy 1 lần, gây 40/65/500 (AP) sát thương phép lên các đơn vị trúng đòn. Kích Hoạt: Ném một quả bom k...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 900/1620/2916
+  • AD: /0/0
+  • AP: 100
+  • Armor: 30
+  • MR: 30
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Mũ Phù Thủy Rabadon
@@ -151,13 +171,18 @@ Unit #5: Zaahen
 📊 Basic Information:
   • Cost (Giá):          7
   • Type (Loại):         Đấu Sĩ Vật Lý
-  • Traits (Đặc Tính):   
+  • Traits (Đặc Tính):   Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Thử Thách Thần Thánh
   • Mana Cost (Chi Phí): 0/40
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 1200/2160/3888
+  • AD: 60/90/135
+  • AP: 100
+  • Armor: 80
+  • MR: 80
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Quyền Năng Khổng Lồ
@@ -177,13 +202,18 @@ Unit #6: Volibear
 📊 Basic Information:
   • Cost (Giá):          5
   • Type (Loại):         Đấu Sĩ Vật Lý
-  • Traits (Đặc Tính):   
+  • Traits (Đặc Tính):   Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Bão Tố Cuồng Nộ
   • Mana Cost (Chi Phí): 0/20
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 1200/2160/3888
+  • AD: 55/83/124
+  • AP: 100
+  • Armor: 60
+  • MR: 60
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Áo Choàng Bóng Tối
@@ -203,14 +233,19 @@ Unit #7: Mel
 📊 Basic Information:
   • Cost (Giá):          5
   • Type (Loại):         None
-  • Traits (Đặc Tính):   Noxus
+  • Traits (Đặc Tính):   Noxus, Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Nguyệt Đao Ánh Sáng
   • Mana Cost (Chi Phí): 30/200
   • Description (Mô Tả): Khi nhận Năng Lượng, bắn ra 2/2/9 quả cầu ánh sáng xoay quanh mục tiêu. Chúng gây 65/100/150 (AP) sát thương phép trong phạm vi 1 ô và rút 1 Năng Lượn...
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 900/1620/2916
+  • AD: 50/75/113
+  • AP: 100
+  • Armor: 30
+  • MR: 30
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Bùa Xanh
@@ -245,13 +280,18 @@ Unit #9: Aatrox
 📊 Basic Information:
   • Cost (Giá):          5
   • Type (Loại):         Đấu Sĩ Vật Lý
-  • Traits (Đặc Tính):   
+  • Traits (Đặc Tính):   Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
+  • Name (Tên):          Quỷ Kiếm Darkin
   • Mana Cost (Chi Phí): 0/20
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 1000/1800/3240
+  • AD: 65/98/146
+  • AP: 100
+  • Armor: 55
+  • MR: 55
 
 🎁 Top Items (Trang Bị Hàng Đầu):
   1. Diệt Khổng Lồ
@@ -265,29 +305,34 @@ Unit #9: Aatrox
 
 
 ====================================================================================================
-Unit #10: Shyvana
+Unit #10: Fiddlesticks
 ====================================================================================================
 
 📊 Basic Information:
   • Cost (Giá):          5
-  • Type (Loại):         Đấu Sĩ Vật Lý
-  • Traits (Đặc Tính):   
+  • Type (Loại):         None
+  • Traits (Đặc Tính):   Piltover
 
 🎯 Ability (Kỹ Năng):
-  • Name (Tên):          Số Liệu
-  • Mana Cost (Chi Phí): 0/30
+  • Name (Tên):          Bão Quạ
+  • Mana Cost (Chi Phí): 30/70
 
 ⚔️  Base Stats (Chỉ Số Cơ Bản):
+  • HP: 1200/2160/3888
+  • AD: 50/75/113
+  • AP: 100
+  • Armor: 60
+  • MR: 60
 
 🎁 Top Items (Trang Bị Hàng Đầu):
-  1. Móng Vuốt Sterak
-  2. Áo Choàng Bóng Tối
-  3. Giáp Vai Nguyệt Thần
-  4. Lời Thề Hộ Vệ
-  5. Áo Choàng Thủy Ngân
+  1. Mũ Thích Nghi
+  2. Vương Miện Hoàng Gia
+  3. Quỷ Thư Morello
+  4. Chùy Đoản Côn
+  5. Mũ Phù Thủy Rabadon
 
 🛠️  Recommended Builds (Bản Dựng Được Khuyến Nghị):
-  1. Huyết Kiếm + Áo Choàng Bóng Tối + Móng Vuốt Sterak
+  1. Găng Bảo Thạch + Quỷ Thư Morello + Mũ Phù Thủy Rabadon
 
 
 ====================================================================================================
@@ -295,7 +340,7 @@ Unit #10: Shyvana
 ====================================================================================================
 
   • Total Units Crawled: 10
-  • Total Traits Found: 6
+  • Total Traits Found: 15
   • Total Top Items: 45
   • Total Recommended Builds: 9
   • Average Top Items per Unit: 4.5

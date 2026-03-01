@@ -250,7 +250,11 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                                         lineLower.includes('máu') || lineLower.includes('sức mạnh') || lineLower.includes('công kích') ||
                                         lineLower.includes('tối đa') || lineLower.includes('bạn') || lineLower.includes('chiến đấu') ||
                                         lineLower.includes('đơn vị') || lineLower.includes('kỹ năng') || lineLower.includes('tuyệt đối') ||
-                                        lineLower.includes('giúp') || lineLower.includes('hồi lại') || lineLower.includes('năng lượng');
+                                        lineLower.includes('giúp') || lineLower.includes('hồi lại') || lineLower.includes('năng lượng') ||
+                                        lineLower.includes('áp dụng') || lineLower.includes('trang bị') || lineLower.includes('khác') ||
+                                        lineLower.includes('mỗi') || lineLower.includes('lần') || lineLower.includes('vòng') ||
+                                        lineLower.includes('trận') || lineLower.includes('tăng') || lineLower.includes('giảm') ||
+                                        lineLower.includes('sát thương') || lineLower.includes('hồi') || lineLower.includes('miễn nhiễm');
 
                                     if ((hasActionKeywordEN || hasActionKeywordVI) && line.length > 25) {
                                         description = line;

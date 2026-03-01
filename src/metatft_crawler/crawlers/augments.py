@@ -171,9 +171,11 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
             'footer_keywords': lang_config.footer_keywords,
         })
 
-        # Now extract descriptions by hovering over each augment
-        print(f"Extracting descriptions for {len(augments_data)} augments...")
-        for i, augment in enumerate(augments_data):
+        # Now extract descriptions by hovering over augments in parallel
+        print(f"Extracting descriptions for {len(augments_data)} augments (parallel, 100ms wait)...")
+
+        async def extract_description(augment, index):
+            """Extract description for a single augment by hovering."""
             try:
                 # Find the element with this augment name and hover over it
                 elements = await page.query_selector_all(f"text={augment['name']}")
@@ -182,8 +184,8 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                     elem = elements[0]
                     # Hover over the element using Playwright
                     await elem.hover()
-                    # Wait for tooltip to appear
-                    await page.wait_for_timeout(500)
+                    # Wait for tooltip to appear (reduced from 500ms)
+                    await page.wait_for_timeout(100)
 
                     # Extract tooltip description
                     description = await page.evaluate(f"""
@@ -210,12 +212,24 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                     if description:
                         augment['description'] = description
 
-                if (i + 1) % 50 == 0:
-                    print(f"  Extracted {i + 1}/{len(augments_data)} descriptions")
-
             except Exception as e:
                 # If extraction fails, keep empty description
                 pass
+
+        # Process augments in parallel batches to avoid overwhelming the browser
+        batch_size = 5
+        for batch_start in range(0, len(augments_data), batch_size):
+            batch_end = min(batch_start + batch_size, len(augments_data))
+            batch = augments_data[batch_start:batch_end]
+
+            # Extract descriptions for this batch in parallel
+            await asyncio.gather(*[
+                extract_description(augment, i)
+                for i, augment in enumerate(batch, start=batch_start)
+            ])
+
+            if batch_end % 50 == 0 or batch_end == len(augments_data):
+                print(f"  Extracted {batch_end}/{len(augments_data)} descriptions")
 
         # Print what we found
         print(f"Found {len(augments_data)} augments")
