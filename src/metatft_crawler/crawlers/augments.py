@@ -10,6 +10,7 @@ from playwright.async_api import async_playwright
 from typing import Dict, Any
 
 from ..utils.browser import switch_language
+from ..languages.loader import get_language_config
 
 
 async def crawl_all_augments(language: str = "en", limit_augments: int = None) -> Dict[str, Any]:
@@ -45,6 +46,9 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
             print("Switching to Vietnamese...")
             await switch_language(page, "vi")
 
+        # Get language configuration
+        lang_config = get_language_config(language)
+
         # First, click on Table view to get structured data
         print("Switching to Table view...")
         await page.evaluate("""
@@ -59,7 +63,7 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
         # First, extract basic augment data (name, tier, type)
         print("Extracting augment names, tiers, and types...")
         augments_data = await page.evaluate("""
-            () => {
+            (langConfig) => {
                 const augments = [];
                 const pageText = document.body.innerText;
 
@@ -71,8 +75,9 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                 let contentStartIdx = -1;
                 let contentEndIdx = lines.length;
 
-                const navKeywords = ['MetaTFT', 'Comps', 'Units', 'Items', 'Traits', 'Download', 'Advertise', 'Terms'];
-                const footerKeywords = ['Privacy', 'Cookies', 'Sitemap', 'Contact', 'GitHub', 'Twitter', 'Discord', 'Advertise With Us'];
+                // Use language-specific keywords from config
+                const navKeywords = langConfig.navigation_keywords;
+                const footerKeywords = langConfig.footer_keywords;
 
                 for (let i = 0; i < lines.length; i++) {
                     const line = lines[i].trim();
@@ -90,6 +95,17 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                 // Extract augments from the main content area
                 const tierPattern = /^[SABCD]$/;
 
+                // Handle case where contentStartIdx was never set (no headers found)
+                if (contentStartIdx === -1) {
+                    // Vietnamese version - look for first tier marker
+                    for (let i = 0; i < lines.length; i++) {
+                        if (tierPattern.test(lines[i].trim())) {
+                            contentStartIdx = i;
+                            break;
+                        }
+                    }
+                }
+
                 for (let i = contentStartIdx; i < contentEndIdx; i++) {
                     const line = lines[i].trim();
 
@@ -98,14 +114,19 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                         continue;
                     }
 
+                    // Skip tier markers
+                    if (tierPattern.test(line)) {
+                        continue;
+                    }
+
                     // Check if this might be an augment name
-                    if (line && !tierPattern.test(line) && line.length > 1 && line.length < 100) {
+                    if (line && line.length > 1 && line.length < 100) {
                         const augmentName = line;
                         let tier = null;
                         let type = null;
 
                         // Look ahead for tier
-                        for (let j = i + 1; j < Math.min(i + 5, contentEndIdx); j++) {
+                        for (let j = i + 1; j < Math.min(i + 10, contentEndIdx); j++) {
                             const nextLine = lines[j].trim();
 
                             if (tierPattern.test(nextLine)) {
@@ -114,7 +135,8 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
                                 // Look for type after tier
                                 for (let k = j + 1; k < Math.min(j + 5, contentEndIdx); k++) {
                                     const typeLine = lines[k].trim();
-                                    if (typeLine && !tierPattern.test(typeLine) && typeLine !== augmentName) {
+                                    if (typeLine && !tierPattern.test(typeLine) && typeLine !== augmentName &&
+                                        typeLine.length < 100) {
                                         type = typeLine;
                                         break;
                                     }
@@ -139,7 +161,10 @@ async def crawl_all_augments(language: str = "en", limit_augments: int = None) -
 
                 return augments;
             }
-        """)
+        """, {
+            'navigation_keywords': lang_config.navigation_keywords,
+            'footer_keywords': lang_config.footer_keywords,
+        })
 
         # Now extract descriptions by hovering over each augment
         print(f"Extracting descriptions for {len(augments_data)} augments...")

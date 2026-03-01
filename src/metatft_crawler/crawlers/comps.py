@@ -10,6 +10,7 @@ from playwright.async_api import async_playwright
 from typing import Dict, Any
 
 from ..utils.browser import switch_language
+from ..languages.loader import get_language_config
 
 
 async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
@@ -44,10 +45,13 @@ async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
             print("Switching to Vietnamese...")
             await switch_language(page, "vi")
 
+        # Get language configuration
+        lang_config = get_language_config(language)
+
         # Extract comp data from the page
         print("Extracting comp data from page...")
         comps_data = await page.evaluate("""
-            () => {
+            (langConfig) => {
                 const comps = [];
 
                 // Get all text content and parse it
@@ -70,21 +74,23 @@ async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
                     const text = el.innerText || '';
 
                     // Look for pattern: unit names and stats together
-                    // English: "Avg Place", "Pick Rate", "Win Rate", "Top 4 Rate"
-                    // Vietnamese: "Hạng TB", "Tỷ Lệ Chọn", "Tỷ Lệ Thắng", "Tỷ Lệ Top 4"
-                    const hasPlacementEnglish = text.includes('Avg Place');
-                    const hasPlacementVietnamese = text.includes('Hạng TB');
-                    const hasPickRateEnglish = text.includes('Pick Rate');
-                    const hasPickRateVietnamese = text.includes('Tỷ Lệ Chọn');
+                    // Use language-specific labels from config
+                    const hasPlacement = text.includes(langConfig.avg_place);
+                    const hasPickRate = text.includes(langConfig.pick_rate);
 
-                    if ((hasPlacementEnglish || hasPlacementVietnamese) && (hasPickRateEnglish || hasPickRateVietnamese)) {
+                    if (hasPlacement && hasPickRate) {
                         const lines = text.split('\\n').filter(l => l.trim());
 
-                        // Extract stats - support both English and Vietnamese patterns
-                        const avgPlaceMatch = text.match(/(Avg Place|Hạng TB)\\s*([\\d.]+)/) || text.match(/([\\d.]+)(?=.*Hạng)/);
-                        const pickRateMatch = text.match(/(Pick Rate|Tỷ Lệ Chọn)\\s*([\\d.]+)/);
-                        const winRateMatch = text.match(/(Win Rate|Tỷ Lệ Thắng)\\s*([\\d.%]+)/);
-                        const top4Match = text.match(/(Top 4 Rate|Tỷ Lệ Top 4)\\s*([\\d.]+)/);
+                        // Extract stats - use language-specific regex patterns
+                        const avgPlaceRegex = new RegExp(langConfig.avg_place + '\\\\s*([\\\\d.]+)');
+                        const pickRateRegex = new RegExp(langConfig.pick_rate + '\\\\s*([\\\\d.]+)');
+                        const winRateRegex = new RegExp(langConfig.win_rate + '\\\\s*([\\\\d.%]+)');
+                        const top4Regex = new RegExp(langConfig.top_4_rate + '\\\\s*([\\\\d.]+)');
+
+                        const avgPlaceMatch = text.match(avgPlaceRegex);
+                        const pickRateMatch = text.match(pickRateRegex);
+                        const winRateMatch = text.match(winRateRegex);
+                        const top4Match = text.match(top4Regex);
 
                         // Unit names are actual TFT champion names
                         // They typically appear between tier/difficulty and "Avg Place"
@@ -176,7 +182,12 @@ async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
 
                 return validComps.slice(0, 20); // Limit to top 20 comps
             }
-        """)
+        """, {
+            'avg_place': lang_config.avg_place,
+            'pick_rate': lang_config.pick_rate,
+            'win_rate': lang_config.win_rate,
+            'top_4_rate': lang_config.top_4_rate,
+        })
 
         # Print what we found
         print(f"Found {len(comps_data)} comps")

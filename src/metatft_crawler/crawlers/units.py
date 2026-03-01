@@ -11,6 +11,7 @@ from playwright.async_api import async_playwright
 from typing import Dict, List, Any
 
 from ..utils.browser import switch_language
+from ..languages.loader import get_language_config
 
 
 async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict[str, Any]:
@@ -45,6 +46,9 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
         if language == "vi":
             print("Switching to Vietnamese...")
             await switch_language(page, "vi")
+
+        # Get language configuration
+        lang_config = get_language_config(language)
 
         # Extract all units from the main units page
         print("Extracting all units and their links...")
@@ -168,7 +172,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                 # Extract unit detail data - with proper tab handling
                 # First, extract initial info (cost, type, traits, ability name, description)
                 initial_data = await page.evaluate("""
-                    () => {
+                    (langConfig) => {
                         const pageText = document.body.innerText;
                         const lines = pageText.split('\\n').map(l => l.trim()).filter(l => l && l.length > 0);
 
@@ -182,9 +186,9 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         let abilityOthers = '';
                         let unlockCondition = '';
 
-                        // Known trait names to look for (exact matches)
-                        const knownTraits = ['Attack', 'Fighter', 'Void', 'Riftscourge', 'Magic', 'Marksman', 'Zaun', 'Zaunite', 'Yordle', 'Longshot', 'Duelist', 'Visionary', 'Knight', 'Assassin', 'Mage', 'Ranger', 'Support', 'Tank', 'Bruiser', 'Shurima', 'Noxus', 'Piltover', 'Demacia', 'Ionia', 'Shadow', 'Star', 'Caretaker', 'Chemtech', 'Corrupt', 'Enforcer'];
-                        const typeWords = ['Attack', 'Fighter', 'Caster', 'Support', 'Tank'];
+                        // Use language-specific trait names and type words from config
+                        const knownTraits = langConfig.traits;
+                        const typeWords = langConfig.unit_types;
 
                         // Look for pattern: Unit Name, then Type, then Traits, then number (cost), then "Ability"/"Stats" tabs
                         let headerStartIndex = -1;
@@ -193,7 +197,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
 
                         // Find where unit header starts (look for tabs)
                         for (let i = 0; i < Math.min(100, lines.length); i++) {
-                            if (lines[i] === 'Ability' && lines[i+1] === 'Stats') {
+                            if (lines[i] === langConfig.ability_label && lines[i+1] === langConfig.stats_label) {
                                 abilityTabIndex = i;
                                 headerStartIndex = Math.max(0, i - 20);
                                 break;
@@ -269,10 +273,13 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             for (let i = abilityTabIndex + 1; i < lines.length; i++) {
                                 const line = lines[i];
 
-                                // Mark start of description when we see Passive or Active
-                                if ((line.startsWith('Passive:') || line.startsWith('Active:')) && !inDescription) {
+                                // Mark start of description when we see Passive or Active (language-aware)
+                                const passiveMarker = langConfig.passive_marker;
+                                const activeMarker = langConfig.active_marker;
+                                if ((line.startsWith(passiveMarker) || line.startsWith(activeMarker)) && !inDescription) {
                                     inDescription = true;
-                                    const textAfterLabel = line.replace(/^(Passive:|Active:)\\s*/, '');
+                                    const markers = new RegExp(`^(${passiveMarker}|${activeMarker})\\\\s*`);
+                                    const textAfterLabel = line.replace(markers, '');
                                     if (textAfterLabel && textAfterLabel.length > 3) {
                                         descriptionLines.push(textAfterLabel);
                                     }
@@ -280,7 +287,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                                 }
 
                                 // Track where Unlock starts
-                                if (line === 'Unlock:' && unlockIndex === -1) {
+                                if (line === langConfig.unlock_marker && unlockIndex === -1) {
                                     unlockIndex = i;
                                 }
 
@@ -407,7 +414,15 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             damage_stats_mapping: damageStatsMapping
                         };
                     }
-                """)
+                """, {
+                    'traits': lang_config.traits,
+                    'unit_types': lang_config.unit_types,
+                    'ability_label': lang_config.ability_label,
+                    'stats_label': lang_config.stats_label,
+                    'passive_marker': lang_config.passive_marker,
+                    'active_marker': lang_config.active_marker,
+                    'unlock_marker': lang_config.unlock_marker,
+                })
                 # Extract the damage stats mapping from the returned data
                 damage_stats_mapping = initial_data.get('damage_stats_mapping', {})
 
@@ -431,7 +446,7 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
 
                 # Extract base stats from Stats tab
                 base_stats = await page.evaluate("""
-                    () => {
+                    (langConfig) => {
                         const pageText = document.body.innerText;
                         const lines = pageText.split('\\n').map(l => l.trim()).filter(l => l && l.length > 0);
 
@@ -448,55 +463,66 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             range: null
                         };
 
-                        // Look for stat labels and their values
+                        // Look for stat labels and their values (language-aware)
                         for (let i = 0; i < lines.length; i++) {
                             const line = lines[i];
 
                             // Health: "3000/5400/9720" format
-                            if (line === 'Health' && i + 1 < lines.length) {
+                            if (line === langConfig.health && i + 1 < lines.length) {
                                 stats.health = lines[i + 1];
                             }
                             // Mana
-                            if (line === 'Mana' && i + 1 < lines.length) {
+                            if (line === langConfig.mana && i + 1 < lines.length) {
                                 stats.mana = lines[i + 1];
                             }
                             // Attack Damage
-                            if (line.includes('Attack Damage') && i + 1 < lines.length) {
+                            if (line.includes(langConfig.attack_damage) && i + 1 < lines.length) {
                                 stats.attack_damage = lines[i + 1];
                             }
                             // Ability Power
-                            if (line === 'Ability Power' && i + 1 < lines.length) {
+                            if (line === langConfig.ability_power && i + 1 < lines.length) {
                                 stats.ability_power = lines[i + 1];
                             }
                             // Armor
-                            if (line === 'Armor' && i + 1 < lines.length) {
+                            if (line === langConfig.armor && i + 1 < lines.length) {
                                 stats.armor = lines[i + 1];
                             }
                             // Magic Resist
-                            if (line.includes('Magic Resist') && i + 1 < lines.length) {
+                            if (line.includes(langConfig.magic_resist) && i + 1 < lines.length) {
                                 stats.magic_resist = lines[i + 1];
                             }
                             // Attack Speed
-                            if (line.includes('Attack Speed') && i + 1 < lines.length) {
+                            if (line.includes(langConfig.attack_speed) && i + 1 < lines.length) {
                                 stats.attack_speed = lines[i + 1];
                             }
                             // Crit Chance
-                            if (line.includes('Crit Chance') && i + 1 < lines.length) {
+                            if (line.includes(langConfig.crit_chance) && i + 1 < lines.length) {
                                 stats.crit_chance = lines[i + 1];
                             }
                             // Crit Damage
-                            if (line.includes('Crit Damage') && i + 1 < lines.length) {
+                            if (line.includes(langConfig.crit_damage) && i + 1 < lines.length) {
                                 stats.crit_damage = lines[i + 1];
                             }
                             // Range
-                            if (line === 'Range' && i + 1 < lines.length) {
+                            if (line === langConfig.range && i + 1 < lines.length) {
                                 stats.range = lines[i + 1];
                             }
                         }
 
                         return stats;
                     }
-                """)
+                """, {
+                    'health': lang_config.health,
+                    'mana': lang_config.mana,
+                    'attack_damage': lang_config.attack_damage,
+                    'ability_power': lang_config.ability_power,
+                    'armor': lang_config.armor,
+                    'magic_resist': lang_config.magic_resist,
+                    'attack_speed': lang_config.attack_speed,
+                    'crit_chance': lang_config.crit_chance,
+                    'crit_damage': lang_config.crit_damage,
+                    'range': lang_config.range,
+                })
 
                 # Post-process damage info to add stat abbreviations (AD/AP) to empty ()
                 if (initial_data.get('ability_others') or initial_data.get('ability_description')) and damage_stats_mapping:
@@ -551,29 +577,31 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
 
                 # Extract recommended builds (all 5) and top items
                 recommended_builds_data = await page.evaluate("""
-                    () => {
+                    (langConfig) => {
                         const pageText = document.body.innerText;
                         const lines = pageText.split('\\n').map(l => l.trim()).filter(l => l && l.length > 0);
 
                         let topItems = [];
                         let builds = [];
 
-                        // Find "Top Items" section and extract items from the next line
+                        // Find "Top Items" section using language config label
                         for (let i = 0; i < lines.length; i++) {
-                            if (lines[i].includes('Top Items') && !lines[i].includes('Recommended') && i + 1 < lines.length) {
+                            if (lines[i].includes(langConfig.top_items_label) && !lines[i].includes(langConfig.recommended_builds_label) && i + 1 < lines.length) {
                                 const nextLine = lines[i + 1];
 
                                 // Look for item names in this line
-                                // Items are separated by commas and possibly "and"
+                                // Items are separated by commas and possibly "and"/"và"
                                 let itemsStr = nextLine;
 
-                                // Extract just the items part (after "are" or ":")
+                                // Extract just the items part (after "are", ":", or Vietnamese "là")
                                 if (itemsStr.includes(' are ')) {
                                     itemsStr = itemsStr.split(' are ')[1];
+                                } else if (itemsStr.includes(' là ')) {
+                                    itemsStr = itemsStr.split(' là ')[1];
                                 }
 
-                                // Split by comma and "and"
-                                let itemList = itemsStr.split(/,|\\s+and\\s+/);
+                                // Split by comma and "and"/"và" (Vietnamese and)
+                                let itemList = itemsStr.split(/,|\\s+and\\s+|\\s+và\\s+/);
 
                                 itemList.forEach(item => {
                                     const cleanItem = item.trim();
@@ -588,24 +616,32 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             }
                         }
 
-                        // Find "Recommended Builds" section and extract builds
+                        // Find "Recommended Builds" section using language config label
                         // Each build is preceded by stats (avg place, etc.)
                         for (let i = 0; i < lines.length; i++) {
-                            if (lines[i].includes('Recommended Builds') && !lines[i].includes('Top Items')) {
+                            if (lines[i].includes(langConfig.recommended_builds_label) && !lines[i].includes(langConfig.top_items_label)) {
                                 // Look at next line - should have the recommended build description
                                 if (i + 1 < lines.length) {
                                     const buildLine = lines[i + 1];
                                     // Extract items from description like "We recommend Bloodthirster, Infinity Edge, Sterak's Gage..."
-                                    if (buildLine.includes('recommend') || buildLine.includes('build')) {
+                                    // Support both English "recommend"/"build" and Vietnamese "đề xuất"/"lối chơi"
+                                    if (buildLine.includes('recommend') || buildLine.includes('build') ||
+                                        buildLine.includes('đề xuất') || buildLine.includes('lối chơi')) {
                                         // Find items in this line by looking for known items
-                                        // For now, extract comma-separated items after "recommend"
+                                        // Extract comma-separated items after "recommend" (English) or "đề xuất" (Vietnamese)
                                         let itemsStr = buildLine;
                                         if (itemsStr.includes(' recommend ')) {
                                             itemsStr = itemsStr.split(' recommend ')[1].split(' as ')[0];
+                                        } else if (itemsStr.includes(' đề xuất ')) {
+                                            // Vietnamese: "Chúng tôi đề xuất ... là ..."
+                                            itemsStr = itemsStr.split(' đề xuất ')[1];
+                                            if (itemsStr.includes(' là ')) {
+                                                itemsStr = itemsStr.split(' là ')[1];
+                                            }
                                         }
 
-                                        // Split by comma and "and"
-                                        let itemList = itemsStr.split(/,|\\s+and\\s+/);
+                                        // Split by comma and "and"/"và" (Vietnamese and)
+                                        let itemList = itemsStr.split(/,|\\s+and\\s+|\\s+và\\s+/);
                                         let build = [];
 
                                         itemList.forEach(item => {
@@ -629,7 +665,10 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                             recommended_builds: builds
                         };
                     }
-                """)
+                """, {
+                    'top_items_label': lang_config.top_items_label,
+                    'recommended_builds_label': lang_config.recommended_builds_label,
+                })
 
                 # Merge all extracted data with proper structure
                 unit_detail = {
