@@ -11,6 +11,7 @@ from playwright.async_api import async_playwright
 from typing import Dict, List, Any
 
 from ..utils.browser import switch_language
+from ..languages.loader import get_language_config
 
 
 async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict[str, Any]:
@@ -45,6 +46,9 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
         if language == "vi":
             print("Switching to Vietnamese...")
             await switch_language(page, "vi")
+
+        # Get language configuration
+        lang_config = get_language_config(language)
 
         # Extract all items from the main items page
         print("Extracting all items and their links...")
@@ -97,38 +101,47 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
 
                 # Extract item details
                 item_details = await page.evaluate("""
-                    () => {
+                    (langConfig) => {
                         const pageText = document.body.innerText;
                         const lines = pageText.split('\\n').map(l => l.trim()).filter(l => l);
 
-                        // Find item name - "Name TFT Item Stats" (EN) or "Số Liệu Trang Bị Name" (VI)
+                        // Find item name - language-aware
                         let itemName = null;
                         let statsData = {};
                         let traitNumber = null;
                         let description = null;
 
-                        // Find the item name from the header that mentions "TFT Item Stats" or Vietnamese equivalent
+                        // Find the item name from the header (use language-specific label)
                         for (let i = 0; i < lines.length; i++) {
                             const line = lines[i];
-                            // English: "ItemName TFT Item Stats"
-                            if (line.includes('TFT Item Stats')) {
-                                itemName = line.replace(/\\s*TFT Item Stats\\s*/i, '').trim();
+                            // Try primary label (e.g., "TFT Item Stats" or "Số Liệu Trang Bị")
+                            if (line.includes(langConfig.tft_item_stats)) {
+                                // Replace the label and get the item name
+                                const pattern = new RegExp('\\\\s*' + langConfig.tft_item_stats + '\\\\s*', 'i');
+                                itemName = line.replace(pattern, '').trim();
                                 break;
                             }
-                            // Vietnamese: "Số Liệu Trang Bị ItemName" or similar pattern
-                            if (line.includes('Số Liệu Trang Bị') || line.includes('Thống kê')) {
-                                // Item name is in the same line after the stat keyword
-                                itemName = line.replace(/Số Liệu Trang Bị\\s*/i, '').replace(/Thống kê.*$/i, '').trim();
-                                if (!itemName || itemName.includes('hiệu')) {
-                                    // If extraction failed, try next non-empty line
-                                    for (let j = i + 1; j < Math.min(i + 5, lines.length); j++) {
-                                        if (lines[j] && !lines[j].includes('Dữ liệu') && !lines[j].includes('cập nhật')) {
-                                            itemName = lines[j];
+                            // Try alternate labels if provided
+                            if (langConfig.item_stats_labels && langConfig.item_stats_labels.length > 0) {
+                                for (const label of langConfig.item_stats_labels) {
+                                    if (line.includes(label)) {
+                                        const pattern = new RegExp(label + '\\\\s*', 'i');
+                                        itemName = line.replace(pattern, '').trim();
+                                        // Filter out unwanted patterns
+                                        if (itemName && !itemName.includes('hiệu')) {
                                             break;
                                         }
+                                        // Fallback: try next non-empty line
+                                        for (let j = i + 1; j < Math.min(i + 5, lines.length); j++) {
+                                            if (lines[j]) {
+                                                itemName = lines[j];
+                                                break;
+                                            }
+                                        }
+                                        break;
                                     }
                                 }
-                                break;
+                                if (itemName) break;
                             }
                         }
 
@@ -215,25 +228,29 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                                         line.includes('hiệu suất') || line.includes('Lần Cập Nhật')) {
                                         continue;
                                     }
-                                    // Check if this looks like an ability description (English)
-                                    const hasActionKeywordEN = line.includes('deal') || line.includes('grant') ||
-                                        line.includes('gain') || line.includes('reduce') || line.includes('heal') ||
-                                        line.includes('summon') || line.includes('restore') || line.includes('apply') ||
-                                        line.includes('trigger') || line.includes('convert') || line.includes('double') ||
-                                        line.includes('each') || line.includes('takes') || line.includes('shield') ||
-                                        line.includes('absorb') || line.includes('max team') || line.includes('chance') ||
-                                        line.includes('regenerate') || line.includes('execute') || line.includes('become') ||
-                                        line.includes('untargetable') || line.includes('invulnerable') || line.includes('burn') ||
-                                        line.includes('wound') || line.includes('stacking') || line.includes('bonus') ||
-                                        line.includes('critical') || line.includes('Attack') || line.includes('Health');
+                                    // Convert line to lowercase for case-insensitive matching
+                                    const lineLower = line.toLowerCase();
 
-                                    // Check if this looks like an ability description (Vietnamese)
-                                    const hasActionKeywordVI = line.includes('Đòn đánh') || line.includes('Gây') ||
-                                        line.includes('Cộng') || line.includes('Nhận') || line.includes('Giảm') ||
-                                        line.includes('Chữa') || line.includes('Gọi') || line.includes('Gia tăng') ||
-                                        line.includes('Máu') || line.includes('Sức Mạnh') || line.includes('Công Kích') ||
-                                        line.includes('tối đa') || line.includes('bạn') || line.includes('chiến đấu') ||
-                                        line.includes('Đơn vị') || line.includes('Kỹ năng') || line.includes('tuyệt đối');
+                                    // Check if this looks like an ability description (English)
+                                    const hasActionKeywordEN = lineLower.includes('deal') || lineLower.includes('grant') ||
+                                        lineLower.includes('gain') || lineLower.includes('reduce') || lineLower.includes('heal') ||
+                                        lineLower.includes('summon') || lineLower.includes('restore') || lineLower.includes('apply') ||
+                                        lineLower.includes('trigger') || lineLower.includes('convert') || lineLower.includes('double') ||
+                                        lineLower.includes('each') || lineLower.includes('takes') || lineLower.includes('shield') ||
+                                        lineLower.includes('absorb') || lineLower.includes('max team') || lineLower.includes('chance') ||
+                                        lineLower.includes('regenerate') || lineLower.includes('execute') || lineLower.includes('become') ||
+                                        lineLower.includes('untargetable') || lineLower.includes('invulnerable') || lineLower.includes('burn') ||
+                                        lineLower.includes('wound') || lineLower.includes('stacking') || lineLower.includes('bonus') ||
+                                        lineLower.includes('critical') || lineLower.includes('attack') || lineLower.includes('health');
+
+                                    // Check if this looks like an ability description (Vietnamese - case insensitive)
+                                    const hasActionKeywordVI = lineLower.includes('đòn đánh') || lineLower.includes('gây') ||
+                                        lineLower.includes('cộng') || lineLower.includes('nhận') || lineLower.includes('giảm') ||
+                                        lineLower.includes('chữa') || lineLower.includes('gọi') || lineLower.includes('gia tăng') ||
+                                        lineLower.includes('máu') || lineLower.includes('sức mạnh') || lineLower.includes('công kích') ||
+                                        lineLower.includes('tối đa') || lineLower.includes('bạn') || lineLower.includes('chiến đấu') ||
+                                        lineLower.includes('đơn vị') || lineLower.includes('kỹ năng') || lineLower.includes('tuyệt đối') ||
+                                        lineLower.includes('giúp') || lineLower.includes('hồi lại') || lineLower.includes('năng lượng');
 
                                     if ((hasActionKeywordEN || hasActionKeywordVI) && line.length > 25) {
                                         description = line;
@@ -261,7 +278,10 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                             description: description
                         };
                     }
-                """)
+                """, {
+                    'tft_item_stats': lang_config.tft_item_stats,
+                    'item_stats_labels': lang_config.item_stats_labels,
+                })
 
                 items_data.append(item_details)
                 print(f"  ✓ {item_details['name']}")
