@@ -119,11 +119,17 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                         // The pattern seems to be: "Recipe" followed by stat values like "+20%", "+20", "+300"
                         for (let i = 0; i < lines.length; i++) {
                             if (lines[i] === 'Recipe') {
-                                // Next lines might contain stat values
+                                // Next lines might contain stat values or recipe info
                                 let j = i + 1;
                                 let statIndex = 0;
                                 const statNames = ['AP/AD', 'Armor/MR', 'Health'];
 
+                                // Skip past recipe indicator (like "Cannot be Crafted" or "+")
+                                while (j < lines.length && (lines[j] === '+' || lines[j].includes('Crafted'))) {
+                                    j++;
+                                }
+
+                                // Now try to collect stat values
                                 while (j < lines.length && statIndex < 3) {
                                     const line = lines[j];
                                     // Collect stat values (they look like "+20%", "+20", "+300")
@@ -142,18 +148,42 @@ async def crawl_all_items(language: str = "en", limit_items: int = None) -> Dict
                             }
                         }
 
-                        // Find the item description (longer text after stats)
-                        // Usually appears after the stat values
+                        // Find the item description (ability/effect text, NOT meta stats)
+                        // Look for text that describes what the item does
+                        // Priority: Look near Recipe section, find action verbs
                         for (let i = 0; i < lines.length; i++) {
-                            const line = lines[i];
-                            // Match lines that contain ability/effect description
-                            if (line.includes('deal') || line.includes('grant') || line.includes('increase') ||
-                                line.includes('gain') || line.includes('reduce') || line.includes('gain') ||
-                                line.includes('heal') || line.includes('summon')) {
-                                if (line.length > 40) {
-                                    description = line;
-                                    break;
+                            if (lines[i] === 'Recipe') {
+                                // Look ahead from Recipe for description
+                                for (let j = i + 1; j < Math.min(i + 15, lines.length); j++) {
+                                    const line = lines[j];
+                                    // Skip stat lines and craft indicators
+                                    if (line.match(/^[+\\-][0-9.%]+$/) || line === '+' || line.includes('Crafted')) {
+                                        continue;
+                                    }
+                                    // Skip common meta/stats labels
+                                    if (line.includes('Stats on how') || line.includes('Avg Place') ||
+                                        line.includes('Pick Rate') || line.includes('Best Item') ||
+                                        line.includes('Trait') || line.includes('Rate') || line === '1') {
+                                        continue;
+                                    }
+                                    // Check if this looks like an ability description
+                                    const hasActionKeyword = line.includes('deal') || line.includes('grant') ||
+                                        line.includes('gain') || line.includes('reduce') || line.includes('heal') ||
+                                        line.includes('summon') || line.includes('restore') || line.includes('apply') ||
+                                        line.includes('trigger') || line.includes('convert') || line.includes('double') ||
+                                        line.includes('each') || line.includes('takes') || line.includes('shield') ||
+                                        line.includes('absorb') || line.includes('max team') || line.includes('chance') ||
+                                        line.includes('regenerate') || line.includes('execute') || line.includes('become') ||
+                                        line.includes('untargetable') || line.includes('invulnerable') || line.includes('burn') ||
+                                        line.includes('wound') || line.includes('stacking') || line.includes('bonus') ||
+                                        line.includes('critical') || line.includes('Attack') || line.includes('Health');
+
+                                    if (hasActionKeyword && line.length > 25) {
+                                        description = line;
+                                        break;
+                                    }
                                 }
+                                break;
                             }
                         }
 
