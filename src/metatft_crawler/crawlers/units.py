@@ -223,166 +223,106 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                         }
 
                         if (abilityTabIndex > 0) {
-                            // Look backwards from "Ability" tab for cost, type, and traits (expand search range)
-                            let typeLines = [];
-                            let searchStart = Math.max(0, abilityTabIndex - 100);  // Expanded from 20 to 100
-                            for (let i = abilityTabIndex - 1; i >= searchStart; i--) {
-                                const line = lines[i];
+                            // Position-based extraction using fixed page structure:
+                            // "Back to Units" → Unit Name → Type → Trait1 → Trait2 → ... → Cost → Ability Tab
 
-                                // Cost is a single digit (1-10)
-                                if (/^[1-9]$/.test(line) && cost === null) {
-                                    cost = parseInt(line);
-                                }
-
-                                // Type: look for lines containing type words (could be "Attack Fighter" on one line)
-                                if (type === null) {
-                                    let hasTypeWord = false;
-                                    for (const typeWord of typeWords) {
-                                        if (line.includes(typeWord)) {
-                                            typeLines.unshift(line);
-                                            hasTypeWord = true;
-                                            break;
-                                        }
-                                    }
-                                    if (hasTypeWord) continue;
-                                }
-
-                                // Traits: check for exact match first, then check if line contains multiple traits
-                                if (knownTraits.includes(line) && !typeWords.includes(line) && !traits.includes(line)) {
-                                    traits.unshift(line);  // add to front to preserve order
-                                } else if (!typeWords.includes(line)) {
-                                    // Check if line contains multiple traits (split by spaces and check each word)
-                                    const words = line.split(/\\s+/);
-                                    if (words.length > 1) {
-                                        for (const word of words) {
-                                            if (word && knownTraits.includes(word) && !traits.includes(word)) {
-                                                traits.push(word);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
-                            // Set type from first matching line found
-                            if (typeLines.length > 0) {
-                                type = typeLines[0];
-                            }
-
-                            // Extract ability name: Look after "Ability" tab for first non-empty, non-number line
-                            for (let i = abilityTabIndex + 1; i < Math.min(abilityTabIndex + 5, lines.length); i++) {
-                                const line = lines[i];
-                                // Skip tabs, keys, and numbers
-                                if (line && !line.match(/^\\d/) && line !== 'Key' && line !== 'Stats' && line !== langConfig.stats_label && line !== langConfig.ability_label && line.length < 100) {
-                                    abilityName = line;
-                                    abilityNameIndex = i;
+                            // Step 1: Find cost (single digit, searching backward from ability tab)
+                            let costIndex = -1;
+                            for (let i = abilityTabIndex - 1; i >= Math.max(0, abilityTabIndex - 5); i--) {
+                                if (/^[1-9]$/.test(lines[i])) {
+                                    cost = parseInt(lines[i]);
+                                    costIndex = i;
                                     break;
                                 }
                             }
 
-                            // Extract ability mana cost from DOM - look for UnitAbilityMana class
+                            // Step 2: Find unit name line by looking for "Back to Units" / "Quay Lại Tướng"
+                            let unitNameIndex = -1;
+                            for (let i = Math.max(0, abilityTabIndex - 15); i < abilityTabIndex; i++) {
+                                if (lines[i] === 'Back to Units' || lines[i] === 'Quay Lại Tướng') {
+                                    unitNameIndex = i + 1;  // Unit name is next line
+                                    break;
+                                }
+                            }
+
+                            // Step 3: Type is ALWAYS the line right after unit name
+                            let typeIndex = -1;
+                            if (unitNameIndex > 0 && unitNameIndex + 1 < lines.length) {
+                                type = lines[unitNameIndex + 1];
+                                typeIndex = unitNameIndex + 1;
+                            }
+
+                            // Step 4: Traits = all lines between type and cost (exclusive)
+                            if (typeIndex !== -1 && costIndex !== -1) {
+                                for (let i = typeIndex + 1; i < costIndex; i++) {
+                                    const line = lines[i].trim();
+                                    if (line && line.length > 1 && line.length < 40 && !traits.includes(line)) {
+                                        traits.push(line);
+                                    }
+                                }
+                            }
+
+                            // DOM-based extraction for ability name, mana, description, and unlock
                             try {
-                                const manaContainer = document.querySelector('.UnitAbilityMana');
-                                if (manaContainer) {
-                                    const manaText = manaContainer.innerText;
-                                    // Extract all numbers and build mana string (e.g., first/second digits)
-                                    const nums = manaText.match(/\\d+/g);
+                                const nameEl = document.querySelector('.UnitAbilityName');
+                                if (nameEl) abilityName = nameEl.innerText.trim();
+
+                                const manaEl = document.querySelector('.UnitAbilityMana');
+                                if (manaEl) {
+                                    const nums = manaEl.innerText.match(/\\d+/g);
                                     if (nums && nums.length >= 2) {
                                         abilityMana = nums[0] + '/' + nums[1];
                                     }
                                 }
-                            } catch (e) {
-                                // Silently catch any errors
-                            }
 
-                            // Extract ability description, damage info, and unlock condition
-                            let descriptionLines = [];
-                            let damageLines = [];
-                            let inDescription = false;
-                            let unlockIndex = -1;
+                                const descEl = document.querySelector('.UnitAbilityDescription');
+                                if (descEl) {
+                                    const fullDescText = descEl.innerText.trim();
+                                    // Split into description lines and damage lines
+                                    const descLines = fullDescText.split('\\n').map(l => l.trim()).filter(l => l.length > 0);
+                                    let descriptionParts = [];
+                                    let damageParts = [];
+                                    let inDamage = false;
 
-                            for (let i = abilityTabIndex + 1; i < lines.length; i++) {
-                                const line = lines[i];
-
-                                // Stop at unlock condition
-                                if (line === langConfig.unlock_marker && unlockIndex === -1) {
-                                    unlockIndex = i;
-                                }
-
-                                // Mark start of description when we see Passive or Active markers
-                                const passiveMarker = langConfig.passive_marker;
-                                const activeMarker = langConfig.active_marker;
-                                if ((line.startsWith(passiveMarker) || line.startsWith(activeMarker)) && !inDescription) {
-                                    inDescription = true;
-                                    const markers = new RegExp(`^(${passiveMarker}|${activeMarker})\\\\s*`);
-                                    const textAfterLabel = line.replace(markers, '');
-                                    if (textAfterLabel && textAfterLabel.length > 3) {
-                                        descriptionLines.push(textAfterLabel);
-                                    }
-                                    continue;
-                                }
-
-                                // If no markers found, start description after ability name + mana cost (roughly 5-10 lines after ability tab)
-                                // Description typically starts with substantial text containing ability info
-                                if (!inDescription && abilityNameIndex !== -1 && i > abilityNameIndex + 2) {
-                                    if (line && line.length > 5 && line.length < 400 &&
-                                        !line.match(/^\\d+$/) &&  // Not a single number
-                                        !line.match(/^\\//) &&  // Not just "/"
-                                        !line.match(/^[\\/\\(\\)%]*$/) &&  // Not just punctuation/symbols
-                                        line !== langConfig.unlock_marker &&
-                                        !line.includes('Damages') &&
-                                        !line.includes('Damage:') &&
-                                        !line.includes('Stats') &&
-                                        !line.includes('Hạng TB') &&  // Vietnamese "Avg Place"
-                                        !line.includes('Tỷ Lệ')) {  // Vietnamese "Pick Rate"
-                                        inDescription = true;
-                                        descriptionLines.push(line);
-                                        continue;
-                                    }
-                                }
-
-                                // Track where Unlock starts
-                                if (line === langConfig.unlock_marker && unlockIndex === -1) {
-                                    unlockIndex = i;
-                                }
-
-                                // Collect lines while in description section (until Unlock)
-                                if (inDescription && unlockIndex === -1) {
-                                    // Collect damage calculation lines separately
-                                    if (line === 'Damage:' || line === 'Acid Damage:' ||
-                                        line === '+' || line === 'of' ||
-                                        line.match(/^\\d+[\\/\\d%]*\\s*$/) ||  // Just numbers like "30/45/500"
-                                        line.match(/^[\\d\\(\\)\\/]*$/) ||     // Numbers and parens
-                                        line.match(/\\(\\)\\s*$/) ||           // Ends with ()
-                                        line.match(/^%/)) {                     // Starts with %
-                                        damageLines.push(line);
-                                        continue;
-                                    }
-
-                                    // Collect substantial text lines (likely ability description)
-                                    if (line && line.length > 5 && line.length < 300) {
-                                        descriptionLines.push(line);
-                                    }
-                                }
-
-                                // Extract unlock condition after "Unlock:" is found
-                                if (unlockIndex !== -1 && i === unlockIndex) {
-                                    // Next 2 lines after "Unlock:" contain the condition
-                                    if (i + 1 < lines.length) {
-                                        unlockCondition = lines[i + 1].trim();
-                                        if (i + 2 < lines.length && lines[i + 2].trim().length > 0 && lines[i + 2].trim().length < 100) {
-                                            const nextLine = lines[i + 2].trim();
-                                            // Only add if it looks like part of the condition (not a section header)
-                                            if (!nextLine.match(/^[A-Z][a-z]+\\s[A-Z]/) && nextLine.length > 3) {
-                                                unlockCondition += ' ' + nextLine;
-                                            }
+                                    for (const line of descLines) {
+                                        // Detect damage section markers (English and Vietnamese)
+                                        if (line.match(/^(Damage|Sát Thương|Acid Damage|Number of|Số|Shield|Healing|Heal|Hồi)/i) && line.endsWith(':')) {
+                                            inDamage = true;
+                                            damageParts.push(line);
+                                            continue;
                                         }
+                                        if (inDamage) {
+                                            // Damage values are typically numbers with slashes
+                                            if (line.match(/^[\\d\\/\\s%()]+$/) || line === '()' || line === '+' || line === 'of') {
+                                                damageParts.push(line);
+                                                continue;
+                                            }
+                                            // New text line means back to description
+                                            inDamage = false;
+                                        }
+                                        descriptionParts.push(line);
                                     }
-                                    break;  // Stop after processing unlock
-                                }
-                            }
 
-                            abilityDescription = descriptionLines.join(' ').trim();
-                            abilityOthers = damageLines.join(' ').trim();
+                                    abilityDescription = descriptionParts.join(' ').trim();
+                                    abilityOthers = damageParts.join(' ').trim();
+                                }
+
+                                // Extract unlock condition from the UnitAbility container
+                                const abilityContainer = document.querySelector('.UnitAbility');
+                                if (abilityContainer) {
+                                    const fullText = abilityContainer.innerText;
+                                    const unlockMarker = langConfig.unlock_marker;
+                                    const unlockIdx = fullText.indexOf(unlockMarker);
+                                    if (unlockIdx !== -1) {
+                                        const afterUnlock = fullText.substring(unlockIdx + unlockMarker.length).trim();
+                                        const unlockLines = afterUnlock.split('\\n').map(l => l.trim()).filter(l => l.length > 0);
+                                        // Unlock condition is typically the first 1-2 lines after "Unlock:"
+                                        unlockCondition = unlockLines.slice(0, 2).join(' ').trim();
+                                    }
+                                }
+                            } catch (e) {
+                                // Silently catch DOM extraction errors
+                            }
                         }
 
                         // Extract damage->stats mapping with context awareness, preferring scalelevel
