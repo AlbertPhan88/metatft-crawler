@@ -126,9 +126,9 @@ class VietnameseConfig(LanguageConfig):
         self.tft_item_stats = "Số Liệu Trang Bị"
         self.item_stats_labels = ["Số Liệu Trang Bị", "Thống kê"]
 
-        # Unit page build/items labels (English on both English and Vietnamese pages)
-        self.top_items_label = "Top Items"  # Stays English on Vietnamese page
-        self.recommended_builds_label = "Recommended Builds"  # Stays English on Vietnamese page
+        # Unit page build/items labels (Vietnamese)
+        self.top_items_label = "Trang Bị Hàng Đầu"  # Vietnamese for "Top Items"
+        self.recommended_builds_label = "Lối Chơi Đề Xuất"  # Vietnamese for "Recommended Builds"
 
         # Augments page keywords
         self.navigation_keywords = [

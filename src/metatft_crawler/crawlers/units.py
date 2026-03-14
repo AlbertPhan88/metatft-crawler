@@ -574,12 +574,6 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                 await page.wait_for_timeout(2000)
 
                 # Extract recommended builds (all 5) and top items
-                # First try to navigate back to English temporarily to get items, then switch back
-                original_language = language
-                if language != "en":
-                    # Temporarily switch to English to get items (they're not visible in Vietnamese)
-                    await switch_language(page, "en")
-                    await page.wait_for_timeout(1500)
 
                 recommended_builds_data = await page.evaluate("""
                     (langConfig) => {
@@ -676,11 +670,6 @@ async def crawl_all_units(language: str = "en", limit_units: int = None) -> Dict
                     'top_items_label': lang_config.top_items_label,
                     'recommended_builds_label': lang_config.recommended_builds_label,
                 })
-
-                # Switch back to original language if we switched to English for items extraction
-                if language != "en":
-                    await switch_language(page, language)
-                    await page.wait_for_timeout(1000)
 
                 # Merge all extracted data with proper structure
                 unit_detail = {
