@@ -55,6 +55,16 @@ class LanguageConfig:
     traits_back_link: str  # e.g., "Back to Traits" or "Quay về"
     traits_meta_stat_keywords: List[str]  # Keywords that indicate meta stats section
 
+    # Comp detail page labels
+    comp_options_tab: str  # "Options & Quick Guide" / "Tùy Chọn & Hướng Dẫn Nhanh"
+    comp_counters_tab: str  # "Counters & Vods" / "Khắc Chế & Vods"
+    comp_early_game: str  # "Early Game" / "Đầu Trận"
+    comp_positioning: str  # "Team Positioning" / "Bài Trí Đội Hình"
+    comp_augments: str  # "Augments" / "Nâng Cấp"
+    comp_leveling: str  # "Leveling" / "Lên Cấp"
+    comp_carousel: str  # "Carousel Priority" / "Ưu Tiên Vòng Đi Chợ"
+    comp_round_win_rate: str  # "Round Win Rate" / "Tỷ Lệ Thắng Vòng Đấu"
+
     def __init__(self):
         """Initialize with default values - must be overridden in subclasses."""
         raise NotImplementedError(

@@ -180,3 +180,13 @@ class VietnameseConfig(LanguageConfig):
             "Tải Xuống",
             "Tộc/Hệ",  # Traits section header in Vietnamese
         ]
+
+        # Comp detail page labels
+        self.comp_options_tab = "Tùy Chọn & Hướng Dẫn Nhanh"
+        self.comp_counters_tab = "Khắc Chế & Vods"
+        self.comp_early_game = "Đầu Trận"
+        self.comp_positioning = "Bài Trí Đội Hình"
+        self.comp_augments = "Nâng Cấp"
+        self.comp_leveling = "Lên Cấp"
+        self.comp_carousel = "Ưu Tiên Vòng Đi Chợ"
+        self.comp_round_win_rate = "Tỷ Lệ Thắng Vòng Đấu"

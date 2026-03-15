@@ -10,6 +10,7 @@ from .crawlers.units import crawl_all_units
 from .crawlers.items import crawl_all_items
 from .crawlers.augments import crawl_all_augments
 from .crawlers.traits import crawl_all_traits
+from .crawlers.comp_details import crawl_comp_details
 from .languages.loader import get_language_config, get_supported_languages
 
 __all__ = [
@@ -18,6 +19,7 @@ __all__ = [
     "crawl_all_items",
     "crawl_all_augments",
     "crawl_all_traits",
+    "crawl_comp_details",
     "get_language_config",
     "get_supported_languages",
 ]
