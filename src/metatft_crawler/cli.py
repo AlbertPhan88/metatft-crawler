@@ -15,6 +15,7 @@ from .crawlers.units import crawl_all_units
 from .crawlers.items import crawl_all_items
 from .crawlers.augments import crawl_all_augments
 from .crawlers.traits import crawl_all_traits
+from .crawlers.comp_details import crawl_comp_details
 from .utils.csv_export import units_to_csv
 
 
@@ -29,6 +30,7 @@ Usage:
   python -m metatft_crawler items [OPTIONS]     Crawl items from MetaTFT.com
   python -m metatft_crawler augments [OPTIONS]  Crawl augments from MetaTFT.com
   python -m metatft_crawler traits [OPTIONS]    Crawl traits from MetaTFT.com
+  python -m metatft_crawler comp-details [OPTIONS]  Crawl detailed comp data
   python -m metatft_crawler --help              Show this help message
 
 Options:
@@ -188,6 +190,26 @@ async def run_traits(language: str = "en", output: Optional[str] = None, verbose
     return result
 
 
+async def run_comp_details(language: str = "vi", output: Optional[str] = None, verbose: bool = False, limit: Optional[int] = None):
+    """Run comp details crawler."""
+    if verbose:
+        print(f"[INFO] Starting comp details crawler (language={language}, limit={limit})")
+
+    result = await crawl_comp_details(language=language, limit_comps=limit)
+
+    if output:
+        output_path = Path(output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+        if verbose:
+            print(f"[INFO] Results saved to {output_path}")
+    else:
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+
+    return result
+
+
 def main():
     """Main CLI entry point."""
     if len(sys.argv) < 2:
@@ -258,6 +280,8 @@ def main():
         asyncio.run(run_augments(language=language, output=output, verbose=verbose, limit=limit))
     elif command == 'traits':
         asyncio.run(run_traits(language=language, output=output, verbose=verbose, limit=limit))
+    elif command == 'comp-details':
+        asyncio.run(run_comp_details(language=language, output=output, verbose=verbose, limit=limit))
     else:
         print(f"Error: Unknown command '{command}'")
         print_help()
