@@ -134,13 +134,14 @@ async def _extract_comp_detail(
     """Click on a comp to expand it and extract all detail sections."""
     comp_name = comp['name']
 
-    # Click on the comp to expand it
+    # Scroll comp into view and click to expand it
     clicked = await page.evaluate("""
         (compName) => {
             const elements = document.querySelectorAll('div, span, a');
             for (const el of elements) {
                 const text = el.innerText ? el.innerText.trim() : '';
                 if (text === compName && el.offsetHeight > 0 && el.offsetHeight < 60) {
+                    el.scrollIntoView({ behavior: 'instant', block: 'start' });
                     el.click();
                     return true;
                 }
@@ -153,6 +154,10 @@ async def _extract_comp_detail(
         return comp
 
     await page.wait_for_timeout(2000)
+
+    # Scroll down to trigger lazy loading of augments/leveling sections
+    await page.evaluate("window.scrollBy(0, 600)")
+    await page.wait_for_timeout(1000)
 
     # Extract all detail data
     detail = await page.evaluate("""
@@ -337,6 +342,10 @@ async def _extract_comp_detail(
     units_with_items = await _extract_units_with_items(page, comp_name, positioning)
     detail['units'] = units_with_items
 
+    # Extract per-level comp variations by clicking MUI Tab buttons
+    level_variations = await _extract_level_variations(page, lang_config)
+    detail['level_variations'] = level_variations
+
     # Extract augments from img alt attributes
     augments = await _extract_augments(page, lang_config)
     detail['augments'] = augments
@@ -371,6 +380,120 @@ async def _extract_comp_detail(
     await page.wait_for_timeout(1000)
 
     return detail
+
+
+async def _extract_level_variations(page: Page, lang_config) -> List[Dict]:
+    """Extract comp variations for each level tab (Cấp 7/8/9/10).
+
+    Clicks each MUI Tab button and extracts units with items for that level.
+    """
+    variations = []
+
+    # Get all level tab buttons
+    tabs = await page.evaluate("""
+        () => {
+            const buttons = document.querySelectorAll('button[class*="MuiTab"]');
+            return Array.from(buttons)
+                .filter(b => b.offsetHeight > 0 && b.innerText.trim().startsWith('Cấp'))
+                .map(b => {
+                    const text = b.innerText.trim();
+                    const parts = text.split('\\n');
+                    return {
+                        label: parts[0],
+                        percentage: parts.length > 1 ? parts[1] : null
+                    };
+                });
+        }
+    """)
+
+    for tab in tabs:
+        # Click this level tab
+        await page.evaluate("""
+            (label) => {
+                const buttons = document.querySelectorAll('button[class*="MuiTab"]');
+                for (const btn of buttons) {
+                    if (btn.innerText.trim().startsWith(label) && btn.offsetHeight > 0) {
+                        btn.click(); return;
+                    }
+                }
+            }
+        """, tab['label'])
+        await page.wait_for_timeout(1500)
+
+        # Extract positioning (units) for this level
+        units = await page.evaluate("""
+            () => {
+                const lines = document.body.innerText.split('\\n').map(l => l.trim()).filter(l => l);
+                for (let i = 0; i < lines.length; i++) {
+                    if (lines[i] === 'Bài Trí Đội Hình' || lines[i] === 'Team Positioning') {
+                        const units = [];
+                        for (let j = i + 1; j < Math.min(i + 15, lines.length); j++) {
+                            const line = lines[j];
+                            if (line === 'Nâng Cấp' || line === 'More' || line.startsWith('Lên Cấp') ||
+                                line.length <= 1 || line.match(/^\\d/)) break;
+                            if (line.length > 1 && line.length < 40) units.push(line);
+                        }
+                        return units;
+                    }
+                }
+                return [];
+            }
+        """)
+
+        # Extract items per unit for this level variation
+        units_with_items = await page.evaluate("""
+            (levelUnits) => {
+                const results = [];
+                const seen = new Set();
+                const wrappers = document.querySelectorAll('div[class*="Unit_Wrapper"]');
+
+                for (const wrapper of wrappers) {
+                    const imgs = wrapper.querySelectorAll('img');
+                    const alts = Array.from(imgs).map(i => (i.alt || '').trim()).filter(a => a.length > 1);
+                    const filtered = alts.filter(a =>
+                        !a.includes('Unlockable') && !a.includes('Three Star') &&
+                        a !== 'Teambuilder' && !a.includes('Copy') && !a.includes('Open In'));
+
+                    if (filtered.length >= 2) {
+                        const unitName = filtered[0];
+                        const itemNames = filtered.slice(1);
+                        if (levelUnits.includes(unitName) && !seen.has(unitName) && itemNames.length > 0) {
+                            seen.add(unitName);
+                            results.push({ name: unitName, items: itemNames });
+                        }
+                    }
+                }
+
+                // Add units without items
+                for (const unitName of levelUnits) {
+                    if (!seen.has(unitName)) {
+                        results.push({ name: unitName, items: [] });
+                    }
+                }
+                return results;
+            }
+        """, units)
+
+        variations.append({
+            'level': tab['label'],
+            'percentage': tab['percentage'],
+            'units': units_with_items,
+        })
+
+    # Click back to "Đầu Trận" tab
+    await page.evaluate("""
+        () => {
+            const buttons = document.querySelectorAll('button[class*="MuiTab"]');
+            for (const btn of buttons) {
+                if (btn.innerText.trim().startsWith('Đầu Trận') || btn.innerText.trim().startsWith('Early')) {
+                    btn.click(); return;
+                }
+            }
+        }
+    """)
+    await page.wait_for_timeout(500)
+
+    return variations
 
 
 async def _extract_units_with_items(
