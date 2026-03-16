@@ -385,7 +385,8 @@ async def _extract_comp_detail(
 async def _extract_level_variations(page: Page, lang_config) -> List[Dict]:
     """Extract comp variations for each level tab (Cấp 7/8/9/10).
 
-    Clicks each MUI Tab button and extracts units with items for that level.
+    Each level tab shows multiple comp compositions (rows of unit icons).
+    Units may have a 3-star indicator. No items are shown in level variations.
     """
     variations = []
 
@@ -407,7 +408,6 @@ async def _extract_level_variations(page: Page, lang_config) -> List[Dict]:
     """)
 
     for tab in tabs:
-        # Click this level tab
         await page.evaluate("""
             (label) => {
                 const buttons = document.querySelectorAll('button[class*="MuiTab"]');
@@ -420,64 +420,87 @@ async def _extract_level_variations(page: Page, lang_config) -> List[Dict]:
         """, tab['label'])
         await page.wait_for_timeout(1500)
 
-        # Extract positioning (units) for this level
-        units = await page.evaluate("""
+        # Extract comp variation rows from Unit_Wrapper groups
+        # Group by Y position, skip the main comp row (first row) and other comps below
+        comps = await page.evaluate("""
             () => {
-                const lines = document.body.innerText.split('\\n').map(l => l.trim()).filter(l => l);
-                for (let i = 0; i < lines.length; i++) {
-                    if (lines[i] === 'Bài Trí Đội Hình' || lines[i] === 'Team Positioning') {
-                        const units = [];
-                        for (let j = i + 1; j < Math.min(i + 15, lines.length); j++) {
-                            const line = lines[j];
-                            if (line === 'Nâng Cấp' || line === 'More' || line.startsWith('Lên Cấp') ||
-                                line.length <= 1 || line.match(/^\\d/)) break;
-                            if (line.length > 1 && line.length < 40) units.push(line);
-                        }
-                        return units;
-                    }
-                }
-                return [];
-            }
-        """)
-
-        # Extract items per unit for this level variation
-        units_with_items = await page.evaluate("""
-            (levelUnits) => {
-                const results = [];
-                const seen = new Set();
                 const wrappers = document.querySelectorAll('div[class*="Unit_Wrapper"]');
+                const units = [];
 
                 for (const wrapper of wrappers) {
+                    const rect = wrapper.getBoundingClientRect();
+                    if (rect.height === 0) continue;
+
                     const imgs = wrapper.querySelectorAll('img');
-                    const alts = Array.from(imgs).map(i => (i.alt || '').trim()).filter(a => a.length > 1);
-                    const filtered = alts.filter(a =>
-                        !a.includes('Unlockable') && !a.includes('Three Star') &&
+                    const alts = Array.from(imgs).map(i => (i.alt || '').trim());
+
+                    const unitName = alts.find(a =>
+                        a.length > 1 && !a.includes('Unlockable') &&
+                        !a.includes('Three Star') && !a.includes('Tướng 3 Sao') &&
                         a !== 'Teambuilder' && !a.includes('Copy') && !a.includes('Open In'));
+                    const isThreeStar = alts.some(a =>
+                        a.includes('Three Star') || a.includes('Tướng 3 Sao'));
 
-                    if (filtered.length >= 2) {
-                        const unitName = filtered[0];
-                        const itemNames = filtered.slice(1);
-                        if (levelUnits.includes(unitName) && !seen.has(unitName) && itemNames.length > 0) {
-                            seen.add(unitName);
-                            results.push({ name: unitName, items: itemNames });
-                        }
+                    if (unitName) {
+                        units.push({
+                            name: unitName,
+                            top: Math.round(rect.top),
+                            is_three_star: isThreeStar
+                        });
                     }
                 }
 
-                // Add units without items
-                for (const unitName of levelUnits) {
-                    if (!seen.has(unitName)) {
-                        results.push({ name: unitName, items: [] });
+                // Group by Y position (40px tolerance)
+                const rows = {};
+                for (const u of units) {
+                    const key = Math.round(u.top / 40) * 40;
+                    if (!rows[key]) rows[key] = [];
+                    rows[key].push(u);
+                }
+
+                // Sort rows by Y, skip first row (main comp) and rows that belong to other comps
+                const sortedKeys = Object.keys(rows).map(Number).sort((a, b) => a - b);
+                if (sortedKeys.length < 2) return [];
+
+                const mainRowY = sortedKeys[0];
+                const mainRowSize = rows[mainRowY].length;
+
+                // Find where other comps start (look for "Bài Trí Đội Hình" label position)
+                const posLabel = Array.from(document.querySelectorAll('*')).find(
+                    el => el.innerText && el.innerText.trim() === 'Bài Trí Đội Hình' && el.offsetHeight > 0
+                );
+                const posTop = posLabel ? posLabel.getBoundingClientRect().top : 99999;
+
+                // Variation rows are between main comp row and the next full-page comp
+                // Stop when we see a row with mostly different units (another comp)
+                const mainUnits = new Set(rows[mainRowY].map(u => u.name));
+                const compVariations = [];
+                for (const key of sortedKeys) {
+                    if (key <= mainRowY) continue;  // skip main comp row
+                    const row = rows[key];
+                    // Check if this row shares units with the main comp
+                    const sharedUnits = row.filter(u => mainUnits.has(u.name)).length;
+                    const shareRatio = row.length > 0 ? sharedUnits / row.length : 0;
+                    // If less than 30% shared, this is a different comp - stop
+                    if (shareRatio < 0.3) break;
+                    if (row.length >= 3) {
+                        compVariations.push(
+                            row.map(u => ({
+                                name: u.name,
+                                is_three_star: u.is_three_star
+                            }))
+                        );
                     }
                 }
-                return results;
+
+                return compVariations;
             }
-        """, units)
+        """)
 
         variations.append({
             'level': tab['label'],
             'percentage': tab['percentage'],
-            'units': units_with_items,
+            'comps': comps,
         })
 
     # Click back to "Đầu Trận" tab
@@ -515,19 +538,20 @@ async def _extract_units_with_items(
             for (const wrapper of wrappers) {
                 const imgs = wrapper.querySelectorAll('img');
                 const alts = Array.from(imgs).map(i => (i.alt || '').trim()).filter(a => a.length > 1);
+                const isThreeStar = alts.some(a =>
+                    a.includes('Three Star') || a.includes('Tướng 3 Sao'));
                 const filtered = alts.filter(a =>
                     !a.includes('Unlockable') && !a.includes('Three Star') &&
+                    !a.includes('Tướng 3 Sao') &&
                     a !== 'Teambuilder' && !a.includes('Copy') && !a.includes('Open In'));
 
                 if (filtered.length >= 2) {
-                    // First alt is the unit name, rest are items
                     const unitName = filtered[0];
                     const itemNames = filtered.slice(1);
 
-                    // Only include units that are in this comp's positioning list
                     if (compUnits.includes(unitName) && !seen.has(unitName) && itemNames.length > 0) {
                         seen.add(unitName);
-                        results.push({ name: unitName, items: itemNames });
+                        results.push({ name: unitName, items: itemNames, is_three_star: isThreeStar });
                     }
                 }
             }
@@ -535,7 +559,7 @@ async def _extract_units_with_items(
             // Add units from positioning that had no items
             for (const unitName of compUnits) {
                 if (!seen.has(unitName)) {
-                    results.push({ name: unitName, items: [] });
+                    results.push({ name: unitName, items: [], is_three_star: false });
                 }
             }
 
