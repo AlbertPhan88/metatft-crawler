@@ -622,14 +622,14 @@ async def _extract_carousel_components(page: Page, lang_config) -> List[str]:
 
 
 async def _extract_counters_vods(page: Page, lang_config) -> Dict:
-    """Click the Counters & Vods tab and extract content."""
-    # Click the tab
+    """Click the Counters & Vods tab and extract synergy/counter data."""
+    # Click the tab using anchor (nav-link) inside the LI
     await page.evaluate("""
         (label) => {
-            const allElements = document.querySelectorAll('*');
-            for (const el of allElements) {
+            const links = document.querySelectorAll('a');
+            for (const el of links) {
                 const text = el.innerText ? el.innerText.trim() : '';
-                if (text === label && el.offsetHeight > 0 && el.offsetHeight < 50) {
+                if (text === label && el.offsetHeight > 0) {
                     el.click();
                     return true;
                 }
@@ -639,33 +639,76 @@ async def _extract_counters_vods(page: Page, lang_config) -> Dict:
     """, lang_config.comp_counters_tab)
     await page.wait_for_timeout(1500)
 
-    # Extract counter comp names and VOD links
+    # Extract synergy and counter comps
+    # Structure: "Hiệu Quả Với" (good with) + "Bất Lợi Trước" (weak against)
+    # Each entry: comp name + similarity% + avg place delta
     result = await page.evaluate("""
-        (label) => {
+        () => {
             const lines = document.body.innerText.split('\\n').map(l => l.trim()).filter(l => l);
-            // Find Khắc Chế section
-            let startIdx = -1;
+            const synergies = [];
+            const counters = [];
+
+            let section = null;  // 'synergy' or 'counter'
+
             for (let i = 0; i < lines.length; i++) {
-                if (lines[i].includes(label)) { startIdx = i + 1; break; }
-            }
-            if (startIdx === -1) return { counters: [], vods: [] };
+                const line = lines[i];
 
-            // Extract lines until we hit something else
-            const content = [];
-            for (let i = startIdx; i < Math.min(startIdx + 30, lines.length); i++) {
-                content.push(lines[i]);
+                if (line === 'Hiệu Quả Với' || line === 'Good With') {
+                    section = 'synergy';
+                    continue;
+                }
+                if (line === 'Bất Lợi Trước' || line === 'Weak Against') {
+                    section = 'counter';
+                    continue;
+                }
+
+                if (!section) continue;
+
+                // Stop at VODs section or next major section
+                if (line === 'Phát Sóng Twitch Gần Đây' || line === 'Recent Twitch Streams' ||
+                    line === 'Xem thêm' || line === 'See More' ||
+                    line.includes('Tùy Chọn') || line.includes('Tướng & Trang Bị') ||
+                    line.includes('Tộc/Hệ')) break;
+
+                // Skip labels
+                if (line === 'Độ Tương Đồng' || line === 'Similarity' ||
+                    line === 'Hạng TB' || line === 'Avg Place') continue;
+                // Skip percentages and deltas (they're parsed via lookahead)
+                if (line.endsWith('%') || line.match(/^[+-][0-9.]+$/)) continue;
+                // Skip pure numbers
+                if (line.match(/^[0-9.]+$/)) continue;
+
+                // Remaining lines are comp names
+                if (line.length > 3) {
+                    const entry = { name: line };
+
+                    // Look ahead for similarity% and avg_place delta
+                    for (let j = i + 1; j < Math.min(i + 5, lines.length); j++) {
+                        if (lines[j].endsWith('%') && !entry.similarity) {
+                            entry.similarity = lines[j];
+                        }
+                        if ((lines[j].startsWith('+') || lines[j].startsWith('-')) &&
+                            lines[j].match(/^[+-][0-9.]+$/) && !entry.avg_place_delta) {
+                            entry.avg_place_delta = lines[j];
+                        }
+                    }
+
+                    if (section === 'synergy') synergies.push(entry);
+                    else if (section === 'counter') counters.push(entry);
+                }
             }
-            return { raw_content: content };
+
+            return { synergies, counters };
         }
-    """, lang_config.comp_counters_tab)
+    """)
 
-    # Switch back to the first tab
+    # Switch back to first tab
     await page.evaluate("""
         (label) => {
-            const allElements = document.querySelectorAll('*');
-            for (const el of allElements) {
+            const links = document.querySelectorAll('a');
+            for (const el of links) {
                 const text = el.innerText ? el.innerText.trim() : '';
-                if (text === label && el.offsetHeight > 0 && el.offsetHeight < 50) {
+                if (text === label && el.offsetHeight > 0) {
                     el.click();
                     return true;
                 }
