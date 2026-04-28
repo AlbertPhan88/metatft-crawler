@@ -1,0 +1,2785 @@
+{
+  "timestamp": "2026-04-27T17:17:06.569131",
+  "source": "https://www.metatft.com/units",
+  "total_units_found": 63,
+  "total_units_crawled": 63,
+  "units": [
+    {
+      "name": "Jhin",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Jhin",
+      "cost": 5,
+      "type": "Attack Marksman",
+      "traits": [
+        "Dark Star",
+        "Eradicator",
+        "Sniper"
+      ],
+      "ability": {
+        "name": "Space Opera",
+        "mana": "0/44",
+        "description": "Passive: Jhin has a fixed attack speed of 0.9/0.9/1.4 and converts every 1% of bonus Attack Speed into 0.75 bonus Attack Damage. Active: Summon 4 spectral hands that fire alongside Jhin for the next 4 attacks. Each hand deals 42/63/688 (AD/AP/AD/AP) physical damage per shot. The final shots deal 244% more damage and pierce through the most enemies in a line, dealing 44% reduced damage per target hit. Attacks Per Second: 0.9/0.9/1.4",
+        "unlock_condition": "",
+        "others": "Damage: AP 4/6/44 Damage: 42/63/688 38/57/644 (AD) + 4/6/44 (AP)"
+      },
+      "stats": {
+        "health": "900/1620/2916",
+        "mana": "0/44",
+        "attack_damage": "80/120/180",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.9",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Last Whisper",
+        "Red Buff",
+        "Striker's Flail",
+        "Giant Slayer",
+        "Deathblade"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Last Whisper",
+          "Giant Slayer"
+        ]
+      ]
+    },
+    {
+      "name": "Bard",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Bard",
+      "cost": 5,
+      "type": "Magic Caster",
+      "traits": [
+        "Meeple",
+        "Conduit"
+      ],
+      "ability": {
+        "name": "Ultra Friendly Object",
+        "mana": "0/65",
+        "description": "Summon a flying saucer over the current target that lasts 4 seconds. Each second it deals 220/330/3000 (AP/AP/AP/AP) magic damage to the target, plus 135/205/1500 (AP) magic damage split between all enemies within 1 hex. The saucer deals 30% increased damage to Tanks. If an enemy under the UFO dies, Bard has a 15/20/100% chance to abduct them and create a 1-star copy on your bench. Meep bonus: On combat start, grant the nearest @ModifiedNumAllies@ () Meeple allies an additional Meep. Friends abducted: X Abduction Chance: 15/20/100% Meeps granted: 1 per 1 ()",
+        "unlock_condition": "",
+        "others": "Damage Per Second: 220/330/3000 220/330/3000 Damage Per Second: 135/205/1500 135/205/1500"
+      },
+      "stats": {
+        "health": "900/1620/2916",
+        "mana": "0/65",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.85",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Void Staff",
+        "Adaptive Helm",
+        "Rabadon's Deathcap",
+        "Archangel's Staff",
+        "Morellonomicon"
+      ],
+      "recommended_builds": [
+        [
+          "Giant Slayer",
+          "Spear of Shojin",
+          "Void Staff"
+        ]
+      ]
+    },
+    {
+      "name": "Morgana",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Morgana",
+      "cost": 5,
+      "type": "Magic Fighter",
+      "traits": [
+        "Dark Lady"
+      ],
+      "ability": {
+        "name": "Dark Form",
+        "mana": "20/60",
+        "description": "Passive: Heal for 20% of Ability damage. Active: Transform into Dark Form for 5 seconds, gaining 250/300/4000 (AP) Shield for the duration. While in Dark Form, tether the 3 nearest enemies, dealing 50/75/1500 (AP) magic damage per second to each one. At the end of the transfomation, deal 240/360/4000 (AP) magic damage to all tethered enemies. Delayed Damage: 240/360/4000 (AP)",
+        "unlock_condition": "",
+        "others": "Shield: 250/300/4000 (AP) Damage Per Second: 50/75/1500 (AP)"
+      },
+      "stats": {
+        "health": "1000/1800/3240",
+        "mana": "20/60",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "50",
+        "magic_resist": "50",
+        "attack_speed": "0.9",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "2"
+      },
+      "top_items": [
+        "Crownguard",
+        "Adaptive Helm",
+        "Morellonomicon",
+        "Void Staff",
+        "Rabadon's Deathcap"
+      ],
+      "recommended_builds": [
+        [
+          "Adaptive Helm",
+          "Morellonomicon",
+          "Void Staff"
+        ]
+      ]
+    },
+    {
+      "name": "Nami",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Nami",
+      "cost": 4,
+      "type": "Magic Caster",
+      "traits": [
+        "Space Groove",
+        "Replicator"
+      ],
+      "ability": {
+        "name": "Bubble Pop",
+        "mana": "25/70",
+        "description": "Toss a disco bubble at the target that deals 410/615/5000 (AP) split between enemies in a one hex radius. The explosion sends 3 globs towards nearby enemies that deal 110/165/1000 (AP) magic damage. On cast, Nami enters The Groove for 3 seconds. Bounce Damage: 110/165/1000 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 410/615/5000 (AP)"
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "25/70",
+        "attack_damage": "40/60/90",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Void Staff",
+        "Spear of Shojin",
+        "Giant Slayer",
+        "Morellonomicon",
+        "Adaptive Helm"
+      ],
+      "recommended_builds": [
+        [
+          "Giant Slayer",
+          "Spear of Shojin",
+          "Void Staff"
+        ]
+      ]
+    },
+    {
+      "name": "Sona",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Sona",
+      "cost": 5,
+      "type": "Magic Caster",
+      "traits": [
+        "Commander",
+        "Psionic",
+        "Shepherd"
+      ],
+      "ability": {
+        "name": "Psionic Crush",
+        "mana": "0/25",
+        "description": "Hurl a chunk of magnetic debris at the nearest target without one, dealing 240/360/999 (AP) magic damage and sticking it to them. If an enemy with debris dies, it passes to the nearest enemy without one. Every 5 casts, instead rip off all debris dealing 120/180/999 (AP) magic damage, then crush all the debris onto the target, dealing 620/930/9999 (AP) magic damage and briefly stunning them. Rip Damage: 120/180/999 (AP) Slam Damage: 620/930/9999 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 240/360/999 (AP)"
+      },
+      "stats": {
+        "health": "900/1620/2916",
+        "mana": "0/25",
+        "attack_damage": "35/53/79",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.9",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Adaptive Helm",
+        "Void Staff",
+        "Morellonomicon",
+        "Spear of Shojin",
+        "Blue Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Morellonomicon",
+          "Spear of Shojin",
+          "Void Staff"
+        ]
+      ]
+    },
+    {
+      "name": "Shen",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Shen",
+      "cost": 5,
+      "type": "Magic Fighter",
+      "traits": [
+        "Bulwark",
+        "Bastion"
+      ],
+      "ability": {
+        "name": "Reality Tear",
+        "mana": "10/70",
+        "description": "Passive: On cast, attacks gain 40/60/777 (AP) stacking bonus magic damage. Starting from the third cast, gain true damage instead. Active: Gain 321/473/3767 (AP) Shield for 3 seconds, then slice open a rift on the largest group of champions dealing the Passive's bonus damage to all enemies within. Enemies have their Attack Speed slowed by 50/50/999% while allies within gain 80/80/999% Attack Speed, both rapidly decaying over 3 seconds. Bonus Damage: 40/60/777 (AP)",
+        "unlock_condition": "",
+        "others": "Shield: 321/473/3767 8 % + 225/300/3456"
+      },
+      "stats": {
+        "health": "1200/2160/3888",
+        "mana": "10/70",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "65",
+        "magic_resist": "65",
+        "attack_speed": "0.9",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Crownguard",
+        "Adaptive Helm",
+        "Stargazer Emblem",
+        "Steadfast Heart",
+        "Bramble Vest"
+      ],
+      "recommended_builds": [
+        [
+          "Stargazer Emblem",
+          "Spirit Visage",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Blitzcrank",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Blitzcrank",
+      "cost": 5,
+      "type": "Magic Fighter",
+      "traits": [
+        "Party Animal",
+        "Space Groove",
+        "Vanguard"
+      ],
+      "ability": {
+        "name": "Party Crasher",
+        "mana": "20/100",
+        "description": "Passive: Every 2/2/0.5 seconds, call down a bolt on the highest Health nearby enemy that deals 60/90/150 (AP) magic damage. Active: Summon a disco ball at the largest clump of enemies, then knock up the current target into it, dealing 150/225/999 (AP) magic damage. They crash down into the disco ball, dealing 175/265/5000 (AP) magic damage in a three hex radius. Enter The Groove for 1 second per enemy hit. Bolt Damage: 60/90/150 (AP) Uppercut Damage: 150/225/999 (AP) Explosion Damage: 175/265/5000 (AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "1000/1800/3240",
+        "mana": "20/100",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "50",
+        "magic_resist": "50",
+        "attack_speed": "0.9",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Crownguard",
+        "Rabadon's Deathcap",
+        "Morellonomicon",
+        "Adaptive Helm",
+        "Ionic Spark"
+      ],
+      "recommended_builds": [
+        [
+          "Jeweled Gauntlet",
+          "Striker's Flail",
+          "Hand Of Justice"
+        ]
+      ]
+    },
+    {
+      "name": "Rhaast",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Rhaast",
+      "cost": 3,
+      "type": "Attack Tank",
+      "traits": [
+        "Redeemer"
+      ],
+      "ability": {
+        "name": "Divine Scythe",
+        "mana": "30/90",
+        "description": "Gain 20% Durability for 2 seconds, healing 500/550/650 (AP) over the duration. Afterwards, slash forward in a line, dealing 120/180/300 (AD) physical damage to enemies hit and knocking them up for 1 second.",
+        "unlock_condition": "",
+        "others": "Healing: 500/550/650 (AP) Damage: AD 120/180/300 (AD)"
+      },
+      "stats": {
+        "health": "1200/2160/3888",
+        "mana": "30/90",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "60",
+        "magic_resist": "60",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Steadfast Heart",
+        "Adaptive Helm",
+        "Bramble Vest",
+        "Ionic Spark",
+        "Dragon's Claw"
+      ],
+      "recommended_builds": [
+        [
+          "Protector's Vow",
+          "Steadfast Heart",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Pyke",
+      "tier": "S",
+      "url": "https://www.metatft.com/units/Pyke",
+      "cost": 2,
+      "type": "Attack Assassin",
+      "traits": [
+        "Psionic",
+        "Voyager"
+      ],
+      "ability": {
+        "name": "Marked for Death",
+        "mana": "0/40",
+        "description": "Reposition up to one hex to throw a harpoon at the furthest enemy. The harpoon pulls the first enemy hit one hex forward and deals 60/90/135 (AP) physical damage. Then, teleport behind them and cleave, dealing 210/315/720 (AD) physical damage to them and 120/180/360 (AD) physical damage to nearby enemies. Target Cleave Damage: 210/315/720 (AD) Area Damage: 120/180/360 (AD)",
+        "unlock_condition": "",
+        "others": "Damage: AP 60/90/135 (AP)"
+      },
+      "stats": {
+        "health": "700/1260/2268",
+        "mana": "0/40",
+        "attack_damage": "45/68/101",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Deathblade",
+        "Sterak's Gage",
+        "Edge of Night",
+        "Target-Lock Optics",
+        "Striker's Flail"
+      ],
+      "recommended_builds": [
+        [
+          "Target-Lock Optics",
+          "Edge of Night",
+          "Hand Of Justice"
+        ]
+      ]
+    },
+    {
+      "name": "Viktor",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Viktor",
+      "cost": 3,
+      "type": "Magic Caster",
+      "traits": [
+        "Psionic",
+        "Conduit"
+      ],
+      "ability": {
+        "name": "Psionic Storm",
+        "mana": "20/80",
+        "description": "Channel a one-hex psionic storm that follows enemies for 4 seconds. Each second, it grows larger and deals 220/330/545 (AP) magic damage to enemies within, reduced by 60% per hex from the epicenter.",
+        "unlock_condition": "",
+        "others": "Damage: AP 220/330/545 (AP)"
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "20/80",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "25",
+        "magic_resist": "25",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Drone Uplink",
+        "Rabadon's Deathcap",
+        "Jeweled Gauntlet",
+        "Giant Slayer",
+        "Archangel's Staff"
+      ],
+      "recommended_builds": [
+        [
+          "Drone Uplink",
+          "Jeweled Gauntlet",
+          "Rabadon's Deathcap"
+        ]
+      ]
+    },
+    {
+      "name": "Lissandra",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Lissandra",
+      "cost": 1,
+      "type": "Magic Caster",
+      "traits": [
+        "Dark Star",
+        "Shepherd",
+        "Replicator"
+      ],
+      "ability": {
+        "name": "Dark Matter",
+        "mana": "0/30",
+        "description": "Hurl a shard towards the current target, dealing 250/375/600 (AP) magic damage to the first target it hits. After hitting its initial target or at its final destination, the dagger explodes dealing 50/75/115 (AP) magic damage to nearby targets. Secondary Damage: 50/75/115 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 250/375/600 (AP)"
+      },
+      "stats": {
+        "health": "450/810/1458",
+        "mana": "0/30",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "15",
+        "magic_resist": "15",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Void Staff",
+        "Adaptive Helm",
+        "Morellonomicon",
+        "Rabadon's Deathcap",
+        "Blue Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Morellonomicon",
+          "Spear of Shojin",
+          "Void Staff"
+        ]
+      ]
+    },
+    {
+      "name": "Kindred",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Kindred",
+      "cost": 4,
+      "type": "Attack Marksman",
+      "traits": [
+        "N.O.V.A.",
+        "Challenger"
+      ],
+      "ability": {
+        "name": "Cosmic Pursuit",
+        "mana": "0/40",
+        "description": "Passive: Attacks and Abilities mark the target. When an enemy reaches 3 marks, Wolf consumes the marks, dealing 125/190/1000 (AD/AP/AD/AP/AD/AP/AD) physical damage. Active: Jump up to 1 hex away and fire arrows at the nearest 3/3/5 targets, each dealing 0.6/0.9/6 () physical damage. N.O.V.A. Strike: Gain 5% Damage Amp. Now and every 5 seconds after, add a mark to all enemies. Wolf Damage: 10/15/100 Wolf Damage: 125/190/1000 115/175/900 (AD) + 10/15/100 (AP) Targets: 3/3/5 Arrow Damage: 0.6/0.9/6 ()",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "0/40",
+        "attack_damage": "55/83/124",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Red Buff",
+        "Last Whisper",
+        "Striker's Flail",
+        "Deathblade",
+        "Giant Slayer"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Guinsoo's Rageblade",
+          "Giant Slayer"
+        ]
+      ]
+    },
+    {
+      "name": "Riven",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Riven",
+      "cost": 4,
+      "type": "Hybrid Fighter",
+      "traits": [
+        "Timebreaker",
+        "Rogue"
+      ],
+      "ability": {
+        "name": "Time Warp",
+        "mana": "0/20",
+        "description": "Passive: This Ability adapts to Attack Damage or Ability Power, whichever is higher. Attacks deal 75/115/300 (AP/AD) physical damage. Active: Dash to a nearby hex, gaining 100/150/1200 Shield for 2 seconds and slashing adjacent enemies for 90/135/1000 (AD) physical damage. Every third cast, leap into the air and launch a wave of energy that deals 160/240/2000 (AD) physical damage to enemies in a line. Attack Damage: 75/115/300 (AP/AD) or 75/115/300 (AP/AD) 90/135/1000 (AD) or 90/135/1000 (AD) Wave Damage: 160/240/2000 (AD) or 160/240/2000 (AD)",
+        "unlock_condition": "",
+        "others": "Shield: 100/150/1200 Damage:"
+      },
+      "stats": {
+        "health": "1100/1980/3564",
+        "mana": "0/20",
+        "attack_damage": "0/0/0",
+        "ability_power": "100",
+        "armor": "60",
+        "magic_resist": "60",
+        "attack_speed": "0.85",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Sterak's Gage",
+        "Hand Of Justice",
+        "Giant Slayer",
+        "Quicksilver",
+        "Edge of Night"
+      ],
+      "recommended_builds": [
+        [
+          "Space Groove Emblem",
+          "Bloodthirster",
+          "Sterak's Gage"
+        ]
+      ]
+    },
+    {
+      "name": "Zed",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Zed",
+      "cost": 5,
+      "type": "Attack Fighter",
+      "traits": [
+        "Galaxy Hunter"
+      ],
+      "ability": {
+        "name": "Quantum Clone",
+        "mana": "50/100",
+        "description": "Create a clone behind the target with 33% reduced max Health and 30 increased Mana cost. The clone inherits its creator's items, stats, and current Health, and can cast Quantum Clone.",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "1300/2340/4212",
+        "mana": "50/100",
+        "attack_damage": "85/128/191",
+        "ability_power": "100",
+        "armor": "60",
+        "magic_resist": "60",
+        "attack_speed": "0.85",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Edge of Night",
+        "Adaptive Helm",
+        "Radiant Spear of Shojin",
+        "Radiant Edge of Night"
+      ],
+      "recommended_builds": [
+        [
+          "Meeple Emblem",
+          "Edge of Night",
+          "Spear of Shojin"
+        ]
+      ]
+    },
+    {
+      "name": "Corki",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Corki",
+      "cost": 4,
+      "type": "Attack Caster",
+      "traits": [
+        "Meeple",
+        "Fateweaver"
+      ],
+      "ability": {
+        "name": "Asteroid Blaster",
+        "mana": "0/60",
+        "description": "Strafe to a nearby position, unleashing 21 missiles split between the target and all enemies within two hexes. Missiles deal 33/49/304 (AD/AP/AD/AD/AP/AD/AP/AD) physical damage with a 20% Lucky chance of firing a mega missile that deals 116/172/1064 (AD) instead. Meep Bonus: Every 8 () seconds, launch an Explosive Meep at the target, dealing 120/180/900 (AD) physical damage in a one hex radius on impact. Lucky: Check twice and take the better outcome. Missile Damage: 5/7/24 Missile Damage: 33/49/304 28/42/280 + 5/7/24 Mega Damage: 116/172/1064 350 % of 33/49/304 Meep Cooldown: 8 8 reduced by 10 % per Meep Damage: 120/180/900 (AD)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "0/60",
+        "attack_damage": "45/68/101",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Red Buff",
+        "Stargazer Emblem",
+        "Deathblade",
+        "Striker's Flail",
+        "Giant Slayer"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Striker's Flail",
+          "Spear of Shojin"
+        ]
+      ]
+    },
+    {
+      "name": "Fiora",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Fiora",
+      "cost": 5,
+      "type": "Attack Fighter",
+      "traits": [
+        "Divine Duelist",
+        "Anima",
+        "Marauder"
+      ],
+      "ability": {
+        "name": "Perfect Bladework",
+        "mana": "0/80",
+        "description": "Passive: Every 2 attacks, reveal a Vital on the target. If a Vital exists, dash to attack it dealing 40/60/777 (AD) bonus true damage and heal for 15% of the damage dealt. Active: Reveal 6 Vitals on the target and quickly attack them all. If the target dies, remaining Vitals transfer to the nearest enemy. Upon striking the final Vital, create a two hex aura that heals allies within for 200/250/999 (AP) over 5 seconds. Vital Damage: 40/60/777 (AD) Aura Healing: 200/250/999 (AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "1200/2160/3888",
+        "mana": "0/80",
+        "attack_damage": "80/120/180",
+        "ability_power": "100",
+        "armor": "65",
+        "magic_resist": "65",
+        "attack_speed": "0.9",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Edge of Night",
+        "Sterak's Gage",
+        "Giant Slayer",
+        "Striker's Flail",
+        "Hand Of Justice"
+      ],
+      "recommended_builds": [
+        [
+          "Edge of Night",
+          "Giant Slayer",
+          "Hand Of Justice"
+        ]
+      ]
+    },
+    {
+      "name": "Bel'Veth",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Belveth",
+      "cost": 2,
+      "type": "Attack Fighter",
+      "traits": [
+        "Primordian",
+        "Challenger",
+        "Marauder"
+      ],
+      "ability": {
+        "name": "Tidal Slashes",
+        "mana": "0/50",
+        "description": "Unleash a flurry of 12 () slashes at the current target over 2 seconds, dealing 23/35/52 (AD/AP/AP/AD/AP) physical damage each. + 1 per 25 % bonus",
+        "unlock_condition": "",
+        "others": "Number of Slashes: 12 12 Damage: AP 3/5/7 Damage: 23/35/52 20/30/45 (AD) + 3/5/7 (AP)"
+      },
+      "stats": {
+        "health": "750/1350/2430",
+        "mana": "0/50",
+        "attack_damage": "47/71/106",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "2"
+      },
+      "top_items": [
+        "Giant Slayer",
+        "Kraken's Fury",
+        "Evelynn's Instinct",
+        "Quicksilver",
+        "Deathblade"
+      ],
+      "recommended_builds": [
+        [
+          "Radiant Giant Slayer",
+          "Quicksilver",
+          "Kraken's Fury"
+        ]
+      ]
+    },
+    {
+      "name": "Caitlyn",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Caitlyn",
+      "cost": 1,
+      "type": "Attack Specialist",
+      "traits": [
+        "N.O.V.A.",
+        "Fateweaver"
+      ],
+      "ability": {
+        "name": "Aim For The Head",
+        "mana": "0/0",
+        "description": "Passive: Attacks have a 15% Lucky chance to fire an empowered Headshot, dealing 190/285/555 (AD/AP/AD/AP/AP/AD/AP/AD/AP) physical damage. N.O.V.A. Strike: Mark all enemies, increasing damage taken by 10%. The first time marked targets drop below 50% Health, Headshot them for 76/114/222 (AD/AP) physical damage. Lucky: Check twice and take the better outcome. Headshot Damage: 20/30/45 Headshot Damage: 190/285/555 170/255/510 + 20/30/45 N.O.V.A. Damage: 76/114/222 40 % of 190/285/555 (AD/AP/AD/AP/AP/AD/AP/AD/AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "500/900/1620",
+        "mana": "0/0",
+        "attack_damage": "65/98/146",
+        "ability_power": "100",
+        "armor": "15",
+        "magic_resist": "15",
+        "attack_speed": "0.55",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Deathblade",
+        "Red Buff",
+        "Striker's Flail",
+        "Giant Slayer",
+        "Guinsoo's Rageblade"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Guinsoo's Rageblade",
+          "Giant Slayer"
+        ]
+      ]
+    },
+    {
+      "name": "Teemo",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Teemo",
+      "cost": 1,
+      "type": "Magic Marksman",
+      "traits": [
+        "Space Groove",
+        "Shepherd"
+      ],
+      "ability": {
+        "name": "Double Time",
+        "mana": "0/50",
+        "description": "Passive: Attacks deal 30/45/100 (AP) bonus magic damage and an additional 70/105/190 (AP) stacking magic damage over 6 seconds. While an enemy has 5 or more stacks, Teemo is in The Groove. Active: Gain 150% Attack Speed for 3 attacks. Bonus Damage: 30/45/100 (AP) Poison Damage: 70/105/190 (AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "450/810/1458",
+        "mana": "0/50",
+        "attack_damage": "15/23/34",
+        "ability_power": "100",
+        "armor": "15",
+        "magic_resist": "15",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Giant Slayer",
+        "Rabadon's Deathcap",
+        "Guinsoo's Rageblade",
+        "Hextech Gunblade",
+        "Archangel's Staff"
+      ],
+      "recommended_builds": [
+        [
+          "Guinsoo's Rageblade",
+          "Giant Slayer",
+          "Rabadon's Deathcap"
+        ]
+      ]
+    },
+    {
+      "name": "Rek'Sai",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/RekSai",
+      "cost": 1,
+      "type": "Magic Tank",
+      "traits": [
+        "Primordian",
+        "Brawler"
+      ],
+      "ability": {
+        "name": "Upheaval",
+        "mana": "40/100",
+        "description": "Heal 246/302/407 (AP/AP/AP/AP), then briefly knock up adjacent enemies and deal 80/120/180 (AP) magic damage.",
+        "unlock_condition": "",
+        "others": "Damage: AP 80/120/180 (AP) Heal: 246/302/407 7 % + 200/220/260 (AP)"
+      },
+      "stats": {
+        "health": "700/1260/2268",
+        "mana": "40/100",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Evenshroud",
+        "Steadfast Heart",
+        "Protector's Vow",
+        "Dragon's Claw",
+        "Bramble Vest"
+      ],
+      "recommended_builds": [
+        [
+          "Protector's Vow",
+          "Sunfire Cape",
+          "Evenshroud"
+        ]
+      ]
+    },
+    {
+      "name": "Akali",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Akali",
+      "cost": 2,
+      "type": "Attack Fighter",
+      "traits": [
+        "N.O.V.A.",
+        "Marauder"
+      ],
+      "ability": {
+        "name": "Star Strike",
+        "mana": "0/30",
+        "description": "Reposition next to the target to strike the most enemies. Then throw 5 piercing kunai, each dealing 38/56/89 (AD/AD/AD/AP/AD/AD/AP/AD/AD) physical damage to the first enemy hit, reduced to 15/22/36 (AD) for each subsequent target. Kunai remove 1 Armor, 2 if they crit. N.O.V.A. Strike: Slice all enemies, applying Wound and a bleed that deals 10/14/18 (AD) physical damage each second. Kunai increase the damage of the bleed by 10%. Secondary Damage: 15/22/36 40 % of 38/56/89 (AD/AD/AD/AP/AD/AD/AP/AD/AD) N.O.V.A. Damage: 10/14/18 (AD)",
+        "unlock_condition": "",
+        "others": "Damage: AP 4/6/9 Damage: 38/56/89 (AD/AD/AD/AP/AD/AD/AP/AD/AD) 34/50/80 + 4/6/9"
+      },
+      "stats": {
+        "health": "750/1350/2430",
+        "mana": "0/30",
+        "attack_damage": "45/68/101",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Edge of Night",
+        "Striker's Flail",
+        "Hand Of Justice",
+        "Giant Slayer",
+        "Sterak's Gage"
+      ],
+      "recommended_builds": [
+        [
+          "Edge of Night",
+          "Giant Slayer",
+          "Hand Of Justice"
+        ]
+      ]
+    },
+    {
+      "name": "Mordekaiser",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Mordekaiser",
+      "cost": 2,
+      "type": "Magic Tank",
+      "traits": [
+        "Dark Star",
+        "Conduit",
+        "Vanguard"
+      ],
+      "ability": {
+        "name": "Indestructible",
+        "mana": "40/100",
+        "description": "Gain 300/375/500 (AP) Shield. Each second for the next 4 seconds, gain 75/90/105 (AP) more Shield and deal 45/70/100 (AP) magic damage to adjacent enemies. When this ability ends, consume the remaining Shield and heal for 40% of its value. Initial Shield: 300/375/500 (AP) Channel Shield: 75/90/105 (AP) Channel Damage: 45/70/100 (AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "950/1710/3078",
+        "mana": "40/100",
+        "attack_damage": "40/60/90",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Crownguard",
+        "Steadfast Heart",
+        "Ionic Spark",
+        "Bramble Vest",
+        "Adaptive Helm"
+      ],
+      "recommended_builds": [
+        [
+          "Gargoyle Stoneplate",
+          "Ionic Spark",
+          "Sunfire Cape"
+        ]
+      ]
+    },
+    {
+      "name": "Kai'Sa",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Kaisa",
+      "cost": 3,
+      "type": "Attack Caster",
+      "traits": [
+        "Dark Star",
+        "Rogue"
+      ],
+      "ability": {
+        "name": "Bullet Cluster",
+        "mana": "0/50",
+        "description": "Passive: On takedown, gain 10 mana. Active: Fire 16 missiles in a 2-hex radius around the current target, dealing 35/53/84 (AD/AD/AP) physical damage each.",
+        "unlock_condition": "",
+        "others": "Damage: 35/53/84 32/48/77 (AD) + 3/5/7 (AP)"
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "0/50",
+        "attack_damage": "45/68/101",
+        "ability_power": "100",
+        "armor": "25",
+        "magic_resist": "25",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Giant Slayer",
+        "Striker's Flail",
+        "Deathblade",
+        "Infinity Edge",
+        "Blue Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Infinity Edge",
+          "Striker's Flail"
+        ]
+      ]
+    },
+    {
+      "name": "Meepsie",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/IvernMinion",
+      "cost": 2,
+      "type": "Magic Tank",
+      "traits": [
+        "Meeple",
+        "Shepherd",
+        "Voyager"
+      ],
+      "ability": {
+        "name": "Meep Impact",
+        "mana": "50/100",
+        "description": "Heal 456/567/846 (AP/AP/AP/AP) Health over 3 seconds. Slam the target, dealing 160/240/360 (AP) magic damage and knocking up for 1.5/1.75/2 seconds. The impact creates meepwaves that deal 50% of these effects in the target's row. Meep Bonus: Meeps water Meepsie's flower, increasing all incoming Healing and Shielding by 12% (). Stun Duration 1.5/1.75/2 % x",
+        "unlock_condition": "",
+        "others": "Healing: 456/567/846 8 % + 380/430/600 Damage: AP 160/240/360 (AP) Healing and Shielding: 12% 12"
+      },
+      "stats": {
+        "health": "950/1710/3078",
+        "mana": "50/100",
+        "attack_damage": "65/98/146",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.55",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Edge of Night",
+        "Jeweled Gauntlet",
+        "Hand Of Justice",
+        "Protector's Vow",
+        "Steadfast Heart"
+      ],
+      "recommended_builds": [
+        [
+          "Radiant Hand of Justice",
+          "Edge of Night",
+          "Jeweled Gauntlet"
+        ]
+      ]
+    },
+    {
+      "name": "Vex",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Vex",
+      "cost": 5,
+      "type": "Magic Marksman",
+      "traits": [
+        "Doomer"
+      ],
+      "ability": {
+        "name": "Lend Me a Hand, Shadow!",
+        "mana": "0/60",
+        "description": "Passive: Every time Vex attacks, Shadow strikes a nearby enemy, dealing 30/45/250 (AP) magic damage. Whenever an enemy is struck 5 times by Shadow, Shadow strikes them again. Active: Shadow launches 3 empowered strikes, dealing 140/210/1000 (AP) magic damage instead. Strike Damage: 30/45/250 (AP) Empowered Strike Damage: 140/210/1000 (AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "900/1620/2916",
+        "mana": "0/60",
+        "attack_damage": "15/23/34",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "10"
+      },
+      "top_items": [
+        "Guinsoo's Rageblade",
+        "Rabadon's Deathcap",
+        "Giant Slayer",
+        "Striker's Flail",
+        "Hextech Gunblade"
+      ],
+      "recommended_builds": [
+        [
+          "Guinsoo's Rageblade",
+          "Jeweled Gauntlet",
+          "Striker's Flail"
+        ]
+      ]
+    },
+    {
+      "name": "Samira",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Samira",
+      "cost": 3,
+      "type": "Attack Caster",
+      "traits": [
+        "Space Groove",
+        "Sniper"
+      ],
+      "ability": {
+        "name": "Jump and Jive",
+        "mana": "0/60",
+        "description": "Passive: Whenever an enemy is knocked up, shoot them, dealing 65/95/155 (AD/AP/AD/AP/AD/AP/AD) physical damage and entering The Groove for 3 seconds. Active: Unleash a volley of bullets at the target, dealing 380/570/915 (AD) physical damage and knocking up for 1.25 seconds. Passive Damage: 10/15/25 Passive Damage: 65/95/155 55/80/130 (AD) + 10/15/25 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AD 380/570/915 (AD)"
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "0/60",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "25",
+        "magic_resist": "25",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Spear of Shojin",
+        "Deathblade",
+        "Giant Slayer",
+        "Infinity Edge",
+        "Blue Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Infinity Edge",
+          "Spear of Shojin"
+        ]
+      ]
+    },
+    {
+      "name": "Milio",
+      "tier": "A",
+      "url": "https://www.metatft.com/units/Milio",
+      "cost": 2,
+      "type": "Magic Caster",
+      "traits": [
+        "Timebreaker",
+        "Fateweaver"
+      ],
+      "ability": {
+        "name": "Mega Time Kick",
+        "mana": "0/30",
+        "description": "Kick a ball at the current target that deals 230/345/520 (AP) magic damage. On impact, the ball has a 100% Luckychance to bounce to a new target dealing 75/115/175 (AP) magic damage. These bounces can trigger additional bounces, but the odds halve with each bounce. Lucky: Check twice and take the better outcome. Bounce Damage: 75/115/175 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 230/345/520 (AP)"
+      },
+      "stats": {
+        "health": "550/990/1782",
+        "mana": "0/30",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "20",
+        "magic_resist": "20",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Morellonomicon",
+        "Adaptive Helm",
+        "Void Staff",
+        "Spear of Shojin",
+        "Rabadon's Deathcap"
+      ],
+      "recommended_builds": [
+        [
+          "Rabadon's Deathcap",
+          "Spear of Shojin",
+          "Void Staff"
+        ]
+      ]
+    },
+    {
+      "name": "Karma",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Karma",
+      "cost": 4,
+      "type": "Magic Caster",
+      "traits": [
+        "Dark Star",
+        "Voyager"
+      ],
+      "ability": {
+        "name": "Singularity",
+        "mana": "10/55",
+        "description": "Gather the force of a black hole, dealing 570/855/5000 (AP) magic damage split between the target and the 2/2/4 closest enemies to them. The target takes an additional 120/180/1000 (AP) magic damage. Targets: 2/2/4 Additional Damage: 120/180/1000 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 570/855/5000 (AP)"
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "10/55",
+        "attack_damage": "40/60/90",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Adaptive Helm",
+        "Void Staff",
+        "Morellonomicon",
+        "Red Buff",
+        "Blue Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Morellonomicon",
+          "Spear of Shojin",
+          "Void Staff"
+        ]
+      ]
+    },
+    {
+      "name": "The Mighty Mech",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Galio",
+      "cost": 4,
+      "type": "Attack Tank",
+      "traits": [
+        "Mecha",
+        "Voyager"
+      ],
+      "ability": {
+        "name": "Gravity Matrix",
+        "mana": "40/100",
+        "description": "Enter a defensive stance for 4 seconds gaining 20/20/90% Durability. While in the defensive stance, attract nearby enemy projectiles and heal 850/1200/3000 (AP) over the duration. When this ends, release a shockwave that deals 96/144/3600 () as physical damage in a 2-hex range.",
+        "unlock_condition": "",
+        "others": "Heal: 850/1200/3000 (AP) Damage: 96/144/3600 80/120/3000 % + 80/120/3000 %"
+      },
+      "stats": {
+        "health": "1300/2340/4212",
+        "mana": "40/100",
+        "attack_damage": "70/105/158",
+        "ability_power": "100",
+        "armor": "60",
+        "magic_resist": "60",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Steadfast Heart",
+        "Bramble Vest",
+        "Protector's Vow",
+        "Evenshroud",
+        "Crownguard"
+      ],
+      "recommended_builds": [
+        [
+          "Lioness's Lament",
+          "Gargoyle Stoneplate",
+          "Sterak's Gage"
+        ]
+      ]
+    },
+    {
+      "name": "Gwen",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Gwen",
+      "cost": 2,
+      "type": "Magic Assassin",
+      "traits": [
+        "Space Groove",
+        "Rogue"
+      ],
+      "ability": {
+        "name": "Dance n' Dice",
+        "mana": "0/30",
+        "description": "Passive: Attacks deal magic damage. Gwen is in The Groove while targeting an enemy below 40% Health. Active: Dash to a nearby hex to snip the lowest percent Health enemy, dealing 145/220/380 (AP) magic damage to the target and 75/110/190 (AP) magic damage to enemies in a cone. If this kills, dash and snip again at 65% damage! Area Damage: 75/110/190 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 145/220/380 (AP)"
+      },
+      "stats": {
+        "health": "750/1350/2430",
+        "mana": "0/30",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.85",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "2"
+      },
+      "top_items": [
+        "Hextech Gunblade",
+        "Giant Slayer",
+        "Edge of Night",
+        "Hand Of Justice",
+        "Rabadon's Deathcap"
+      ],
+      "recommended_builds": [
+        [
+          "Jeweled Gauntlet",
+          "Giant Slayer",
+          "Hand Of Justice"
+        ]
+      ]
+    },
+    {
+      "name": "Aatrox",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Aatrox",
+      "cost": 1,
+      "type": "Attack Tank",
+      "traits": [
+        "N.O.V.A.",
+        "Bastion"
+      ],
+      "ability": {
+        "name": "Stellar Combo",
+        "mana": "30/90",
+        "description": "Rotate between three abilities: Strike: Deal 140/210/315 (AD) physical damage. Sweep: Deal 100/150/225 (AD) physical damage in a cone and remove 10 () Armor. Slam: Deal 160/240/360 (AD) in a one-hex radius around the target and briefly knock enemies up. If this only hits one enemy, deal 250% damage. N.O.V.A. Strike: Cleave the battlefield, briefly knocking up all enemies and dealing 120/180/270 (AD) physical damage. Strike Damage: 140/210/315 (AD) Sweep Damage: 100/150/225 (AD) Armor Shred: 10 () Slam Damage: 160/240/360 (AD) N.O.V.A. Damage: 120/180/270 (AD)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "700/1260/2268",
+        "mana": "30/90",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Stargazer Emblem",
+        "Steadfast Heart",
+        "Bramble Vest",
+        "Adaptive Helm",
+        "Protector's Vow"
+      ],
+      "recommended_builds": [
+        [
+          "Protector's Vow",
+          "Steadfast Heart",
+          "Sunfire Cape"
+        ]
+      ]
+    },
+    {
+      "name": "Zoe",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Zoe",
+      "cost": 2,
+      "type": "Magic Caster",
+      "traits": [
+        "Arbiter",
+        "Conduit"
+      ],
+      "ability": {
+        "name": "Paddle Star",
+        "mana": "0/50",
+        "description": "Fire a paddle star at the current target, dealing 68/102/153 (AP) magic damage to the first target hit and 34/51/77 (AP) to others it passes through. When the missile reaches its destination, redirect it to a distant enemy, increasing its speed and repeating the damage. This redirect can occur 4 times. Secondary Damage: 34/51/77 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 68/102/153 (AP)"
+      },
+      "stats": {
+        "health": "550/990/1782",
+        "mana": "0/50",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "20",
+        "magic_resist": "20",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Void Staff",
+        "Morellonomicon",
+        "Striker's Flail",
+        "Rabadon's Deathcap",
+        "Red Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Ekko's Patience",
+          "Jeweled Gauntlet",
+          "Striker's Flail"
+        ]
+      ]
+    },
+    {
+      "name": "Talon",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Talon",
+      "cost": 1,
+      "type": "Attack Assassin",
+      "traits": [
+        "Stargazer - The Boar",
+        "Rogue"
+      ],
+      "ability": {
+        "name": "Diviner's Judgment",
+        "mana": "0/30",
+        "description": "Stab the target, causing them to bleed for 520/780/1225 (AD/AP/AP/AD/AP) physical damage over 18 seconds. After the attack, leap to the highest percent Health enemy within 3 hexes.",
+        "unlock_condition": "",
+        "others": "Damage: AP 60/90/135 Damage: 520/780/1225 460/690/1090 (AD) + 60/90/135 (AP)"
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "0/30",
+        "attack_damage": "35/53/79",
+        "ability_power": "100",
+        "armor": "35",
+        "magic_resist": "35",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Edge of Night",
+        "Spear of Shojin",
+        "Hextech Gunblade",
+        "Sterak's Gage",
+        "Deathblade"
+      ],
+      "recommended_builds": [
+        [
+          "Edge of Night",
+          "Hextech Gunblade",
+          "Spear of Shojin"
+        ]
+      ]
+    },
+    {
+      "name": "Maokai",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Maokai",
+      "cost": 3,
+      "type": "Magic Tank",
+      "traits": [
+        "N.O.V.A.",
+        "Brawler"
+      ],
+      "ability": {
+        "name": "Grasp of Convergence",
+        "mana": "30/100",
+        "description": "Passive: Gain 45% more max Health from all sources. Active: Converge an X-shape of vines on the target, dealing 100/150/225 (AP) magic damage to each enemy hit and Stunning them for 1.5/1.5/1.75 seconds. N.O.V.A. Strike: Send forth a wave of dragons that stun all enemies for 1.5/1.5/1.75 seconds. For the rest of combat, Maokai's attacks deal 88/158/285 () bonus physical damage. Stun Duration: 1.5/1.5/1.75 N.O.V.A. Stun Duration: 1.5/1.5/1.75 N.O.V.A. Damage: 88/158/285 8 % ( )",
+        "unlock_condition": "",
+        "others": "Damage: AP 100/150/225 (AP)"
+      },
+      "stats": {
+        "health": "1100/1980/3564",
+        "mana": "30/100",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Steadfast Heart",
+        "Evenshroud",
+        "Warmog's Armor",
+        "Bramble Vest",
+        "Protector's Vow"
+      ],
+      "recommended_builds": [
+        [
+          "Protector's Vow",
+          "Evenshroud",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Xayah",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Xayah",
+      "cost": 4,
+      "type": "Attack Marksman",
+      "traits": [
+        "Stargazer - The Boar",
+        "Sniper"
+      ],
+      "ability": {
+        "name": "Stellar Ricochet",
+        "mana": "0/50",
+        "description": "Passive: Attacks bounce to strike 3/3/5 times, dealing 60/60/30% reduced damage per target hit and leaving a Feather behind the final target. Active: Gain 75% Attack Speed for 4 seconds. At the end, recall all Feathers split between the closest 3 enemies, dealing 54/81/960 (AD) physical damage each. Strikes: 3/3/5",
+        "unlock_condition": "",
+        "others": "Damage Reduction: 60/60/30% Damage: AP 6/9/60 Damage: 54/81/960 48/72/900 (AD) + 6/9/60 (AP)"
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "0/50",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Battle Bunny Crossbow",
+        "Red Buff",
+        "Guinsoo's Rageblade",
+        "Infinity Edge",
+        "Last Whisper"
+      ],
+      "recommended_builds": [
+        [
+          "Battle Bunny Crossbow",
+          "Guinsoo's Rageblade",
+          "Infinity Edge"
+        ]
+      ]
+    },
+    {
+      "name": "Jax",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Jax",
+      "cost": 2,
+      "type": "Magic Tank",
+      "traits": [
+        "Stargazer - The Boar",
+        "Bastion"
+      ],
+      "ability": {
+        "name": "Counter Star-ike",
+        "mana": "20/80",
+        "description": "Enter a defensive stance for 3 seconds, reducing incoming damage by 15/25/35 (AP) and gaining 400/500/675 (AP) Shield. When the stance ends, strike all nearby enemies, dealing 68/104/154 () magic damage and Stunning them for 1/1.25/1.5 second(s). Flat Damage Reduction: 15/25/35 (AP) Stun Duration: 1/1.25/1.5",
+        "unlock_condition": "",
+        "others": "Shield: 400/500/675 (AP) Damage: 68/104/154 75/115/170% () + 75/115/170% ()"
+      },
+      "stats": {
+        "health": "950/1710/3078",
+        "mana": "20/80",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Gargoyle Stoneplate",
+        "Crownguard",
+        "Protector's Vow",
+        "Bramble Vest"
+      ],
+      "recommended_builds": [
+        [
+          "Crownguard",
+          "Gargoyle Stoneplate",
+          "Gargoyle Stoneplate"
+        ]
+      ]
+    },
+    {
+      "name": "Nunu & Willump",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Nunu",
+      "cost": 4,
+      "type": "Magic Tank",
+      "traits": [
+        "Stargazer - The Boar",
+        "Vanguard"
+      ],
+      "ability": {
+        "name": "Calamity",
+        "mana": "40/145",
+        "description": "Gain 475/575/2000 (AP) Shield for 4 seconds. Summon an astrolabe to crash down on a nearby hex, dealing 120/180/2000 (AP) magic damage to enemies within 2 hexes. Then, push the astrolabe towards the end of the board, dealing 100/150/2000 (AP) magic damage. All enemies hit by the astrolabe are knocked up for 1.75/2/8 seconds. Stun Duration: 1.75/2/8 Initial Damage: 120/180/2000 (AP) Collision Damage: 100/150/2000 (AP)",
+        "unlock_condition": "",
+        "others": "Shield Amount: 475/575/2000 (AP)"
+      },
+      "stats": {
+        "health": "1300/2340/4212",
+        "mana": "40/145",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "60",
+        "magic_resist": "60",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Protector's Vow",
+        "Adaptive Helm",
+        "Crownguard",
+        "Bramble Vest"
+      ],
+      "recommended_builds": [
+        [
+          "Adaptive Helm",
+          "Protector's Vow",
+          "Protector's Vow"
+        ]
+      ]
+    },
+    {
+      "name": "Illaoi",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Illaoi",
+      "cost": 3,
+      "type": "Magic Tank",
+      "traits": [
+        "Anima",
+        "Vanguard",
+        "Shepherd"
+      ],
+      "ability": {
+        "name": "Test of Spirit",
+        "mana": "40/100",
+        "description": "Gain 450/525/650 (AP/AP/AP/AP/AP) Shield for 3 seconds. Over the duration, drain 55/85/130 (AP) Health from the nearest 3 enemies. Then slam down, dealing 80/120/180 (AP) magic damage to all enemies within 2 hexes.",
+        "unlock_condition": "",
+        "others": "Shield: 450/525/650 Health Drain: 55/85/130 (AP) Damage: AP 80/120/180 (AP)"
+      },
+      "stats": {
+        "health": "1100/1980/3564",
+        "mana": "40/100",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "50",
+        "magic_resist": "50",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Crownguard",
+        "Bramble Vest",
+        "Ionic Spark",
+        "Steadfast Heart",
+        "Warmog's Armor"
+      ],
+      "recommended_builds": [
+        [
+          "Crownguard",
+          "Gargoyle Stoneplate",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Twisted Fate",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/TwistedFate",
+      "cost": 1,
+      "type": "Magic Caster",
+      "traits": [
+        "Stargazer - The Boar",
+        "Fateweaver"
+      ],
+      "ability": {
+        "name": "Fate's Gambit",
+        "mana": "0/50",
+        "description": "Draw a card with a value between 1 and 9 by Lucky chance, then throw it at the target. Based on the card drawn, deal between 190/285/430 (AP) and 380/570/860 (AP) magic damage. Overkill damage bounces to the nearest enemy. 3-Star Bonus: If a 9 is thrown, generate 1 gold. Lucky: Check twice and take the better outcome. Min Damage: 190/285/430 (AP) Max Damage: 380/570/860 (AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "500/900/1620",
+        "mana": "0/50",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "15",
+        "magic_resist": "15",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Nashor's Tooth",
+        "Rabadon's Deathcap",
+        "Spear of Shojin",
+        "Striker's Flail"
+      ],
+      "recommended_builds": [
+        [
+          "Nashor's Tooth",
+          "Nashor's Tooth",
+          "Rabadon's Deathcap"
+        ]
+      ]
+    },
+    {
+      "name": "Rammus",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Rammus",
+      "cost": 4,
+      "type": "Magic Tank",
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
+      "ability": {
+        "name": "Gravitational Spin",
+        "mana": "20/90",
+        "description": "Gain 675/825/2000 (AP) shield for 4 seconds. Then, strike enemies in a three hex line, dealing 80/120/1360 (AP) magic damage. Meep Bonus: Reduce the damage of incoming attacks by 4 (). After being attacked 20 times, deal 12/18/300 () magic damage in a two hex radius. per Proc Damage: 12/18/300 20/30/500% per",
+        "unlock_condition": "",
+        "others": "Shield: 675/825/2000 (AP) Damage: AP 50/75/700 Damage: 80/120/1360 50/75/700 + 50/75/1100% Damage Reduction: 4 4"
+      },
+      "stats": {
+        "health": "1300/2340/4212",
+        "mana": "20/90",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "60",
+        "magic_resist": "60",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Bramble Vest",
+        "Crownguard",
+        "Steadfast Heart",
+        "Dragon's Claw",
+        "Warmog's Armor"
+      ],
+      "recommended_builds": [
+        [
+          "Bramble Vest",
+          "Gargoyle Stoneplate",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Gnar",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Gnar",
+      "cost": 2,
+      "type": "Attack Specialist",
+      "traits": [
+        "Meeple",
+        "Sniper"
+      ],
+      "ability": {
+        "name": "Slingshot Maneuver",
+        "mana": "0/5",
+        "description": "Passive: Every 5th attack, launch a returning boomerang at the target that travels two hexes past the first enemy it hits. It deals 245/370/570 (AD/AP/AD/AP/AD/AP/AD) physical damage, reduced by 75% per hit. Meep Bonus: 1 () Meeps attack alongside Gnar, dealing 13/20/29 (AD) physical damage per second. Meeps: 1 1 per Meep Damage: 13/20/29 23 % of 45 x 40 % Bonus",
+        "unlock_condition": "",
+        "others": "Damage: AP 20/30/45 Damage: 245/370/570 225/340/525 + 20/30/45"
+      },
+      "stats": {
+        "health": "550/990/1782",
+        "mana": "0/5",
+        "attack_damage": "45/68/101",
+        "ability_power": "100",
+        "armor": "20",
+        "magic_resist": "20",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Guinsoo's Rageblade",
+        "Kraken's Fury",
+        "Red Buff",
+        "Stargazer Emblem",
+        "Last Whisper"
+      ],
+      "recommended_builds": [
+        [
+          "Guinsoo's Rageblade",
+          "Giant Slayer",
+          "Kraken's Fury"
+        ]
+      ]
+    },
+    {
+      "name": "Urgot",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Urgot",
+      "cost": 3,
+      "type": "Attack Fighter",
+      "traits": [
+        "Mecha",
+        "Brawler",
+        "Marauder"
+      ],
+      "ability": {
+        "name": "Unstoppable Dreadnought",
+        "mana": "0/50",
+        "description": "Passive - Proximity Blast: Whenever an enemy enters a 2 () hex radius, fire a blast in a cone towards the closest adjacent hex that deals 85/125/200 (AD) physical damage with 30% falloff per hex. Each adjacent hex has a 5 second cooldown, and starts combat on cooldown. Active: Gain 150/175/200 (AP) Shield for 3 seconds and reposition up to one hex to maximize the number of targets within Proximity Blast's radius. Reset Proximity Blast's cooldowns. Shotgun Damage: 85/125/200 (AD)",
+        "unlock_condition": "",
+        "others": "Shield: 150/175/200 (AP)"
+      },
+      "stats": {
+        "health": "600/1080/1944",
+        "mana": "0/50",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "2"
+      },
+      "top_items": [
+        "Quicksilver",
+        "Radiant Giant Slayer",
+        "Giant Slayer",
+        "Prowler's Claw",
+        "Infinity Edge"
+      ],
+      "recommended_builds": [
+        [
+          "Radiant Giant Slayer",
+          "Infinity Edge",
+          "Quicksilver"
+        ]
+      ]
+    },
+    {
+      "name": "Nasus",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Nasus",
+      "cost": 1,
+      "type": "Magic Tank",
+      "traits": [
+        "Space Groove",
+        "Vanguard"
+      ],
+      "ability": {
+        "name": "Groovin' Susan",
+        "mana": "60/120",
+        "description": "Transform for 6 seconds, temporarily gaining 250/350/550 max Health, entering The Groove, and dealing 44/70/115 (AP) magic damage to adjacent enemies each second. Bonus Health 250/350/550 2% max + 30/45/70",
+        "unlock_condition": "",
+        "others": "Damage: AP 44/70/115"
+      },
+      "stats": {
+        "health": "700/1260/2268",
+        "mana": "60/120",
+        "attack_damage": "40/60/90",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Ionic Spark",
+        "Bramble Vest",
+        "Steadfast Heart",
+        "Warmog's Armor",
+        "Sunfire Cape"
+      ],
+      "recommended_builds": [
+        [
+          "Ionic Spark",
+          "Sunfire Cape",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Ornn",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Ornn",
+      "cost": 3,
+      "type": "Magic Tank",
+      "traits": [
+        "Space Groove",
+        "Bastion"
+      ],
+      "ability": {
+        "name": "Disco Inferno",
+        "mana": "40/100",
+        "description": "Passive: On combat start, forge a temporary completed item. If 3 items are already equipped, a random completed item becomes Radiant this combat instead. Active: Gain 100/150/500 (AP) Shield for 3 seconds, then breath fire in a cone dealing 180/270/430 (AP) magic damage. After any Shield on Ornn expires, Ornn enters The Groove for 3 seconds.",
+        "unlock_condition": "",
+        "others": "Shield: 100/150/500 (AP) Damage: AP 180/270/430 (AP)"
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "40/100",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Warmog's Armor",
+        "Steadfast Heart",
+        "Bramble Vest",
+        "Dragon's Claw",
+        "Crownguard"
+      ],
+      "recommended_builds": [
+        [
+          "Dragon's Claw",
+          "Gargoyle Stoneplate",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Aurelion Sol",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/AurelionSol",
+      "cost": 4,
+      "type": "Magic Caster",
+      "traits": [
+        "Mecha",
+        "Conduit"
+      ],
+      "ability": {
+        "name": "Deathbeam",
+        "mana": "15/75",
+        "description": "Channel a deathbeam in a line towards the current target for 3 seconds. It deals 185/280/2700 (AP) magic damage per second, reduced by 60% per enemy it passes through. Deathbeam ignores 30% of the enemy's Magic Resist.",
+        "unlock_condition": "",
+        "others": "Damage: AP 185/280/2700 (AP)"
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "15/75",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Rabadon's Deathcap",
+        "Striker's Flail",
+        "Jeweled Gauntlet",
+        "Ahri's Aura",
+        "Ekko's Patience"
+      ],
+      "recommended_builds": [
+        [
+          "Ekko's Patience",
+          "Jeweled Gauntlet",
+          "Rabadon's Deathcap"
+        ]
+      ]
+    },
+    {
+      "name": "LeBlanc",
+      "tier": "B",
+      "url": "https://www.metatft.com/units/Leblanc",
+      "cost": 4,
+      "type": "Magic Marksman",
+      "traits": [
+        "Arbiter",
+        "Shepherd"
+      ],
+      "ability": {
+        "name": "Fracture Reality",
+        "mana": "0/40",
+        "description": "Passive: Attacks deal 64/96/400 (AP) magic damage instead. Active: Summon 5 clones that attack alongside for 5 attacks, dealing 25/25/150% damage. For their final attack, clones fire a bolt that deals 70/105/750 (AP) magic damage. Attack Damage: 64/96/400 (AP) Clone Damage Multiplier: 25/25/150% Bolt Damage: 70/105/750 (AP)",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "0/40",
+        "attack_damage": "0/0/0",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Void Staff",
+        "Archangel's Staff",
+        "Rabadon's Deathcap",
+        "Giant Slayer",
+        "Hextech Gunblade"
+      ],
+      "recommended_builds": [
+        [
+          "Guinsoo's Rageblade",
+          "Jeweled Gauntlet",
+          "Rabadon's Deathcap"
+        ]
+      ]
+    },
+    {
+      "name": "Fizz",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Fizz",
+      "cost": 3,
+      "type": "Magic Assassin",
+      "traits": [
+        "Meeple",
+        "Rogue"
+      ],
+      "ability": {
+        "name": "Meep Bait",
+        "mana": "0/20",
+        "description": "Dash through the current target, dealing 110/165/265 (AP) magic damage. Every third cast also summons a Mega Meep after a delay, briefly knocking the target up and dealing 260/395/625 (AP) magic damage. Adjacent enemies take 50% damage. Meep Bonus: Add 1 () Meep to the bait, increasing Mega Meep damage by 75/115/180 (AP). Dash Damage: 110/165/265 (AP) Chomp Damage: 260/395/625 (AP) Bonus Damage: 75/115/180 (AP) 75/115/180 per",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "0/20",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "55",
+        "magic_resist": "55",
+        "attack_speed": "0.85",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Giant Slayer",
+        "Hand Of Justice",
+        "Hextech Gunblade",
+        "Edge of Night",
+        "Jeweled Gauntlet"
+      ],
+      "recommended_builds": [
+        [
+          "Jeweled Gauntlet",
+          "Striker's Flail",
+          "Hand Of Justice"
+        ]
+      ]
+    },
+    {
+      "name": "Leona",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Leona",
+      "cost": 1,
+      "type": "Magic Tank",
+      "traits": [
+        "Arbiter",
+        "Vanguard"
+      ],
+      "ability": {
+        "name": "Shield of Daybreak",
+        "mana": "50/110",
+        "description": "Gain 420/500/685 (AP) Shield for 4 seconds. Bash the current target, dealing 100/150/225 () magic damage and stunning them for 1.75/1.75/2 seconds. Base Damage: 100/150/225 Stun Duration 1.75/1.75/2",
+        "unlock_condition": "",
+        "others": "Shield: 420/500/685 (AP) Damage: 100/150/225 100/150/225 + 140/210/315 % + 140/210/315 %"
+      },
+      "stats": {
+        "health": "700/1260/2268",
+        "mana": "50/110",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Gargoyle Stoneplate",
+        "Radiant Gargoyle Stoneplate",
+        "Warmog's Armor"
+      ],
+      "recommended_builds": [
+        [
+          "Radiant Gargoyle Stoneplate",
+          "Gargoyle Stoneplate",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Poppy",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Poppy",
+      "cost": 1,
+      "type": "Magic Tank",
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
+      "ability": {
+        "name": "Huddle Up!",
+        "mana": "30/100",
+        "description": "Gain 400/475/575 (AP) Shield for 4 seconds. For the duration, allies within two hexes gain 15/25/60 (AP) Armor and Magic Resistance. Meep Bonus: Meeps grant 125/160/210 (AP) Shield to the nearest 1 () allies for 4 seconds. Defenses: 15/25/60 (AP) Meep Shield: 125/160/210 (AP) Allies Shielded: 1 1 per",
+        "unlock_condition": "",
+        "others": "Shield: 400/475/575 (AP)"
+      },
+      "stats": {
+        "health": "700/1260/2268",
+        "mana": "30/100",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.65",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Crownguard",
+        "Ionic Spark",
+        "Protector's Vow",
+        "Bramble Vest",
+        "Steadfast Heart"
+      ],
+      "recommended_builds": [
+        [
+          "Crownguard",
+          "Protector's Vow",
+          "Ionic Spark"
+        ]
+      ]
+    },
+    {
+      "name": "Tahm Kench",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/TahmKench",
+      "cost": 4,
+      "type": "Magic Tank",
+      "traits": [
+        "Oracle",
+        "Brawler"
+      ],
+      "ability": {
+        "name": "Tounge Lash",
+        "mana": "50/120",
+        "description": "Passive: Once per combat after dropping below 35% Health, gain Shield for 4 seconds equal to 40% of healing received this combat. Active: Heal 386/514/1858 (AP/AP/AP/AP), then tongue lash all enemies within two hexes dealing 71/107/884 (AP) magic damage. Damage 71/107/884 45/60/800 + 2 %",
+        "unlock_condition": "",
+        "others": "Heal: 386/514/1858 9 % + 275/315/1500"
+      },
+      "stats": {
+        "health": "1300/2340/4212",
+        "mana": "50/120",
+        "attack_damage": "75/113/169",
+        "ability_power": "100",
+        "armor": "60",
+        "magic_resist": "60",
+        "attack_speed": "0.5",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Bramble Vest",
+        "Steadfast Heart",
+        "Crownguard",
+        "Evenshroud",
+        "Warmog's Armor"
+      ],
+      "recommended_builds": [
+        [
+          "Sunfire Cape",
+          "Evenshroud",
+          "Warmog's Armor"
+        ]
+      ]
+    },
+    {
+      "name": "Master Yi",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/MasterYi",
+      "cost": 4,
+      "type": "Attack Fighter",
+      "traits": [
+        "Psionic",
+        "Marauder"
+      ],
+      "ability": {
+        "name": "Psi Strikes",
+        "mana": "30/70",
+        "description": "Passive: Every third attack is a doubleslash that deals 60/90/550 (AD) bonus physical damage. Active: After brief meditation, enter a Psi-State for 5 seconds, gaining 15% Omnivamp, 70% Attack Speed, and increased movement speed. Twice a second, fire a psychic projection at a random nearby enemy that deals 70/105/800 (AD/AP) physical damage Passive Damage: 60/90/550 (AD) Projection Damage: 20/30/200 Projection Damage: 70/105/800 50/75/600 + 20/30/200",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "1100/1980/3564",
+        "mana": "30/70",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "65",
+        "magic_resist": "65",
+        "attack_speed": "0.85",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Edge of Night",
+        "Giant Slayer",
+        "Hand Of Justice",
+        "Quicksilver",
+        "Sterak's Gage"
+      ],
+      "recommended_builds": [
+        [
+          "Edge of Night",
+          "Giant Slayer",
+          "Hand Of Justice"
+        ]
+      ]
+    },
+    {
+      "name": "Veigar",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Veigar",
+      "cost": 1,
+      "type": "Magic Caster",
+      "traits": [
+        "Meeple",
+        "Replicator"
+      ],
+      "ability": {
+        "name": "Meepteor Shower",
+        "mana": "10/50",
+        "description": "Call down a Meepteor on the target that deals 310/465/700 (AP) magic damage. Meep Bonus: An additional 2 () mini Meepteor are called down on nearby targets dealing 31/47/70 (AP) magic damage each. Mini Meeps: 2 2 per Mini Damage: 31/47/70 (AP)",
+        "unlock_condition": "",
+        "others": "Damage: AP 310/465/700 (AP)"
+      },
+      "stats": {
+        "health": "500/900/1620",
+        "mana": "10/50",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "15",
+        "magic_resist": "15",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Radiant Nashor's Tooth",
+        "Jeweled Gauntlet",
+        "Spear of Shojin",
+        "Giant Slayer",
+        "Blue Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Radiant Nashor's Tooth",
+          "Jeweled Gauntlet",
+          "Nashor's Tooth"
+        ]
+      ]
+    },
+    {
+      "name": "Graves",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Graves",
+      "cost": 5,
+      "type": "Attack Marksman",
+      "traits": [
+        "Factory New"
+      ],
+      "ability": {
+        "name": "Collateral Damage",
+        "mana": "0/60",
+        "description": "Passive: Attacks fire 5 projectiles in a cone that deal 20/30/45 (AD/AD/AD/AP/AD/AD/AP/AD/AP) physical damage each. Active: Fire an explosive shell that deals 360/540/5555 (AD) physical damage to the target, and 150/225/4110 (AD/AP) physical damage to adjacent enemies. Passive Damage: 20/30/45 33 % of 60 Secondary Damage: 30/45/777 Secondary Damage: 150/225/4110 120/180/3333 + 30/45/777",
+        "unlock_condition": "",
+        "others": "Damage: AD 360/540/5555 (AD)"
+      },
+      "stats": {
+        "health": "900/1620/2916",
+        "mana": "0/60",
+        "attack_damage": "60/90/135",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Battle Bunny Crossbow",
+        "Striker's Flail",
+        "Quicksilver",
+        "Edge of Night",
+        "Sterak's Gage"
+      ],
+      "recommended_builds": [
+        [
+          "Battle Bunny Crossbow",
+          "Guinsoo's Rageblade",
+          "Infinity Edge"
+        ]
+      ]
+    },
+    {
+      "name": "Cho'Gath",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Chogath",
+      "cost": 1,
+      "type": "Magic Tank",
+      "traits": [
+        "Dark Star",
+        "Brawler"
+      ],
+      "ability": {
+        "name": "Accretion",
+        "mana": "30/70",
+        "description": "Deal 262/384/588 (AP/AP)  magic damage to the lowest Health enemy in range and permanently gain 12/18/33 maximum Health. If this kills them, permanently gain 25/35/65 maximum Health instead. (Current Bonus: +X Health)",
+        "unlock_condition": "",
+        "others": "Health Per Cast: 12/18/33 Health On Kill: 25/35/65 Damage: 262/384/588 8 % + 210/290/420%"
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "30/70",
+        "attack_damage": "45/68/101",
+        "ability_power": "100",
+        "armor": "40",
+        "magic_resist": "40",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Protector's Vow",
+        "Spirit Visage",
+        "Warmog's Armor",
+        "Crownguard",
+        "Bramble Vest"
+      ],
+      "recommended_builds": [
+        [
+          "Crownguard",
+          "Protector's Vow",
+          "Gargoyle Stoneplate"
+        ]
+      ]
+    },
+    {
+      "name": "Aurora",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Aurora",
+      "cost": 3,
+      "type": "Magic Caster",
+      "traits": [
+        "Anima",
+        "Voyager"
+      ],
+      "ability": {
+        "name": "Hopped-Up Hacks",
+        "mana": "20/80",
+        "description": "Open a 2 hex rift containing the target, Hacking enemies within for 4 seconds and dealing 80/120/190 (AP) magic damage to each, plus 370/555/890 (AP) magic damage split between all enemies hit. Hacked enemies store 10% of all damage they take. When the Hack ends, they take true damage equal to the stored damage. The Hack ends early if it would kill the target. Split Damage: 370/555/890",
+        "unlock_condition": "",
+        "others": "Damage: AP 80/120/190"
+      },
+      "stats": {
+        "health": "700/1260/2268",
+        "mana": "20/80",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "25",
+        "magic_resist": "25",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Spear of Shojin",
+        "Rabadon's Deathcap",
+        "Giant Slayer",
+        "Morellonomicon",
+        "Blue Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Morellonomicon",
+          "Rabadon's Deathcap",
+          "Spear of Shojin"
+        ]
+      ]
+    },
+    {
+      "name": "Briar",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Briar",
+      "cost": 1,
+      "type": "Attack Fighter",
+      "traits": [
+        "Anima",
+        "Primordian",
+        "Rogue"
+      ],
+      "ability": {
+        "name": "Fish Frenzy",
+        "mana": "0/40",
+        "description": "Passive: For every 1% missing Health, gain 2/2/2.5% () Attack Speed Active: Deal 130/195/320 (AD) physical damage to the target, increased by 50% if they're a tank. Attack Speed: 2/2/2.5 Bonus Tank Damage 50 % of 130/195/320 (AD)",
+        "unlock_condition": "",
+        "others": "Damage: AD 130/195/320 (AD)"
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "0/40",
+        "attack_damage": "40/60/90",
+        "ability_power": "100",
+        "armor": "35",
+        "magic_resist": "35",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Sterak's Gage",
+        "Titan's Resolve",
+        "Bloodthirster",
+        "Hand Of Justice",
+        "Edge of Night"
+      ],
+      "recommended_builds": [
+        [
+          "Radiant Titan's Resolve",
+          "Bloodthirster",
+          "Sterak's Gage"
+        ]
+      ]
+    },
+    {
+      "name": "Pantheon",
+      "tier": "C",
+      "url": "https://www.metatft.com/units/Pantheon",
+      "cost": 2,
+      "type": "Attack Tank",
+      "traits": [
+        "Timebreaker",
+        "Brawler",
+        "Replicator"
+      ],
+      "ability": {
+        "name": "Advanced Defences",
+        "mana": "20/80",
+        "description": "Gain 54/97/175 (AP/AD/AP/AD) Shield and 15% Durability for 4 seconds. Over the duration, deal 30/45/70 (AD) physical damage each second to enemies in a cone.",
+        "unlock_condition": "",
+        "others": "Shield: 54/97/175 6 % + 275/300/500 (AP) Damage Per Second: 30/45/70 (AD)"
+      },
+      "stats": {
+        "health": "900/1620/2916",
+        "mana": "20/80",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Steadfast Heart",
+        "Bramble Vest",
+        "Crownguard",
+        "Protector's Vow",
+        "Evenshroud"
+      ],
+      "recommended_builds": [
+        [
+          "Protector's Vow",
+          "Sunfire Cape",
+          "Evenshroud"
+        ]
+      ]
+    },
+    {
+      "name": "Gragas",
+      "tier": "D",
+      "url": "https://www.metatft.com/units/Gragas",
+      "cost": 2,
+      "type": "Magic Tank",
+      "traits": [
+        "Psionic",
+        "Brawler"
+      ],
+      "ability": {
+        "name": "Chemical Rage",
+        "mana": "30/80",
+        "description": "Heal 466/585/862 (AP/AP/AP/AP) over 2 seconds. Then, deal 200/300/450 (AP) magic damage to target and enemies adjacent to them and 30% Chill them for 2 seconds. Chill: Reduce Attack Speed",
+        "unlock_condition": "",
+        "others": "Heal: 466/585/862 9 % + 385/440/600 Damage: AP 200/300/450 (AP)"
+      },
+      "stats": {
+        "health": "950/1710/3078",
+        "mana": "30/80",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "45",
+        "magic_resist": "45",
+        "attack_speed": "0.6",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Crownguard",
+        "Steadfast Heart",
+        "Bramble Vest",
+        "Protector's Vow",
+        "Ionic Spark"
+      ],
+      "recommended_builds": [
+        [
+          "Crownguard",
+          "Sunfire Cape",
+          "Evenshroud"
+        ]
+      ]
+    },
+    {
+      "name": "Miss Fortune",
+      "tier": "D",
+      "url": "https://www.metatft.com/units/MissFortune",
+      "cost": 3,
+      "type": "Gun Goddess",
+      "traits": [
+        "Choose Trait"
+      ],
+      "ability": {
+        "name": "Gun Goddess Arsenal",
+        "mana": "0/100",
+        "description": "Field Miss Fortune to choose whether she activates Conduit Mode, Challenger Mode, or Replicator Mode. The chosen mode determines her ability and her trait.",
+        "unlock_condition": "",
+        "others": ""
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "0/100",
+        "attack_damage": "50/75/113",
+        "ability_power": "100",
+        "armor": "30",
+        "magic_resist": "30",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Deathblade",
+        "Giant Slayer",
+        "Infinity Edge",
+        "Striker's Flail",
+        "Red Buff"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Infinity Edge",
+          "Giant Slayer"
+        ]
+      ]
+    },
+    {
+      "name": "Lulu",
+      "tier": "D",
+      "url": "https://www.metatft.com/units/Lulu",
+      "cost": 3,
+      "type": "Magic Caster",
+      "traits": [
+        "Stargazer - The Boar",
+        "Replicator"
+      ],
+      "ability": {
+        "name": "It's Raining Stars",
+        "mana": "0/60",
+        "description": "Passive: Gain a different secondary effect each game based on the Stargazer constellation. Active: Call down something from the sky, dealing 150/225/360 (AP) magic damage to 3 nearby enemies and do some special effect based on this game's Stargazer Constellation.",
+        "unlock_condition": "",
+        "others": "Damage: AP 150/225/360 (AP)"
+      },
+      "stats": {
+        "health": "650/1170/2106",
+        "mana": "0/60",
+        "attack_damage": "30/45/68",
+        "ability_power": "100",
+        "armor": "25",
+        "magic_resist": "25",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "Radiant Nashor's Tooth",
+        "Jeweled Gauntlet",
+        "Archangel's Staff",
+        "Spear of Shojin",
+        "Rabadon's Deathcap"
+      ],
+      "recommended_builds": [
+        [
+          "Radiant Nashor's Tooth",
+          "Jeweled Gauntlet",
+          "Nashor's Tooth"
+        ]
+      ]
+    },
+    {
+      "name": "Ezreal",
+      "tier": "D",
+      "url": "https://www.metatft.com/units/Ezreal",
+      "cost": 1,
+      "type": "Attack Caster",
+      "traits": [
+        "Timebreaker",
+        "Sniper"
+      ],
+      "ability": {
+        "name": "Temporal Shot",
+        "mana": "0/30",
+        "description": "Active: Fire a blast at the current target that deals 165/250/380 (AD/AP/AD/AP/AD/AP/AD) physical damage. Every 8 takedowns, gain a drone that deals 8/12/18 (AD) physical damage to the current target on cast. (Total Takedowns: X) Drone Damage: 8/12/18 (AD)",
+        "unlock_condition": "",
+        "others": "Damage: AP 10/15/25 Damage: 165/250/380 155/235/355 (AD) + 10/15/25 (AP)"
+      },
+      "stats": {
+        "health": "450/810/1458",
+        "mana": "0/30",
+        "attack_damage": "40/60/90",
+        "ability_power": "100",
+        "armor": "15",
+        "magic_resist": "15",
+        "attack_speed": "0.7",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "6"
+      },
+      "top_items": [
+        "Spear of Shojin",
+        "Deathblade",
+        "Infinity Edge",
+        "Giant Slayer",
+        "Radiant Infinity Edge"
+      ],
+      "recommended_builds": [
+        [
+          "Deathblade",
+          "Infinity Edge",
+          "Spear of Shojin"
+        ]
+      ]
+    },
+    {
+      "name": "Diana",
+      "tier": "D",
+      "url": "https://www.metatft.com/units/Diana",
+      "cost": 3,
+      "type": "Magic Fighter",
+      "traits": [
+        "Arbiter",
+        "Challenger"
+      ],
+      "ability": {
+        "name": "Pale Cascade",
+        "mana": "0/50",
+        "description": "Passive: Attacks deal 50/75/130 (AP) bonus magic damage. Active: Gain 225/275/375 (AP) Shield and summon 3 encircling orbs for 3 seconds. Orbs deal 45/70/110 (AP) magic damage to enemies they pass through, and rotate faster based on Attack Speed. Orb Damage: 45/70/110 (AP)",
+        "unlock_condition": "",
+        "others": "Damage on attacks: 50/75/130 (AP) Shield: 225/275/375 (AP)"
+      },
+      "stats": {
+        "health": "850/1530/2754",
+        "mana": "0/50",
+        "attack_damage": "/0/0",
+        "ability_power": "100",
+        "armor": "50",
+        "magic_resist": "50",
+        "attack_speed": "0.8",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "1"
+      },
+      "top_items": [
+        "Cyclonic Slicers",
+        "Bloodthirster",
+        "Edge of Night",
+        "Titan's Resolve",
+        "Guinsoo's Rageblade"
+      ],
+      "recommended_builds": [
+        [
+          "Cyclonic Slicers",
+          "Bloodthirster",
+          "Titan's Resolve"
+        ]
+      ]
+    },
+    {
+      "name": "Jinx",
+      "tier": "D",
+      "url": "https://www.metatft.com/units/Jinx",
+      "cost": 2,
+      "type": "Attack Marksman",
+      "traits": [
+        "Anima",
+        "Challenger"
+      ],
+      "ability": {
+        "name": "Explosive Attitude",
+        "mana": "20/80",
+        "description": "Fire a barrage of 16 () rockets in a cone, each dealing 30/45/67 (AD/AD/AP) physical damage to the first target hit. Rockets: 16 + 1 per 35% scaleAP%3/5/7",
+        "unlock_condition": "",
+        "others": "Damage %i: Damage: 30/45/67 27/40/60 + 3/5/7"
+      },
+      "stats": {
+        "health": "550/990/1782",
+        "mana": "20/80",
+        "attack_damage": "55/83/124",
+        "ability_power": "100",
+        "armor": "20",
+        "magic_resist": "20",
+        "attack_speed": "0.75",
+        "crit_chance": "25%",
+        "crit_damage": "140%",
+        "range": "4"
+      },
+      "top_items": [
+        "OwO Blaster",
+        "Battle Bunny Crossbow",
+        "Rocket Swarm",
+        "Sparking Prototype",
+        "Echoing Batblades"
+      ],
+      "recommended_builds": [
+        [
+          "Rocket Swarm",
+          "OwO Blaster",
+          "Guinsoo's Rageblade"
+        ]
+      ]
+    }
+  ],
+  "note": "All units crawled with detailed data.",
+  "crawl_stats": {
+    "total_time_seconds": 281.18273854255676,
+    "average_time_per_unit": 4.463218072104076
+  }
+}

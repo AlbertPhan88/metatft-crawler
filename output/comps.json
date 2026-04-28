@@ -1,0 +1,3878 @@
+{
+  "timestamp": "2026-04-27T17:12:15.090543",
+  "source": "https://www.metatft.com/comps",
+  "language": "en",
+  "total_comps_found": 56,
+  "total_comps_crawled": 56,
+  "comps": [
+    {
+      "name": "Voyager Viktor",
+      "tier": "S",
+      "playstyle": "lvl 7\nMedium",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 3.9,
+        "pick_rate": 0.5,
+        "win_rate": "12.6%",
+        "top_4_rate": "62.4%"
+      },
+      "units": [
+        {
+          "name": "Viktor",
+          "items": [
+            "Drone Uplink",
+            "Jeweled Gauntlet",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Illaoi",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Nami",
+          "items": [
+            "Giant Slayer",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [
+            "Ionic Spark",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Pyke",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Primordian Bel'Veth",
+      "tier": "S",
+      "playstyle": "lvl 6\nMedium",
+      "difficulty": "lvl 6",
+      "stats": {
+        "avg_placement": 4.1,
+        "pick_rate": 0.48,
+        "win_rate": "9.8%",
+        "top_4_rate": "59.3%"
+      },
+      "units": [
+        {
+          "name": "Bel'Veth",
+          "items": [
+            "Giant Slayer",
+            "Quicksilver",
+            "Kraken's Fury"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rek'Sai",
+          "items": [
+            "Protector's Vow",
+            "Sunfire Cape",
+            "Evenshroud"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Kindred",
+          "items": [
+            "Deathblade",
+            "Guinsoo's Rageblade",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Briar",
+          "items": [
+            "Bloodthirster",
+            "Sterak's Gage",
+            "Titan's Resolve"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Maokai",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Caitlyn",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Vanguard Teemo",
+      "tier": "S",
+      "playstyle": "lvl 5\nMedium",
+      "difficulty": "lvl 5",
+      "stats": {
+        "avg_placement": 4.21,
+        "pick_rate": 0.3,
+        "win_rate": "8.8%",
+        "top_4_rate": "57.0%"
+      },
+      "units": [
+        {
+          "name": "Teemo",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Giant Slayer",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Leona",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Nasus",
+          "items": [
+            "Ionic Spark",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Lissandra",
+          "items": [
+            "Morellonomicon",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Nami",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Zoe",
+          "items": [],
+          "is_three_star": true
+        }
+      ]
+    },
+    {
+      "name": "Vanguard Nunu & Willump",
+      "tier": "S",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.22,
+        "pick_rate": 0.36,
+        "win_rate": "15.4%",
+        "top_4_rate": "54.6%"
+      },
+      "units": [
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Protector's Vow",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Vex",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Giant Slayer",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Rabadon's Deathcap",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Bard",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Sona",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Fateweaver Twisted Fate",
+      "tier": "A",
+      "playstyle": "lvl 5\nMedium",
+      "difficulty": "lvl 5",
+      "stats": {
+        "avg_placement": 4.26,
+        "pick_rate": 0.41,
+        "win_rate": "9.7%",
+        "top_4_rate": "55.5%"
+      },
+      "units": [
+        {
+          "name": "Twisted Fate",
+          "items": [
+            "Nashor's Tooth",
+            "Nashor's Tooth",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Jax",
+          "items": [
+            "Crownguard",
+            "Gargoyle Stoneplate",
+            "Gargoyle Stoneplate"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Caitlyn",
+          "items": [
+            "Deathblade",
+            "Guinsoo's Rageblade",
+            "Giant Slayer"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Talon",
+          "items": [
+            "Edge of Night",
+            "Hextech Gunblade",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Corki",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Riven",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Milio",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": true
+        }
+      ]
+    },
+    {
+      "name": "Mecha Urgot",
+      "tier": "A",
+      "playstyle": "lvl 7\nMedium",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.28,
+        "pick_rate": 0.5,
+        "win_rate": "12.3%",
+        "top_4_rate": "54.8%"
+      },
+      "units": [
+        {
+          "name": "Urgot",
+          "items": [
+            "Infinity Edge",
+            "Giant Slayer",
+            "Quicksilver"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Aurora",
+          "items": [
+            "Jeweled Gauntlet",
+            "Striker's Flail",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Maokai",
+          "items": [
+            "Dragon's Claw",
+            "Evenshroud",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "The Mighty Mech",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Spirit Visage",
+            "Sterak's Gage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Sniper Xayah",
+      "tier": "A",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.3,
+        "pick_rate": 0.72,
+        "win_rate": "21.7%",
+        "top_4_rate": "52.0%"
+      },
+      "units": [
+        {
+          "name": "Xayah",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Protector's Vow",
+            "Protector's Vow"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Rammus",
+          "items": [
+            "Sunfire Cape",
+            "Evenshroud",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [
+            "Infinity Edge",
+            "Last Whisper",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Bard",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Gnar",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Jax",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Meeple Veigar",
+      "tier": "A",
+      "playstyle": "lvl 5\nMedium",
+      "difficulty": "lvl 5",
+      "stats": {
+        "avg_placement": 4.32,
+        "pick_rate": 0.13,
+        "win_rate": "12.1%",
+        "top_4_rate": "52.9%"
+      },
+      "units": [
+        {
+          "name": "Veigar",
+          "items": [
+            "Jeweled Gauntlet",
+            "Nashor's Tooth",
+            "Nashor's Tooth"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Poppy",
+          "items": [
+            "Crownguard",
+            "Protector's Vow",
+            "Ionic Spark"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rammus",
+          "items": [
+            "Dragon's Claw",
+            "Protector's Vow",
+            "Gargoyle Stoneplate"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [
+            "Jeweled Gauntlet",
+            "Striker's Flail",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Corki",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Space Groove Samira",
+      "tier": "A",
+      "playstyle": "lvl 7\nMedium",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.38,
+        "pick_rate": 0.19,
+        "win_rate": "14.1%",
+        "top_4_rate": "51.4%"
+      },
+      "units": [
+        {
+          "name": "Samira",
+          "items": [
+            "Deathblade",
+            "Infinity Edge",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Samira",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Ornn",
+          "items": [
+            "Dragon's Claw",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Ornn",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Xayah",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Last Whisper",
+            "Red Buff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Adaptive Helm",
+            "Protector's Vow",
+            "Protector's Vow"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Jax",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Vanguard Leona",
+      "tier": "A",
+      "playstyle": "lvl 5\nMedium",
+      "difficulty": "lvl 5",
+      "stats": {
+        "avg_placement": 4.39,
+        "pick_rate": 0.07,
+        "win_rate": "9.9%",
+        "top_4_rate": "52.5%"
+      },
+      "units": [
+        {
+          "name": "Leona",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "LeBlanc",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Morellonomicon",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Teemo",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Hextech Gunblade",
+            "Giant Slayer"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Zoe",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Nasus",
+          "items": [],
+          "is_three_star": true
+        }
+      ]
+    },
+    {
+      "name": "Timebreaker Pyke",
+      "tier": "A",
+      "playstyle": "lvl 6\nEasy",
+      "difficulty": "lvl 6",
+      "stats": {
+        "avg_placement": 4.41,
+        "pick_rate": 0.05,
+        "win_rate": "6.0%",
+        "top_4_rate": "53.3%"
+      },
+      "units": [
+        {
+          "name": "Pyke",
+          "items": [
+            "Target-Lock Optics",
+            "Edge of Night",
+            "Infinity Edge"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Gwen",
+          "items": [
+            "Hextech Gunblade",
+            "Jeweled Gauntlet",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Pantheon",
+          "items": [
+            "Dragon's Claw",
+            "Gargoyle Stoneplate",
+            "Sunfire Cape"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Milio",
+          "items": [
+            "Jeweled Gauntlet",
+            "Rabadon's Deathcap",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Corki",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Riven",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Gragas",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": true
+        }
+      ]
+    },
+    {
+      "name": "Dark Star Karma",
+      "tier": "A",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.41,
+        "pick_rate": 0.09,
+        "win_rate": "11.7%",
+        "top_4_rate": "51.6%"
+      },
+      "units": [
+        {
+          "name": "Karma",
+          "items": [
+            "Blue Buff",
+            "Jeweled Gauntlet",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Warmog's Armor",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [
+            "Infinity Edge",
+            "Last Whisper",
+            "Striker's Flail"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "The Mighty Mech",
+          "items": [
+            "Protector's Vow",
+            "Gargoyle Stoneplate",
+            "Sunfire Cape"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Kai'Sa",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Space Groove Nami",
+      "tier": "A",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.43,
+        "pick_rate": 0.35,
+        "win_rate": "14.6%",
+        "top_4_rate": "51.0%"
+      },
+      "units": [
+        {
+          "name": "Riven",
+          "items": [
+            "Space Groove Emblem",
+            "Bloodthirster",
+            "Titan's Resolve"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nami",
+          "items": [
+            "Jeweled Gauntlet",
+            "Nashor's Tooth",
+            "Nashor's Tooth"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Steadfast Heart",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [
+            "Jeweled Gauntlet",
+            "Striker's Flail",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Shen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Ornn",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Gwen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Pantheon",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Voyager LeBlanc",
+      "tier": "A",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.45,
+        "pick_rate": 0.05,
+        "win_rate": "10.8%",
+        "top_4_rate": "50.7%"
+      },
+      "units": [
+        {
+          "name": "LeBlanc",
+          "items": [
+            "Voyager Emblem",
+            "Guinsoo's Rageblade",
+            "Hextech Gunblade"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "The Mighty Mech",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Spirit Visage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Shepherd Emblem",
+            "Morellonomicon",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Steadfast Heart",
+            "Sunfire Cape"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Morgana",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Sona",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Leona",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Dark Star Xayah",
+      "tier": "A",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.45,
+        "pick_rate": 0.09,
+        "win_rate": "14.0%",
+        "top_4_rate": "50.4%"
+      },
+      "units": [
+        {
+          "name": "Xayah",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Adaptive Helm",
+            "Protector's Vow",
+            "Protector's Vow"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [
+            "Infinity Edge",
+            "Giant Slayer",
+            "Striker's Flail"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Blue Buff",
+            "Jeweled Gauntlet",
+            "Striker's Flail"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Kai'Sa",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Rogue Kai'Sa Fizz",
+      "tier": "A",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.46,
+        "pick_rate": 0.04,
+        "win_rate": "8.5%",
+        "top_4_rate": "51.2%"
+      },
+      "units": [
+        {
+          "name": "Kai'Sa",
+          "items": [
+            "Deathblade",
+            "Infinity Edge",
+            "Striker's Flail"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Fizz",
+          "items": [
+            "Jeweled Gauntlet",
+            "Nashor's Tooth",
+            "Giant Slayer"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Ornn",
+          "items": [
+            "Crownguard",
+            "Protector's Vow",
+            "Sunfire Cape"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Maokai",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Spirit Visage",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Meeple Corki",
+      "tier": "A",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.47,
+        "pick_rate": 0.14,
+        "win_rate": "15.8%",
+        "top_4_rate": "48.2%"
+      },
+      "units": [
+        {
+          "name": "Corki",
+          "items": [
+            "Rogue Emblem",
+            "Last Whisper",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Rammus",
+          "items": [
+            "Protector's Vow",
+            "Gargoyle Stoneplate",
+            "Steadfast Heart"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Riven",
+          "items": [
+            "Bloodthirster",
+            "Quicksilver",
+            "Sterak's Gage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "The Mighty Mech",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Fizz",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Milio",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Poppy",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Marauder Kindred",
+      "tier": "B",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.52,
+        "pick_rate": 0.25,
+        "win_rate": "10.7%",
+        "top_4_rate": "49.3%"
+      },
+      "units": [
+        {
+          "name": "Kindred",
+          "items": [
+            "Marauder Emblem",
+            "Guinsoo's Rageblade",
+            "Kraken's Fury"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Master Yi",
+          "items": [
+            "Edge of Night",
+            "Giant Slayer",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Protector's Vow",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [
+            "Edge of Night",
+            "Giant Slayer",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Shen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Maokai",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Bel'Veth",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Rogue Kai'Sa",
+      "tier": "B",
+      "playstyle": "lvl 7\nMedium",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.53,
+        "pick_rate": 0.16,
+        "win_rate": "8.9%",
+        "top_4_rate": "49.4%"
+      },
+      "units": [
+        {
+          "name": "Kai'Sa",
+          "items": [
+            "Deathblade",
+            "Infinity Edge",
+            "Striker's Flail"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Fizz",
+          "items": [
+            "Jeweled Gauntlet",
+            "Nashor's Tooth",
+            "Hand Of Justice"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Ornn",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Steadfast Heart",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rhaast",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Sunfire Cape",
+            "Evenshroud"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Karma",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rammus",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Dark Star Kai'Sa",
+      "tier": "B",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.66,
+        "pick_rate": 0.05,
+        "win_rate": "10.5%",
+        "top_4_rate": "46.4%"
+      },
+      "units": [
+        {
+          "name": "Kai'Sa",
+          "items": [
+            "Blue Buff",
+            "Infinity Edge",
+            "Striker's Flail"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [
+            "Sunfire Cape",
+            "Spirit Visage",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Morellonomicon",
+            "Rabadon's Deathcap",
+            "Spear of Shojin"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Riven",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Pantheon",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Sniper Xayah Tahm Kench",
+      "tier": "B",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.66,
+        "pick_rate": 0.05,
+        "win_rate": "17.7%",
+        "top_4_rate": "46.2%"
+      },
+      "units": [
+        {
+          "name": "Xayah",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Crownguard",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Adaptive Helm",
+            "Protector's Vow",
+            "Spirit Visage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [
+            "Infinity Edge",
+            "Last Whisper",
+            "Striker's Flail"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Riven",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Pantheon",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Ezreal",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Talon",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Space Groove Ornn",
+      "tier": "B",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.69,
+        "pick_rate": 0.07,
+        "win_rate": "7.7%",
+        "top_4_rate": "46.3%"
+      },
+      "units": [
+        {
+          "name": "Ornn",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Steadfast Heart",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Nami",
+          "items": [
+            "Giant Slayer",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Samira",
+          "items": [
+            "Infinity Edge",
+            "Red Buff",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [
+            "Bloodthirster",
+            "Jeweled Gauntlet",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Rammus",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Gwen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Nasus",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Teemo",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Conduit Miss Fortune Viktor",
+      "tier": "B",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.7,
+        "pick_rate": 0.04,
+        "win_rate": "5.6%",
+        "top_4_rate": "46.1%"
+      },
+      "units": [
+        {
+          "name": "Miss Fortune",
+          "items": [
+            "TFT17_ManaTrait",
+            "Infinity Edge",
+            "Giant Slayer",
+            "Kraken's Fury"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Viktor",
+          "items": [
+            "Drone Uplink",
+            "Jeweled Gauntlet",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Ornn",
+          "items": [
+            "Dragon's Claw",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Maokai",
+          "items": [
+            "Dragon's Claw",
+            "Gargoyle Stoneplate",
+            "Spirit Visage"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Gragas",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Timebreaker Lulu",
+      "tier": "B",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.7,
+        "pick_rate": 0.05,
+        "win_rate": "11.1%",
+        "top_4_rate": "45.6%"
+      },
+      "units": [
+        {
+          "name": "Lulu",
+          "items": [
+            "Archangel's Staff",
+            "Archangel's Staff",
+            "Archangel's Staff"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Maokai",
+          "items": [
+            "Sunfire Cape",
+            "Spirit Visage",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Milio",
+          "items": [
+            "Archangel's Staff",
+            "Rabadon's Deathcap",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Jax",
+          "items": [
+            "Dragon's Claw",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Pantheon",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Twisted Fate",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Voyager Nami",
+      "tier": "B",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.71,
+        "pick_rate": 0.05,
+        "win_rate": "8.4%",
+        "top_4_rate": "46.0%"
+      },
+      "units": [
+        {
+          "name": "Nami",
+          "items": [
+            "Dark Star Emblem",
+            "Jeweled Gauntlet",
+            "Nashor's Tooth"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Archangel's Staff",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Adaptive Helm",
+            "Adaptive Helm",
+            "Protector's Vow"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "The Mighty Mech",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Mecha The Mighty Mech",
+      "tier": "B",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.74,
+        "pick_rate": 0.29,
+        "win_rate": "15.9%",
+        "top_4_rate": "44.9%"
+      },
+      "units": [
+        {
+          "name": "The Mighty Mech",
+          "items": [
+            "Iceblast Armor",
+            "Lioness's Lament",
+            "Gargoyle Stoneplate"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Aurelion Sol",
+          "items": [
+            "Jeweled Gauntlet",
+            "Striker's Flail",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Urgot",
+          "items": [
+            "Infinity Edge",
+            "Last Whisper",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Protector's Vow",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Primordian Briar",
+      "tier": "C",
+      "playstyle": "lvl 5\nMedium",
+      "difficulty": "lvl 5",
+      "stats": {
+        "avg_placement": 4.76,
+        "pick_rate": 0.09,
+        "win_rate": "8.0%",
+        "top_4_rate": "46.3%"
+      },
+      "units": [
+        {
+          "name": "Briar",
+          "items": [
+            "Bloodthirster",
+            "Sterak's Gage",
+            "Titan's Resolve"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Bel'Veth",
+          "items": [
+            "Giant Slayer",
+            "Quicksilver",
+            "Kraken's Fury"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rek'Sai",
+          "items": [
+            "Protector's Vow",
+            "Sunfire Cape",
+            "Evenshroud"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Kindred",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Kai'Sa",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Rogue Riven",
+      "tier": "C",
+      "playstyle": "Standard\nEasy",
+      "difficulty": "Standard",
+      "stats": {
+        "avg_placement": 4.77,
+        "pick_rate": 0.02,
+        "win_rate": "6.5%",
+        "top_4_rate": "45.7%"
+      },
+      "units": [
+        {
+          "name": "Riven",
+          "items": [
+            "Bloodthirster",
+            "Sterak's Gage",
+            "Titan's Resolve"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Kai'Sa",
+          "items": [
+            "Infinity Edge",
+            "Last Whisper",
+            "Giant Slayer"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Bel'Veth",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Gwen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Briar",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rek'Sai",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Talon",
+          "items": [],
+          "is_three_star": true
+        }
+      ]
+    },
+    {
+      "name": "Mecha The Mighty Mech Aurelion Sol",
+      "tier": "C",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.79,
+        "pick_rate": 0.07,
+        "win_rate": "13.9%",
+        "top_4_rate": "42.7%"
+      },
+      "units": [
+        {
+          "name": "The Mighty Mech",
+          "items": [
+            "Lioness's Lament",
+            "Gargoyle Stoneplate",
+            "Sterak's Gage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Aurelion Sol",
+          "items": [
+            "Hextech Gunblade",
+            "Jeweled Gauntlet",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Master Yi",
+          "items": [
+            "Bloodthirster",
+            "Edge of Night",
+            "Sterak's Gage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Dragon's Claw",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Urgot",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Viktor",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Vanguard Vex",
+      "tier": "C",
+      "playstyle": "Fast 9\nHard",
+      "difficulty": "Fast 9",
+      "stats": {
+        "avg_placement": 4.79,
+        "pick_rate": 0.63,
+        "win_rate": "13.3%",
+        "top_4_rate": "45.2%"
+      },
+      "units": [
+        {
+          "name": "Vex",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Hextech Gunblade",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Protector's Vow",
+            "Spirit Visage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Graves",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [
+            "Crownguard"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Morgana",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Shen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Bastion Rammus",
+      "tier": "C",
+      "playstyle": "Fast 9\nHard",
+      "difficulty": "Fast 9",
+      "stats": {
+        "avg_placement": 4.8,
+        "pick_rate": 0.18,
+        "win_rate": "12.4%",
+        "top_4_rate": "43.9%"
+      },
+      "units": [
+        {
+          "name": "Rammus",
+          "items": [
+            "Bramble Vest",
+            "Sunfire Cape",
+            "Spirit Visage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Vex",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Hextech Gunblade",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Bard",
+          "items": [
+            "Rabadon's Deathcap",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [
+            "Jeweled Gauntlet",
+            "Rabadon's Deathcap",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Shen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Bastion Corki",
+      "tier": "C",
+      "playstyle": "Standard\nEasy",
+      "difficulty": "Standard",
+      "stats": {
+        "avg_placement": 4.8,
+        "pick_rate": 0.03,
+        "win_rate": "8.4%",
+        "top_4_rate": "44.0%"
+      },
+      "units": [
+        {
+          "name": "Corki",
+          "items": [
+            "Deathblade",
+            "Deathblade",
+            "Spear of Shojin"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Rammus",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Twisted Fate",
+          "items": [
+            "Nashor's Tooth",
+            "Nashor's Tooth",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Jax",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Milio",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Caitlyn",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Poppy",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Timebreaker Ezreal",
+      "tier": "C",
+      "playstyle": "lvl 5\nEasy",
+      "difficulty": "lvl 5",
+      "stats": {
+        "avg_placement": 4.82,
+        "pick_rate": 0.14,
+        "win_rate": "11.2%",
+        "top_4_rate": "42.5%"
+      },
+      "units": [
+        {
+          "name": "Ezreal",
+          "items": [
+            "Dark Star Emblem",
+            "Infinity Edge",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [
+            "Crownguard",
+            "Protector's Vow",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Riven",
+          "items": [
+            "Bloodthirster",
+            "Edge of Night",
+            "Titan's Resolve"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Pantheon",
+          "items": [
+            "Protector's Vow",
+            "Sunfire Cape",
+            "Evenshroud"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Kai'Sa",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Maokai",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Milio",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Space Groove Nami Nunu & Willump",
+      "tier": "C",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.86,
+        "pick_rate": 0.03,
+        "win_rate": "8.0%",
+        "top_4_rate": "43.7%"
+      },
+      "units": [
+        {
+          "name": "Nami",
+          "items": [
+            "Giant Slayer",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Protector's Vow",
+            "Protector's Vow"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [
+            "Jeweled Gauntlet",
+            "Titan's Resolve",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Ornn",
+          "items": [
+            "Dragon's Claw",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Nasus",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Teemo",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Dark Star Nunu & Willump",
+      "tier": "C",
+      "playstyle": "Fast 9\nEasy",
+      "difficulty": "Fast 9",
+      "stats": {
+        "avg_placement": 4.86,
+        "pick_rate": 0.06,
+        "win_rate": "9.7%",
+        "top_4_rate": "42.6%"
+      },
+      "units": [
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Ionic Spark",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Adaptive Helm",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Vex",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Jeweled Gauntlet",
+            "Striker's Flail"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Bard",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Sona",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Meeple Rammus",
+      "tier": "C",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.86,
+        "pick_rate": 0.14,
+        "win_rate": "12.1%",
+        "top_4_rate": "40.6%"
+      },
+      "units": [
+        {
+          "name": "Rammus",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Veigar",
+          "items": [
+            "Archangel's Staff",
+            "Blue Buff",
+            "Jeweled Gauntlet"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Corki",
+          "items": [
+            "Deathblade",
+            "Infinity Edge",
+            "Spear of Shojin"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Bard",
+          "items": [
+            "Rabadon's Deathcap",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nami",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Fizz",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Poppy",
+          "items": [],
+          "is_three_star": true
+        }
+      ]
+    },
+    {
+      "name": "Vanguard Zoe",
+      "tier": "C",
+      "playstyle": "lvl 6\nMedium",
+      "difficulty": "lvl 6",
+      "stats": {
+        "avg_placement": 4.87,
+        "pick_rate": 0.05,
+        "win_rate": "7.3%",
+        "top_4_rate": "42.5%"
+      },
+      "units": [
+        {
+          "name": "Zoe",
+          "items": [
+            "Morellonomicon",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Leona",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Gargoyle Stoneplate"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "LeBlanc",
+          "items": [
+            "Archangel's Staff",
+            "Guinsoo's Rageblade",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Spirit Visage",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Karma",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Voyager Pyke",
+      "tier": "C",
+      "playstyle": "lvl 6\nEasy",
+      "difficulty": "lvl 6",
+      "stats": {
+        "avg_placement": 4.88,
+        "pick_rate": 0.05,
+        "win_rate": "4.7%",
+        "top_4_rate": "42.7%"
+      },
+      "units": [
+        {
+          "name": "Pyke",
+          "items": [
+            "Edge of Night",
+            "Infinity Edge",
+            "Hand Of Justice"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Gragas",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Morellonomicon",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Sona",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Master Yi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Marauder Master Yi",
+      "tier": "C",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.89,
+        "pick_rate": 0.04,
+        "win_rate": "8.4%",
+        "top_4_rate": "42.9%"
+      },
+      "units": [
+        {
+          "name": "Master Yi",
+          "items": [
+            "Bloodthirster",
+            "Giant Slayer",
+            "Quicksilver"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Adaptive Helm",
+            "Protector's Vow",
+            "Sunfire Cape"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [
+            "Edge of Night",
+            "Striker's Flail",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Sona",
+          "items": [
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Maokai",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Urgot",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Viktor",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Gragas",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Psionic Illaoi",
+      "tier": "C",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 4.91,
+        "pick_rate": 0.02,
+        "win_rate": "7.9%",
+        "top_4_rate": "41.5%"
+      },
+      "units": [
+        {
+          "name": "Viktor",
+          "items": [
+            "Drone Uplink",
+            "Archangel's Staff",
+            "Jeweled Gauntlet"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Master Yi",
+          "items": [
+            "Bloodthirster",
+            "Edge of Night",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [
+            "Bramble Vest",
+            "Dragon's Claw",
+            "Gargoyle Stoneplate"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Gragas",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Pyke",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Vanguard Xayah",
+      "tier": "C",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 4.96,
+        "pick_rate": 0.2,
+        "win_rate": "15.7%",
+        "top_4_rate": "41.9%"
+      },
+      "units": [
+        {
+          "name": "Xayah",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Anomaly",
+            "Protector's Vow",
+            "Protector's Vow"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [
+            "Stargazer Emblem",
+            "Infinity Edge",
+            "Last Whisper"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Jax",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Oracle Tahm Kench",
+      "tier": "D",
+      "playstyle": "Fast 9\nHard",
+      "difficulty": "Fast 9",
+      "stats": {
+        "avg_placement": 5.01,
+        "pick_rate": 0.12,
+        "win_rate": "12.2%",
+        "top_4_rate": "40.0%"
+      },
+      "units": [
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Bramble Vest",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Vex",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Guinsoo's Rageblade",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Graves",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [
+            "Edge of Night",
+            "Sterak's Gage",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Morgana",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Shen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Maokai",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Brawler Miss Fortune",
+      "tier": "D",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.06,
+        "pick_rate": 0.01,
+        "win_rate": "5.2%",
+        "top_4_rate": "39.1%"
+      },
+      "units": [
+        {
+          "name": "Miss Fortune",
+          "items": [
+            "TFT17_APTrait",
+            "Infinity Edge",
+            "Striker's Flail",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Maokai",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Spirit Visage",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Rhaast",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Sunfire Cape",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Riven",
+          "items": [
+            "Bloodthirster",
+            "Titan's Resolve",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Shen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Gwen",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Pantheon",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Arbiter Illaoi",
+      "tier": "D",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.07,
+        "pick_rate": 0.05,
+        "win_rate": "11.7%",
+        "top_4_rate": "39.0%"
+      },
+      "units": [
+        {
+          "name": "Illaoi",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Diana",
+          "items": [
+            "Cyclonic Slicers",
+            "Bloodthirster",
+            "Titan's Resolve"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Aurora",
+          "items": [
+            "Searing Shortbow",
+            "Blue Buff",
+            "Jeweled Gauntlet"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Jinx",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "LeBlanc",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Leona",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Stargazer - The Mountain Xayah",
+      "tier": "D",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 5.12,
+        "pick_rate": 0.03,
+        "win_rate": "7.7%",
+        "top_4_rate": "36.8%"
+      },
+      "units": [
+        {
+          "name": "Xayah",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Anomaly",
+            "Protector's Vow",
+            "Sunfire Cape"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Riven",
+          "items": [
+            "Stargazer Emblem",
+            "Bloodthirster",
+            "Quicksilver"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [
+            "Stargazer Emblem",
+            "Hextech Gunblade",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Lulu",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Jax",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Talon",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Shepherd Illaoi",
+      "tier": "D",
+      "playstyle": "Fast 8\nEasy",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 5.12,
+        "pick_rate": 0.04,
+        "win_rate": "6.6%",
+        "top_4_rate": "38.0%"
+      },
+      "units": [
+        {
+          "name": "Illaoi",
+          "items": [
+            "Crownguard",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Vex",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Giant Slayer",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Sona",
+          "items": [
+            "Giant Slayer",
+            "Spear of Shojin",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Bard",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Voyager The Mighty Mech",
+      "tier": "D",
+      "playstyle": "Fast 8\nMedium",
+      "difficulty": "Fast 8",
+      "stats": {
+        "avg_placement": 5.17,
+        "pick_rate": 0.04,
+        "win_rate": "7.5%",
+        "top_4_rate": "37.5%"
+      },
+      "units": [
+        {
+          "name": "The Mighty Mech",
+          "items": [
+            "Iceblast Armor",
+            "Gargoyle Stoneplate",
+            "Sterak's Gage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Jeweled Gauntlet",
+            "Nashor's Tooth",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Jhin",
+          "items": [
+            "Infinity Edge",
+            "Last Whisper",
+            "Giant Slayer"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Kai'Sa",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Lissandra",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Conduit Miss Fortune",
+      "tier": "D",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.27,
+        "pick_rate": 0.01,
+        "win_rate": "3.2%",
+        "top_4_rate": "34.7%"
+      },
+      "units": [
+        {
+          "name": "Miss Fortune",
+          "items": [
+            "TFT17_ManaTrait",
+            "Infinity Edge",
+            "Infinity Edge",
+            "Giant Slayer"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Viktor",
+          "items": [
+            "Jeweled Gauntlet",
+            "Rabadon's Deathcap",
+            "Void Staff"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Illaoi",
+          "items": [
+            "Dragon's Claw",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Sunfire Cape",
+            "Spirit Visage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Aurelion Sol",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Zoe",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Leona",
+          "items": [],
+          "is_three_star": true
+        }
+      ]
+    },
+    {
+      "name": "Replicator Lulu",
+      "tier": "D",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.3,
+        "pick_rate": 0.02,
+        "win_rate": "6.2%",
+        "top_4_rate": "34.3%"
+      },
+      "units": [
+        {
+          "name": "Lulu",
+          "items": [
+            "Archangel's Staff",
+            "Blue Buff",
+            "Jeweled Gauntlet"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Ornn",
+          "items": [
+            "Bramble Vest",
+            "Gargoyle Stoneplate",
+            "Spirit Visage"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Miss Fortune",
+          "items": [
+            "TFT17_APTrait",
+            "Infinity Edge",
+            "Red Buff",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [
+            "Protector's Vow",
+            "Gargoyle Stoneplate",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Illaoi",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Jax",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Timebreaker Pantheon",
+      "tier": "D",
+      "playstyle": "lvl 6\nEasy",
+      "difficulty": "lvl 6",
+      "stats": {
+        "avg_placement": 5.35,
+        "pick_rate": 0.02,
+        "win_rate": "5.6%",
+        "top_4_rate": "34.5%"
+      },
+      "units": [
+        {
+          "name": "Pantheon",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Gargoyle Stoneplate",
+            "Spirit Visage"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Ezreal",
+          "items": [
+            "Infinity Edge",
+            "Giant Slayer",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Riven",
+          "items": [
+            "Bloodthirster",
+            "Sterak's Gage",
+            "Titan's Resolve"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Milio",
+          "items": [
+            "Jeweled Gauntlet",
+            "Giant Slayer",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Xayah",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Maokai",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Cho'Gath",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Brawler Urgot",
+      "tier": "D",
+      "playstyle": "lvl 7\nMedium",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.41,
+        "pick_rate": 0.02,
+        "win_rate": "4.7%",
+        "top_4_rate": "33.1%"
+      },
+      "units": [
+        {
+          "name": "Urgot",
+          "items": [
+            "Infinity Edge",
+            "Last Whisper",
+            "Striker's Flail"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Maokai",
+          "items": [
+            "Steadfast Heart",
+            "Sunfire Cape",
+            "Evenshroud"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Master Yi",
+          "items": [
+            "Brawler Emblem",
+            "Edge of Night",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [
+            "Quicksilver",
+            "Sterak's Gage",
+            "Hand Of Justice"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Gragas",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Psionic Viktor",
+      "tier": "D",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.48,
+        "pick_rate": 0.02,
+        "win_rate": "2.6%",
+        "top_4_rate": "29.8%"
+      },
+      "units": [
+        {
+          "name": "Viktor",
+          "items": [
+            "Drone Uplink",
+            "Archangel's Staff",
+            "Jeweled Gauntlet"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Master Yi",
+          "items": [
+            "Bloodthirster",
+            "Sterak's Gage",
+            "Titan's Resolve"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Gragas",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Spirit Visage",
+            "Warmog's Armor"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Tahm Kench",
+          "items": [
+            "Protector's Vow",
+            "Sunfire Cape",
+            "Spirit Visage"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Sona",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Maokai",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Urgot",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Challenger Diana",
+      "tier": "D",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.54,
+        "pick_rate": 0.02,
+        "win_rate": "2.8%",
+        "top_4_rate": "29.2%"
+      },
+      "units": [
+        {
+          "name": "Diana",
+          "items": [
+            "Vanguard Emblem",
+            "Bloodthirster",
+            "Guinsoo's Rageblade"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Leona",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Sunfire Cape",
+            "Spirit Visage"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Kindred",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Zoe",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Voyager Aurora",
+      "tier": "D",
+      "playstyle": "lvl 7\nEasy",
+      "difficulty": "lvl 7",
+      "stats": {
+        "avg_placement": 5.61,
+        "pick_rate": 0.03,
+        "win_rate": "13.5%",
+        "top_4_rate": "30.6%"
+      },
+      "units": [
+        {
+          "name": "Aurora",
+          "items": [
+            "Evolved Embershot",
+            "Jeweled Gauntlet",
+            "Spear of Shojin"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Illaoi",
+          "items": [
+            "Dragon's Claw",
+            "Sunfire Cape",
+            "Spirit Visage"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Karma",
+          "items": [
+            "Jeweled Gauntlet",
+            "Striker's Flail",
+            "Spear of Shojin"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "The Mighty Mech",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Viktor",
+          "items": [],
+          "is_three_star": true
+        },
+        {
+          "name": "Meepsie",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Pyke",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Bastion Ornn",
+      "tier": "D",
+      "playstyle": "Standard\nEasy",
+      "difficulty": "Standard",
+      "stats": {
+        "avg_placement": 6.32,
+        "pick_rate": 0.02,
+        "win_rate": "2.2%",
+        "top_4_rate": "16.6%"
+      },
+      "units": [
+        {
+          "name": "Ornn",
+          "items": [
+            "Gargoyle Stoneplate",
+            "Spirit Visage",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Vex",
+          "items": [
+            "Guinsoo's Rageblade",
+            "Giant Slayer",
+            "Rabadon's Deathcap"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Graves",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Shen",
+          "items": [
+            "Protector's Vow"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Blitzcrank",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Fiora",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Morgana",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Akali",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Aatrox",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    },
+    {
+      "name": "Anima Illaoi",
+      "tier": "D",
+      "playstyle": "lvl 6\nEasy",
+      "difficulty": "lvl 6",
+      "stats": {
+        "avg_placement": 6.69,
+        "pick_rate": 0.04,
+        "win_rate": "6.0%",
+        "top_4_rate": "14.5%"
+      },
+      "units": [
+        {
+          "name": "Jinx",
+          "items": [
+            "Battle Bunny Crossbow",
+            "Guinsoo's Rageblade",
+            "Infinity Edge"
+          ],
+          "is_three_star": true
+        },
+        {
+          "name": "Illaoi",
+          "items": [
+            "Sunfire Cape",
+            "Evenshroud",
+            "Warmog's Armor"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Aurora",
+          "items": [
+            "Blue Buff",
+            "Jeweled Gauntlet",
+            "Void Staff"
+          ],
+          "is_three_star": false
+        },
+        {
+          "name": "Nunu & Willump",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rammus",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Rhaast",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Jax",
+          "items": [],
+          "is_three_star": false
+        },
+        {
+          "name": "Mordekaiser",
+          "items": [],
+          "is_three_star": false
+        }
+      ]
+    }
+  ]
+}

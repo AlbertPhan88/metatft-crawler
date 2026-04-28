@@ -1,0 +1,1662 @@
+{
+  "timestamp": "2026-04-27T17:24:13.687372",
+  "source": "https://www.metatft.com/items",
+  "language": "en",
+  "total_items_found": 178,
+  "total_items_crawled": 178,
+  "items": [
+    {
+      "name": "Solar Eclipse",
+      "stats": {
+        "Health": "+800"
+      },
+      "traitNumber": null,
+      "description": "Gain 18% max Health. Every second, deal magic damage in a 2 hex radius equal to 5% of the holder's max Health, and gain max Health equal to 20% of damage dealt. Radius increases every 6 seconds."
+    },
+    {
+      "name": "Kayle's Radiant Exaltation",
+      "stats": {
+        "AS": "+30",
+        "AP": "+50",
+        "AD": "+50%"
+      },
+      "traitNumber": null,
+      "description": null
+    },
+    {
+      "name": "Tactician's Crown",
+      "stats": {},
+      "traitNumber": "5",
+      "description": "Your team gains +1 max team size."
+    },
+    {
+      "name": "Radiant Nashor's Tooth",
+      "stats": {
+        "Health": "+300",
+        "AP": "+30",
+        "AS": "+20",
+        "CritChance": "+40"
+      },
+      "traitNumber": "5",
+      "description": "Attacks grant 4 bonus Mana, increased to 8 if they critically strike."
+    },
+    {
+      "name": "Radiant Infinity Edge",
+      "stats": {
+        "AD": "+75%",
+        "CritChance": "+75"
+      },
+      "traitNumber": "5",
+      "description": "Precision: Ability damage can critically strike. Additional Precision grants 10% Critical Strike Damage."
+    },
+    {
+      "name": "Radiant Giant Slayer",
+      "stats": {
+        "AD": "+30%",
+        "AP": "+30",
+        "AS": "+30",
+        "scaleDA": "+30%"
+      },
+      "traitNumber": "5",
+      "description": "Gain 30% additional Damage Amp against Tanks."
+    },
+    {
+      "name": "Radiant Rabadon's Deathcap",
+      "stats": {
+        "AP": "+110",
+        "scaleDA": "+50%"
+      },
+      "traitNumber": "5",
+      "description": null
+    },
+    {
+      "name": "Radiant Last Whisper",
+      "stats": {
+        "AD": "+45%",
+        "AS": "+40",
+        "CritChance": "+40"
+      },
+      "traitNumber": "5",
+      "description": "Damage from attacks and Abilities 30% Sunder the target for the rest of combat. This effect does not stack."
+    },
+    {
+      "name": "Radiant Deathblade",
+      "stats": {
+        "AD": "+110%",
+        "scaleDA": "+20%"
+      },
+      "traitNumber": "5",
+      "description": null
+    },
+    {
+      "name": "Titanic Hydra",
+      "stats": {
+        "Health": "+300",
+        "AD": "+20%",
+        "AS": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Attacks deal 4% of the holder's max Health plus 8% of their Attack Damage as bonus physical damage to the target and adjacent enemies."
+    },
+    {
+      "name": "Radiant Red Buff",
+      "stats": {
+        "AS": "+90",
+        "scaleDA": "+6%"
+      },
+      "traitNumber": "5",
+      "description": "Attacks and Abilities 2% Burn and 33% Wound enemies for 5 seconds."
+    },
+    {
+      "name": "Radiant Gargoyle Stoneplate",
+      "stats": {
+        "Health": "+300",
+        "Armor": "+50",
+        "MagicResist": "+50"
+      },
+      "traitNumber": "5",
+      "description": "Gain 25 Armor and 25 Magic Resist for each enemy targeting the holder."
+    },
+    {
+      "name": "Radiant Kraken's Fury",
+      "stats": {
+        "AD": "+20%",
+        "MagicResist": "+40",
+        "AS": "+20"
+      },
+      "traitNumber": "4",
+      "description": "Attacks grant 7% stacking Attack Damage, up to 15 attacks. After 15 attacks, gain 30% Attack Speed."
+    },
+    {
+      "name": "Prowler's Claw",
+      "stats": {
+        "Health": "+300",
+        "AD": "+35%",
+        "CritChance": "+45"
+      },
+      "traitNumber": "5",
+      "description": "After killing a target, shed negative effects and dash to the farthest target within 4 hexes. The next 2 critical attacks deal 50% bonus Critical Strike Damage."
+    },
+    {
+      "name": "Giant Slayer",
+      "stats": {
+        "AD": "+15%",
+        "AP": "+15",
+        "AS": "+15",
+        "scaleDA": "+15%"
+      },
+      "traitNumber": "4",
+      "description": "Gain 15% additional Damage Amp against Tanks."
+    },
+    {
+      "name": "Gargoyle Stoneplate",
+      "stats": {
+        "Health": "+100",
+        "Armor": "+25",
+        "MagicResist": "+25"
+      },
+      "traitNumber": "1",
+      "description": "Gain 10 Armor and 10 Magic Resist for each enemy targeting the holder."
+    },
+    {
+      "name": "Radiant Edge of Night",
+      "stats": {
+        "AP": "+30",
+        "AD": "+30%",
+        "AS": "+30",
+        "Armor": "+40"
+      },
+      "traitNumber": "4",
+      "description": "At 60% Health, briefly become untargetable, shed negative effects, and heal all missing health."
+    },
+    {
+      "name": "Radiant Striker's Flail",
+      "stats": {
+        "Health": "+300",
+        "AS": "+20",
+        "CritChance": "+40",
+        "scaleDA": "+10%"
+      },
+      "traitNumber": "5",
+      "description": "Critical Strikes grant 10% Damage Amp for 5 seconds, stacking up to 4 times."
+    },
+    {
+      "name": "Radiant Jeweled Gauntlet",
+      "stats": {
+        "AP": "+75",
+        "CritChance": "+75"
+      },
+      "traitNumber": "5",
+      "description": "Precision: Ability damage can critically strike. Additional Precision grants 10% Critical Strike Damage."
+    },
+    {
+      "name": "Radiant Quicksilver",
+      "stats": {
+        "MagicResist": "+40",
+        "AS": "+30",
+        "CritChance": "+40"
+      },
+      "traitNumber": "5",
+      "description": "Combat Start: Gain immunity to crowd control for 45 seconds."
+    },
+    {
+      "name": "Death's Defiance",
+      "stats": {
+        "AD": "+25%",
+        "Armor": "+40",
+        "AS": "+15",
+        "scaleSV": "+25%"
+      },
+      "traitNumber": "5",
+      "description": "50% of the damage the holder receives is instead dealt over 4 seconds as non-lethal damage."
+    },
+    {
+      "name": "Radiant Sterak's Gage",
+      "stats": {
+        "Health": "+600",
+        "AD": "+90%"
+      },
+      "traitNumber": "5",
+      "description": "At 60% Health, gain a Shield equal to 80% of the wearer's maximum Health that rapidly decays over 6 seconds."
+    },
+    {
+      "name": "Lightshield Crest",
+      "stats": {
+        "Armor": "+55",
+        "MagicResist": "+55"
+      },
+      "traitNumber": "4",
+      "description": "Every 3 seconds, Shields the lowest percent Health ally for 70% of the holder's combined Armor and Magic Resist for 5 seconds."
+    },
+    {
+      "name": "Warmog's Armor",
+      "stats": {
+        "Health": "+500"
+      },
+      "traitNumber": "5",
+      "description": null
+    },
+    {
+      "name": "Sunfire Cape",
+      "stats": {
+        "Health": "+150",
+        "Armor": "+20"
+      },
+      "traitNumber": "4",
+      "description": "Every 2 seconds, deal 1% Burn and 33% Wound to an enemy within 2 hexes for 10 seconds."
+    },
+    {
+      "name": "Radiant Void Staff",
+      "stats": {
+        "scalemanaregen": "+2",
+        "AP": "+75",
+        "AS": "+30"
+      },
+      "traitNumber": null,
+      "description": "Damage from attacks and Abilities 30% Shred the target for the rest of combat. This effect does not stack."
+    },
+    {
+      "name": "Radiant Hextech Gunblade",
+      "stats": {
+        "scaleSV": "+30%",
+        "AD": "+40%",
+        "AP": "+40",
+        "scalemanaregen": "+2"
+      },
+      "traitNumber": "5",
+      "description": "Heal the lowest percent Health ally for 40% of damage dealt."
+    },
+    {
+      "name": "Radiant Ionic Spark",
+      "stats": {
+        "Health": "+500",
+        "AP": "+30",
+        "MagicResist": "+70"
+      },
+      "traitNumber": "5",
+      "description": "30% Shred enemies within 2 hexes. When enemies cast an Ability, deal magic damage equal to 300% of the Mana spent."
+    },
+    {
+      "name": "Ahri's Aura",
+      "stats": {
+        "scalemanaregen": "+4",
+        "AP": "+20"
+      },
+      "traitNumber": null,
+      "description": "The holder is orbited by 3 foxfires. Each one deals 55 () magic damage and the orbit expands to hit the holder's current target."
+    },
+    {
+      "name": "Infinity Force",
+      "stats": {
+        "Health": "+300",
+        "AD": "+30%",
+        "AP": "+30",
+        "Armor": "+30",
+        "MagicResist": "+30",
+        "AS": "+30"
+      },
+      "traitNumber": "4",
+      "description": null
+    },
+    {
+      "name": "Protector's Vow",
+      "stats": {
+        "scalemanaregen": "+1",
+        "Armor": "+25",
+        "MagicResist": "+25"
+      },
+      "traitNumber": "2",
+      "description": "Combat Start: Gain 20 Mana."
+    },
+    {
+      "name": "Jeweled Gauntlet",
+      "stats": {
+        "AP": "+35",
+        "CritChance": "+35"
+      },
+      "traitNumber": "5",
+      "description": "Precision: Ability damage can critically strike. Additional Precision grants 10% Critical Strike Damage."
+    },
+    {
+      "name": "Guinsoo's Rageblade",
+      "stats": {
+        "AP": "+10",
+        "AS": "+10"
+      },
+      "traitNumber": "5",
+      "description": "Gain 7% stacking Attack Speed every second."
+    },
+    {
+      "name": "Horizon Focus",
+      "stats": {
+        "Health": "+250",
+        "scalemanaregen": "+2",
+        "Armor": "+20",
+        "MagicResist": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Stunning an enemy causes lightning to strike them, dealing 30% of their max Health as magic damage."
+    },
+    {
+      "name": "Radiant Titan's Resolve",
+      "stats": {
+        "Armor": "+40",
+        "AS": "+20"
+      },
+      "traitNumber": "4",
+      "description": "Gain 4% Attack Damage and 4% Ability Power when attacking or taking damage, stacking up to 25 times."
+    },
+    {
+      "name": "Radiant Evenshroud",
+      "stats": {
+        "Health": "+500",
+        "MagicResist": "+40"
+      },
+      "traitNumber": "5",
+      "description": "30% Sunder enemies within 3 hexes. Gain 50 Armor and Magic Resist for the first 20 seconds of combat."
+    },
+    {
+      "name": "Gold Collector",
+      "stats": {
+        "AD": "+40%",
+        "CritChance": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Attacks and Abilities execute enemies below 12% of their maximum Health. Executions have a 33% chance to drop  1 gold."
+    },
+    {
+      "name": "Spirit Visage",
+      "stats": {
+        "Health": "+300",
+        "scalemanaregen": "+2",
+        "scaleDR": "+8%"
+      },
+      "traitNumber": "4",
+      "description": "Regenerate 2% of missing Health each second."
+    },
+    {
+      "name": "The Indomitable",
+      "stats": {
+        "Health": "+500",
+        "Armor": "+20",
+        "MagicResist": "+20"
+      },
+      "traitNumber": "5",
+      "description": "The holder's Move Speed is drastically reduced."
+    },
+    {
+      "name": "Radiant Spear of Shojin",
+      "stats": {
+        "scalemanaregen": "+2",
+        "AD": "+30%",
+        "AP": "+30"
+      },
+      "traitNumber": "5",
+      "description": "Attacks grant 10 bonus Mana."
+    },
+    {
+      "name": "Zhonya's Paradox",
+      "stats": {
+        "AP": "+25",
+        "Armor": "+25",
+        "MagicResist": "+25"
+      },
+      "traitNumber": "5",
+      "description": "Once per combat at 40% Health, become invulnerable and untargetable for 3 seconds."
+    },
+    {
+      "name": "Radiant Thief's Gloves",
+      "stats": {
+        "Health": "+150",
+        "CritChance": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Each round: Equip 2 random Radiant items."
+    },
+    {
+      "name": "Radiant Morellonomicon",
+      "stats": {
+        "Health": "+300",
+        "AP": "+40",
+        "scalemanaregen": "+2"
+      },
+      "traitNumber": "3",
+      "description": "Attacks and Abilities deal 2% Burn and 33% Wound to enemies for 10 seconds."
+    },
+    {
+      "name": "Mogul's Mail",
+      "stats": {
+        "Health": "+300"
+      },
+      "traitNumber": "2",
+      "description": "Grants 1 Armor, 1 Magic Resist, and 8 Health when taking damage, stacking up to 35 times."
+    },
+    {
+      "name": "Radiant Hand of Justice",
+      "stats": {
+        "CritChance": "+40",
+        "scalemanaregen": "+2"
+      },
+      "traitNumber": "5",
+      "description": "30% Attack Damage and 30% Ability Power."
+    },
+    {
+      "name": "Spear of Shojin",
+      "stats": {
+        "scalemanaregen": "+1",
+        "AD": "+15%",
+        "AP": "+15"
+      },
+      "traitNumber": "2",
+      "description": "Attacks grant 5 bonus Mana."
+    },
+    {
+      "name": "Thief's Gloves",
+      "stats": {
+        "Health": "+150",
+        "CritChance": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Each round: Equip 2 random items."
+    },
+    {
+      "name": "Infinity Edge",
+      "stats": {
+        "AD": "+35%",
+        "CritChance": "+35"
+      },
+      "traitNumber": "5",
+      "description": "Precision: Ability damage can critically strike. Additional Precision grants 10% Critical Strike Damage."
+    },
+    {
+      "name": "Fishbones",
+      "stats": {
+        "AD": "+50%",
+        "AS": "+50"
+      },
+      "traitNumber": "4",
+      "description": "The holder's attacks target random enemies."
+    },
+    {
+      "name": "Radiant Sunfire Cape",
+      "stats": {
+        "Health": "+300",
+        "Armor": "+40"
+      },
+      "traitNumber": "4",
+      "description": "Every 2 seconds, deal 2% Burn and 33% Wound to an enemy within 2 hexes for 10 seconds."
+    },
+    {
+      "name": "Radiant Archangel's Staff",
+      "stats": {
+        "scalemanaregen": "+2",
+        "AP": "+60"
+      },
+      "traitNumber": "5",
+      "description": "Combat start: Gain 40% Ability Power every 5 seconds in combat."
+    },
+    {
+      "name": "Void Staff",
+      "stats": {
+        "scalemanaregen": "+1",
+        "AP": "+35",
+        "AS": "+15"
+      },
+      "traitNumber": null,
+      "description": "Damage from attacks and Abilities 30% Shred the target for 5 seconds. This effect does not stack."
+    },
+    {
+      "name": "Silvermere Dawn",
+      "stats": {
+        "AD": "+140%",
+        "Armor": "+80",
+        "MagicResist": "+80"
+      },
+      "traitNumber": "5",
+      "description": "Grants immunity to Stuns and the holder's attacks Stun the target for 0.8 seconds."
+    },
+    {
+      "name": "Adaptive Helm",
+      "stats": {
+        "scalemanaregen": "+3",
+        "MagicResist": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Gain an additional 15% Mana from all sources. The holder gains an additional bonus based on their Role:"
+    },
+    {
+      "name": "Radiant Blue Buff",
+      "stats": {
+        "scalemanaregen": "+10",
+        "AD": "+30%",
+        "AP": "+30"
+      },
+      "traitNumber": "5",
+      "description": "Gain 20% additional Attack Damage and Ability Power from all sources."
+    },
+    {
+      "name": "Dragon's Claw",
+      "stats": {
+        "MagicResist": "+60"
+      },
+      "traitNumber": "5",
+      "description": "Every 2 seconds, heal 2.5% max Health."
+    },
+    {
+      "name": "Ekko's Patience",
+      "stats": {
+        "AP": "+25",
+        "AD": "+25%"
+      },
+      "traitNumber": null,
+      "description": "Total Ability damage is increased by 45%, but is dealt over 2 seconds instead."
+    },
+    {
+      "name": "Rabadon's Deathcap",
+      "stats": {
+        "AP": "+55",
+        "scaleDA": "+15%"
+      },
+      "traitNumber": "2",
+      "description": null
+    },
+    {
+      "name": "Striker's Flail",
+      "stats": {
+        "Health": "+150",
+        "AS": "+10",
+        "CritChance": "+20",
+        "scaleDA": "+5%"
+      },
+      "traitNumber": "4",
+      "description": "Critical Strikes grant 5% Damage Amp for 5 seconds, stacking up to 4 times."
+    },
+    {
+      "name": "Steadfast Heart",
+      "stats": {
+        "Health": "+250",
+        "Armor": "+20",
+        "CritChance": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Gain 5% Durability. While above 50% Health, instead gain 15% Durability."
+    },
+    {
+      "name": "Eternal Pact",
+      "stats": {
+        "scalemanaregen": "+1",
+        "AP": "+40"
+      },
+      "traitNumber": null,
+      "description": "Combat start: Form a pact with the highest Health allied champion, if they die, gain 10 Mana regen and 40% Ability Power."
+    },
+    {
+      "name": "Mittens",
+      "stats": {
+        "AS": "+65"
+      },
+      "traitNumber": "5",
+      "description": "Shrinks the holder, granting them increased movement speed and immunity to Slow, Burn, and Wound."
+    },
+    {
+      "name": "Hand Of Justice",
+      "stats": {
+        "CritChance": "+20",
+        "scalemanaregen": "+1"
+      },
+      "traitNumber": "4",
+      "description": "15% Attack Damage and 15% Ability Power."
+    },
+    {
+      "name": "Void Gauntlet",
+      "stats": {
+        "Health": "+300",
+        "scaleDR": "+10%"
+      },
+      "traitNumber": null,
+      "description": "Combat start: Store 30% max Health and 2.5% more every second. On death, unleash the stored Health as magic damage split between enemies within 4-hexes."
+    },
+    {
+      "name": "Crownguard",
+      "stats": {
+        "Health": "+100",
+        "AP": "+20",
+        "Armor": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Combat Start: Gain a 25% max Health Shield for 8 seconds."
+    },
+    {
+      "name": "Bramble Vest",
+      "stats": {
+        "Armor": "+50"
+      },
+      "traitNumber": "5",
+      "description": "Take 5% reduced damage from attacks. When struck by any attack, deal 100 magic damage to all adjacent enemies."
+    },
+    {
+      "name": "Voyager Emblem",
+      "stats": {
+        "AP": "+20",
+        "AD": "+20%"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Voyager trait."
+    },
+    {
+      "name": "Radiant Field",
+      "stats": {
+        "Health": "+400"
+      },
+      "traitNumber": "4",
+      "description": "Gain 20% max health. Every second, deal magic damage in a 1-hex radius equal to 3% of the holder's max Health. Radius increases every 6 seconds."
+    },
+    {
+      "name": "Wit's End",
+      "stats": {
+        "Health": "+400",
+        "MagicResist": "+20",
+        "Armor": "+20",
+        "AS": "+25"
+      },
+      "traitNumber": "5",
+      "description": "Attacks deal X bonus magic damage."
+    },
+    {
+      "name": "Edge of Night",
+      "stats": {
+        "AP": "+10",
+        "AD": "+10%",
+        "AS": "+15",
+        "Armor": "+20"
+      },
+      "traitNumber": "3",
+      "description": "At 60% Health, briefly become untargetable, shed negative effects, and heal 30% missing health."
+    },
+    {
+      "name": "Evelynn's Instinct",
+      "stats": {
+        "AS": "+40",
+        "scaleSV": "+15%",
+        "AP": "+10",
+        "AD": "+10%"
+      },
+      "traitNumber": null,
+      "description": "When switching targets, blink to the next target. Attacks and Abilities execute the holder's target below 12% of their Health."
+    },
+    {
+      "name": "Nashor's Tooth",
+      "stats": {
+        "Health": "+150",
+        "AP": "+15",
+        "AS": "+10",
+        "CritChance": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Attacks grant 2 bonus Mana, increased to 4 if they critically strike."
+    },
+    {
+      "name": "Quicksilver",
+      "stats": {
+        "MagicResist": "+20",
+        "AS": "+15",
+        "CritChance": "+20"
+      },
+      "traitNumber": "4",
+      "description": "Combat Start: Gain immunity to crowd control for 18 seconds."
+    },
+    {
+      "name": "Radiant Protector's Vow",
+      "stats": {
+        "scalemanaregen": "+2",
+        "Armor": "+50",
+        "MagicResist": "+50"
+      },
+      "traitNumber": "4",
+      "description": "Combat Start: Gain 40 Mana."
+    },
+    {
+      "name": "Bloodthirster",
+      "stats": {
+        "AD": "+15%",
+        "AP": "+15",
+        "scaleSV": "+20%",
+        "MagicResist": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds."
+    },
+    {
+      "name": "Radiant Warmog's Armor",
+      "stats": {
+        "Health": "+1200"
+      },
+      "traitNumber": "4",
+      "description": null
+    },
+    {
+      "name": "Evenshroud",
+      "stats": {
+        "Health": "+250",
+        "MagicResist": "+20"
+      },
+      "traitNumber": "5",
+      "description": "30% Sunder enemies within 2 hexes. Gain 15 Armor and Magic Resist for the first 15 seconds of combat."
+    },
+    {
+      "name": "Deathblade",
+      "stats": {
+        "AD": "+55%",
+        "scaleDA": "+10%"
+      },
+      "traitNumber": "1",
+      "description": null
+    },
+    {
+      "name": "Hextech Gunblade",
+      "stats": {
+        "AD": "+20%",
+        "AP": "+20",
+        "scaleSV": "+15%",
+        "scalemanaregen": "+1"
+      },
+      "traitNumber": "2",
+      "description": "Heal the lowest percent Health ally for 20% of damage dealt."
+    },
+    {
+      "name": "Lich Bane",
+      "stats": {
+        "AP": "+55",
+        "AS": "+10"
+      },
+      "traitNumber": "5",
+      "description": "The holder's first attack after each Ability cast deals X bonus magic damage."
+    },
+    {
+      "name": "Sterak's Gage",
+      "stats": {
+        "Health": "+300",
+        "AD": "+45%"
+      },
+      "traitNumber": "4",
+      "description": "At 60% Health, gain a Shield equal to 40% of the wearer's maximum Health that rapidly decays over 4 seconds."
+    },
+    {
+      "name": "Aegis of Dawn",
+      "stats": {
+        "Armor": "+50",
+        "Health": "+400"
+      },
+      "traitNumber": "5",
+      "description": "Every 2.5 seconds, steal 3 Armor from enemies within 1-hex and heal 15 of the holder's Armor."
+    },
+    {
+      "name": "Statikk Shiv",
+      "stats": {
+        "AP": "+15",
+        "AS": "+50"
+      },
+      "traitNumber": null,
+      "description": "Every 3rd attack deals 30 + 50% of the holder's Ability Power as additional magic damage to 4 enemies."
+    },
+    {
+      "name": "Rogue Emblem",
+      "stats": {
+        "CritChance": "+20"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Rogue trait. At 50% health, gain 40% Omnivamp and immunity to crowd control for 5 seconds."
+    },
+    {
+      "name": "Hellfire Hatchet",
+      "stats": {
+        "AD": "+20%",
+        "scaleSV": "+20%",
+        "Health": "+150"
+      },
+      "traitNumber": "5",
+      "description": "Attacks deal 3% of the holder's max Health as bonus physical damage. For every 1% missing Health, gain 1% Attack Speed."
+    },
+    {
+      "name": "Stargazer Emblem",
+      "stats": {
+        "AP": "+15",
+        "AD": "+15%"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Stargazer trait."
+    },
+    {
+      "name": "Space Groove Emblem",
+      "stats": {
+        "scalemanaregen": "+3"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Space Groove trait. On cast, the holder enters The Groove for 3 seconds."
+    },
+    {
+      "name": "Red Buff",
+      "stats": {
+        "AS": "+45",
+        "scaleDA": "+6%"
+      },
+      "traitNumber": "4",
+      "description": "Attacks and Abilities 1% Burn and 33% Wound enemies for 5 seconds."
+    },
+    {
+      "name": "Gambler's Blade",
+      "stats": {
+        "AS": "+55"
+      },
+      "traitNumber": "2",
+      "description": "Grant  1% bonus Attack Speed per  gold in your bank (up to  30 gold)."
+    },
+    {
+      "name": "Morellonomicon",
+      "stats": {
+        "Health": "+150",
+        "AP": "+20",
+        "scalemanaregen": "+1"
+      },
+      "traitNumber": "5",
+      "description": "Attacks and Abilities deal 1% Burn and 33% Wound to enemies for 10 seconds."
+    },
+    {
+      "name": "Archangel's Staff",
+      "stats": {
+        "scalemanaregen": "+1",
+        "AP": "+30"
+      },
+      "traitNumber": "4",
+      "description": "Combat start: Gain 20% Ability Power every 5 seconds in combat."
+    },
+    {
+      "name": "Radiant Bloodthirster",
+      "stats": {
+        "AD": "+30%",
+        "AP": "+30",
+        "MagicResist": "+40",
+        "scaleSV": "+40%"
+      },
+      "traitNumber": "5",
+      "description": "Once per combat: At 40% Health, gain a 50% max Health Shield that lasts up to 5 seconds."
+    },
+    {
+      "name": "Hullcrusher",
+      "stats": {
+        "Armor": "+60",
+        "MagicResist": "+60"
+      },
+      "traitNumber": "3",
+      "description": "Combat Start: If there are no adjacent allies, gain 400 Health, 10% Attack Damage, and 10% Ability Power."
+    },
+    {
+      "name": "Last Whisper",
+      "stats": {
+        "AD": "+15%",
+        "AS": "+20",
+        "CritChance": "+20"
+      },
+      "traitNumber": "2",
+      "description": "Damage from attacks and Abilities 30% Sunder the target for 3 seconds. This effect does not stack."
+    },
+    {
+      "name": "Kraken's Fury",
+      "stats": {
+        "AD": "+10%",
+        "AS": "+10",
+        "MagicResist": "+20"
+      },
+      "traitNumber": "4",
+      "description": "Attacks grant 3.5% stacking Attack Damage, up to 15 attacks. After 15 attacks, gain 15% Attack Speed."
+    },
+    {
+      "name": "Cappa Juice",
+      "stats": {
+        "AD": "+25%",
+        "AP": "+25",
+        "AS": "+25"
+      },
+      "traitNumber": null,
+      "description": "The holder dons a Hat on each takedown. The holder gains 1% Attack Damage and Ability Power per Hat. On death lose 20% of all Hats. (Hats: X)"
+    },
+    {
+      "name": "Flickerblades",
+      "stats": {
+        "AS": "+20",
+        "AP": "+10"
+      },
+      "traitNumber": null,
+      "description": "Attacks grant 5% stacking Attack Speed. Every 3 attacks also grant 2% Attack Damage and 2% Ability Power."
+    },
+    {
+      "name": "Radiant Crownguard",
+      "stats": {
+        "Health": "+200",
+        "AP": "+40",
+        "Armor": "+40"
+      },
+      "traitNumber": "5",
+      "description": "Combat Start: Gain a 50% max Health Shield for 8 seconds."
+    },
+    {
+      "name": "Vanguard Emblem",
+      "stats": {
+        "MagicResist": "+20",
+        "Armor": "+20",
+        "Health": "+150"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Vanguard trait. Gain 3% Ability Power whenever an ally gains a shield."
+    },
+    {
+      "name": "Ionic Spark",
+      "stats": {
+        "Health": "+250",
+        "AP": "+15",
+        "MagicResist": "+35"
+      },
+      "traitNumber": "4",
+      "description": "30% Shred enemies within 2 hexes. When enemies cast an Ability, deal magic damage equal to 150% of the Mana spent"
+    },
+    {
+      "name": "Dark Star Emblem",
+      "stats": {
+        "AD": "+25%",
+        "AP": "+25"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Dark Star trait."
+    },
+    {
+      "name": "Radiant Spirit Visage",
+      "stats": {
+        "Health": "+700",
+        "scalemanaregen": "+4",
+        "scaleDR": "+15%"
+      },
+      "traitNumber": "4",
+      "description": "Regenerate 4% of missing Health each second."
+    },
+    {
+      "name": "Shepherd Emblem",
+      "stats": {
+        "scalemanaregen": "+3"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Shepherd trait. On cast, grant 12% of max Mana to the Bond of the Stars."
+    },
+    {
+      "name": "Blue Buff",
+      "stats": {
+        "scalemanaregen": "+5",
+        "AD": "+15%",
+        "AP": "+15"
+      },
+      "traitNumber": "3",
+      "description": "Gain 10% additional Attack Damage and Ability Power from all sources."
+    },
+    {
+      "name": "Titan's Resolve",
+      "stats": {
+        "Armor": "+20",
+        "AS": "+10"
+      },
+      "traitNumber": "5",
+      "description": "Gain 2% Attack Damage and 2% Ability Power when attacking or taking damage, stacking up to 25 times."
+    },
+    {
+      "name": "Timebreaker Emblem",
+      "stats": {
+        "AS": "+15",
+        "Health": "+300"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Timebreaker trait."
+    },
+    {
+      "name": "Blighting Jewel",
+      "stats": {
+        "AP": "+60",
+        "scalemanaregen": "+2"
+      },
+      "traitNumber": "4",
+      "description": "Dealing magic damage reduces the target's Magic Resist by 4. If their Magic Resist is 0, grant the holder 2 Mana instead."
+    },
+    {
+      "name": "Aegis of Dusk",
+      "stats": {
+        "MagicResist": "+70",
+        "Health": "+400"
+      },
+      "traitNumber": "4",
+      "description": "Every 2.5 seconds, steal 3 Magic Resist from enemies within 1 hex and deal 15 of the holder's Magic Resist as magic damage."
+    },
+    {
+      "name": "Rapid Firecannon",
+      "stats": {
+        "AS": "+65"
+      },
+      "traitNumber": "5",
+      "description": "Gain +1 Attack Range, increased by 1 whenever the holder kills an enemy."
+    },
+    {
+      "name": "Soraka's Miracle",
+      "stats": {
+        "scaleDR": "+10%",
+        "Health": "+100"
+      },
+      "traitNumber": null,
+      "description": "The first 2 times the holder drops below 50% Health, a Miracle occurs, healing them for 20% of their max Health."
+    },
+    {
+      "name": "Anomaly",
+      "stats": {},
+      "traitNumber": "5",
+      "description": "Evolve the holder, granting an effect based on their role."
+    },
+    {
+      "name": "Radiant Guinsoo's Rageblade",
+      "stats": {
+        "AP": "+20",
+        "AS": "+20"
+      },
+      "traitNumber": "5",
+      "description": "Gain 14% stacking Attack Speed every second."
+    },
+    {
+      "name": "N.O.V.A. Emblem",
+      "stats": {
+        "CritChance": "+20",
+        "Health": "+300"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the N.O.V.A. trait."
+    },
+    {
+      "name": "Radiant Steadfast Heart",
+      "stats": {
+        "Health": "+600",
+        "Armor": "+40",
+        "CritChance": "+40"
+      },
+      "traitNumber": "5",
+      "description": "Gain 10% durability. While above 50% Health, instead gain 30% Durability."
+    },
+    {
+      "name": "Brawler Emblem",
+      "stats": {
+        "Health": "+250"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Brawler trait. Attacks deals 3% of the holder's max health as magic damage."
+    },
+    {
+      "name": "Battle Bunny Crossbow",
+      "stats": {
+        "AS": "+25",
+        "CritChance": "+35",
+        "AD": "+20%"
+      },
+      "traitNumber": null,
+      "description": "Every 4 critical strikes, fire 5 piercing arrows that can critically strike towards the target. Each deals 80%  physical damage."
+    },
+    {
+      "name": "Luden's Tempest",
+      "stats": {
+        "AD": "+55%",
+        "AP": "+55"
+      },
+      "traitNumber": "5",
+      "description": "100% of overkill damage plus 100 is dealt as magic damage to the three enemies nearest the target."
+    },
+    {
+      "name": "Drone Uplink",
+      "stats": {
+        "AP": "+25"
+      },
+      "traitNumber": "3",
+      "description": "A drone repeats 20% of damage from the holder's attacks and Abilities to the same targets every 3 seconds."
+    },
+    {
+      "name": "Marauder Emblem",
+      "stats": {
+        "AD": "+20%",
+        "scaleSV": "+10%"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Marauder trait and has a 33% chance to drop 1 gold on kill."
+    },
+    {
+      "name": "Bastion Emblem",
+      "stats": {
+        "Armor": "+30",
+        "MagicResist": "+30"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Bastion trait. After the first 10 seconds of combat, the holder gains 70% Attack Speed."
+    },
+    {
+      "name": "Primordian Emblem",
+      "stats": {
+        "Health": "+450"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Primordian trait."
+    },
+    {
+      "name": "Sympathetic Implant",
+      "stats": {
+        "scalemanaregen": "+2",
+        "AP": "+20"
+      },
+      "traitNumber": "2",
+      "description": "Every 5 seconds, gain 1 additional Mana Regen."
+    },
+    {
+      "name": "Varus's Obsession",
+      "stats": {},
+      "traitNumber": null,
+      "description": "Combat Start: Your strongest Tank becomes the Soulmate. For each second they are alive, the holder gains 3% stacking Attack Damage and Ability Power."
+    },
+    {
+      "name": "Target-Lock Optics",
+      "stats": {
+        "AS": "+35",
+        "AD": "+15%"
+      },
+      "traitNumber": null,
+      "description": "The holder's first attack on each enemy deals 150 () additional damage."
+    },
+    {
+      "name": "Tear of the Goddess",
+      "stats": {
+        "scalemanaregen": "+1"
+      },
+      "traitNumber": null,
+      "description": null
+    },
+    {
+      "name": "Biomatter Preserver",
+      "stats": {
+        "Health": "+250"
+      },
+      "traitNumber": "3",
+      "description": "Gain 5% max Health and deploy 3 Life Orbs. Every 8 seconds of combat, one drops restoring 18% of the holder's missing Health."
+    },
+    {
+      "name": "Malware Matrix",
+      "stats": {
+        "AD": "+15%",
+        "AS": "+15",
+        "scaleSV": "+10%"
+      },
+      "traitNumber": "1",
+      "description": "Dealing physical damage to an enemy reduces the target's Armor by 2. (Ability Damage Cooldown: 0.8 seconds)"
+    },
+    {
+      "name": "Seeker's Armguard",
+      "stats": {
+        "AP": "+25",
+        "Armor": "+10",
+        "MagicResist": "+10",
+        "scaleSV": "+20%"
+      },
+      "traitNumber": "3",
+      "description": null
+    },
+    {
+      "name": "Negatron Cloak",
+      "stats": {
+        "MagicResist": "+20"
+      },
+      "traitNumber": "4",
+      "description": null
+    },
+    {
+      "name": "Chain Vest",
+      "stats": {
+        "Armor": "+20"
+      },
+      "traitNumber": "2",
+      "description": null
+    },
+    {
+      "name": "Thresh's Lantern",
+      "stats": {
+        "Armor": "+25",
+        "Health": "+400",
+        "MagicResist": "+25"
+      },
+      "traitNumber": null,
+      "description": null
+    },
+    {
+      "name": "Needlessly Large Rod",
+      "stats": {
+        "AP": "+10"
+      },
+      "traitNumber": "1",
+      "description": null
+    },
+    {
+      "name": "Giant's Belt",
+      "stats": {
+        "Health": "+150"
+      },
+      "traitNumber": "2",
+      "description": null
+    },
+    {
+      "name": "Iceblast Armor",
+      "stats": {
+        "Armor": "+30",
+        "MagicResist": "+30",
+        "Health": "+250"
+      },
+      "traitNumber": null,
+      "description": "The first time you fall below 70% and 35% health, gain a 25% max health shield for 4 seconds and release a frost nova that stuns enemies within 3 hexes for 2 seconds."
+    },
+    {
+      "name": "Sparring Gloves",
+      "stats": {
+        "CritChance": "+20"
+      },
+      "traitNumber": "2",
+      "description": "+20 Critical Strike Chance"
+    },
+    {
+      "name": "Recurve Bow",
+      "stats": {
+        "AS": "+10"
+      },
+      "traitNumber": "5",
+      "description": null
+    },
+    {
+      "name": "Lioness's Lament",
+      "stats": {
+        "Armor": "+30",
+        "MagicResist": "+30",
+        "Health": "+200"
+      },
+      "traitNumber": "3",
+      "description": "Every 15% max health lost, fire crescent projectiles in a line dealing physical damage equal to 50% of the holder's Armor and Magic Resist. Steal 4 Armor and Magic Resist from all enemies hit."
+    },
+    {
+      "name": "Echoing Batblades",
+      "stats": {
+        "AS": "+20",
+        "AD": "+30%"
+      },
+      "traitNumber": "3",
+      "description": "Every 3 attacks, fire 10 batblades split between the 3 nearest enemies. Each blade deals 50%  physical damage."
+    },
+    {
+      "name": "Psionic Emblem",
+      "stats": {
+        "Health": "+300",
+        "AD": "+20%",
+        "AP": "+20",
+        "AS": "+20"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Psionic trait."
+    },
+    {
+      "name": "Tactician's Cape",
+      "stats": {},
+      "traitNumber": "4",
+      "description": "Your team gains +1 max team size."
+    },
+    {
+      "name": "Broken Prototype",
+      "stats": {
+        "Health": "+100"
+      },
+      "traitNumber": "1",
+      "description": "Combat start: Gain a 15% max Health shield."
+    },
+    {
+      "name": "Sparking Prototype",
+      "stats": {
+        "AD": "+10%"
+      },
+      "traitNumber": "3",
+      "description": "Every 4 seconds, gain 30% Attack Speed for 4 seconds."
+    },
+    {
+      "name": "Leaky Prototype",
+      "stats": {
+        "AP": "+15"
+      },
+      "traitNumber": null,
+      "description": "Every 5 seconds, this item loses 3 Ability Power and gains 1 Mana Regen."
+    },
+    {
+      "name": "Cyclonic Slicers",
+      "stats": {
+        "Armor": "+15",
+        "MagicResist": "+15",
+        "AD": "+20%",
+        "AP": "+20"
+      },
+      "traitNumber": "3",
+      "description": "Gain 3 orbiting razors. Razors deal @Damage@ magic damage, and 30% Shred and Sunder enemies for 4 seconds. Deal 10% increased damage to Shredded or Sundered enemies."
+    },
+    {
+      "name": "B.F. Sword",
+      "stats": {
+        "AD": "+10%"
+      },
+      "traitNumber": "1",
+      "description": null
+    },
+    {
+      "name": "Tentacle Slam",
+      "stats": {
+        "Health": "+150"
+      },
+      "traitNumber": null,
+      "description": "Every 5 seconds, summon a tentacle that slams down on the target, dealing @SlamDamage@ physical damage and healing the holder for 12% max health."
+    },
+    {
+      "name": "Evolved Embershot",
+      "stats": {
+        "AP": "+40",
+        "AD": "+40%",
+        "scalemanaregen": "+5"
+      },
+      "traitNumber": null,
+      "description": "For every 15 mana spent, fire a projectile at a nearby enemy dealing @ProjectileDamage@ + 50% of the holder's Ability Power magic damage, and applying 1% Burn and 33% Wound to enemies for 10 seconds."
+    },
+    {
+      "name": "Searing Shortbow",
+      "stats": {
+        "AP": "+40",
+        "AD": "+10%",
+        "scalemanaregen": "+4"
+      },
+      "traitNumber": null,
+      "description": "For every 20 mana spent, fire a projectile at a nearby enemy, dealing @ProjectileDamage@ + 75% of the holder's Ability Power magic damage and applying 1% Burn and 33% Wound to enemies for 3 seconds."
+    },
+    {
+      "name": "OwO Blaster",
+      "stats": {
+        "AD": "+35%",
+        "AS": "+75"
+      },
+      "traitNumber": null,
+      "description": "Every attack, fire 9 laser blasts random targets in range, dealing 40% of the holder's Attack Damage as physical damage."
+    },
+    {
+      "name": "Bunny Prime Ballista",
+      "stats": {
+        "AS": "+50",
+        "CritChance": "+50",
+        "AD": "+30%"
+      },
+      "traitNumber": "5",
+      "description": "Every 3 critical strikes, fire 6 piercing arrows that can critically strike towards the target. Each deals 100%  physical damage."
+    },
+    {
+      "name": "Leonine Lamentation",
+      "stats": {
+        "Armor": "+40",
+        "MagicResist": "+40",
+        "Health": "+400"
+      },
+      "traitNumber": null,
+      "description": "Every 15% max health lost, fire crescent projectiles in 3 lines dealing physical damage equal to 50% of the holder's Armor and Magic Resist. Steal 10 Armor and Magic Resist from all enemies hit."
+    },
+    {
+      "name": "Deep Freeze",
+      "stats": {
+        "Armor": "+30",
+        "MagicResist": "+30",
+        "Health": "+550"
+      },
+      "traitNumber": null,
+      "description": "The first time you fall below 90%, 60%, 40%, and 20% health, gain a 20% max health shield for 4 seconds. When this happens, release a frost nova that stuns enemies within 2 hexes for 2 seconds and deals magic damage equal to 15% of their max Health."
+    },
+    {
+      "name": "Guiding Hex",
+      "stats": {
+        "AP": "+15"
+      },
+      "traitNumber": null,
+      "description": "Every 3 seconds, fire a bolt at a random enemy in Attack Range, dealing @ProjectileDamage@ magic damage."
+    },
+    {
+      "name": "UwU Blaster",
+      "stats": {
+        "AD": "+15%",
+        "AS": "+45"
+      },
+      "traitNumber": null,
+      "description": "Every attack, fire 3 laser blasts random targets in range, dealing 40% of the holder's Attack Damage as physical damage."
+    },
+    {
+      "name": "Vayne's Chromablades",
+      "stats": {
+        "AS": "+50",
+        "AD": "+30%"
+      },
+      "traitNumber": null,
+      "description": "Every 5 attacks, fire 30 chromablades split between all enemies. Each blade deals 50%  physical damage."
+    },
+    {
+      "name": "Animapocalypse",
+      "stats": {
+        "AP": "+30",
+        "AD": "+30%",
+        "scalemanaregen": "+5"
+      },
+      "traitNumber": null,
+      "description": "Store 20% of damage dealt. Every 6 seconds and on death, deal the stored damage as true damage to all enemies, reduced by 5% for each hex they are from the epicenter."
+    },
+    {
+      "name": "Unceasing Cyclone",
+      "stats": {
+        "Armor": "+40",
+        "MagicResist": "+40",
+        "AD": "+30%",
+        "AP": "+30"
+      },
+      "traitNumber": null,
+      "description": "Gain 6 orbiting razors. Razors deal @Damage@ true damage, and 30% Shred and Sunder enemies for the rest of combat. Deal 30% increased damage to Shredded or Sundered enemies."
+    },
+    {
+      "name": "Tactician's Shield",
+      "stats": {},
+      "traitNumber": null,
+      "description": "Your team gains +1 max team size."
+    },
+    {
+      "name": "Omniweapon",
+      "stats": {
+        "AD": "+100%",
+        "AS": "+100",
+        "AP": "+100",
+        "Health": "+10000",
+        "Armor": "+100",
+        "MagicResist": "+100",
+        "scaleDR": "+50%",
+        "scaleSV": "+100%",
+        "CritChance": "+75",
+        "scalemanaregen": "+10"
+      },
+      "traitNumber": null,
+      "description": null
+    },
+    {
+      "name": "Frying Pan",
+      "stats": {},
+      "traitNumber": "5",
+      "description": null
+    },
+    {
+      "name": "Savage Slicer",
+      "stats": {
+        "AD": "+10%",
+        "scaleSV": "+10%"
+      },
+      "traitNumber": null,
+      "description": "Attacks hit the target and all adjacent enemies for 30% of Basic Attack Damage. Omnivamp applies 150% to this damage."
+    },
+    {
+      "name": "The Annihilator",
+      "stats": {
+        "AP": "+30",
+        "AD": "+20%",
+        "scalemanaregen": "+3"
+      },
+      "traitNumber": "3",
+      "description": "Store 20% of damage dealt. On death or after 18 seconds in combat, deal the stored damage as true damage to all enemies, reduced by 15% for each hex they are away from the epicenter."
+    },
+    {
+      "name": "Rocket Swarm",
+      "stats": {
+        "scalemanaregen": "+3",
+        "AD": "+10%"
+      },
+      "traitNumber": null,
+      "description": "Every 30 Mana spent, fire a barrage of 4 rockets at the target, each dealing 30%  physical damage."
+    },
+    {
+      "name": "Sniper Emblem",
+      "stats": {
+        "AS": "+20"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Sniper trait and +1 Attack Range."
+    },
+    {
+      "name": "Radiant Bramble Vest",
+      "stats": {
+        "Armor": "+100"
+      },
+      "traitNumber": "5",
+      "description": "Take 10% reduced damage from attacks. When struck by any attack, deal 200 magic damage to all adjacent enemies."
+    },
+    {
+      "name": "Meeple Emblem",
+      "stats": {
+        "Armor": "+20",
+        "MagicResist": "+20",
+        "scalemanaregen": "+2"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Meeple trait and 1 additional Mana Regen per ."
+    },
+    {
+      "name": "Sniper's Focus",
+      "stats": {
+        "AD": "+20%",
+        "AP": "+20",
+        "AS": "+20",
+        "scalemanaregen": "+3"
+      },
+      "traitNumber": "3",
+      "description": "Gain 40% Damage Amp against targets 4 or more hexes away."
+    },
+    {
+      "name": "Crown of Demacia",
+      "stats": {
+        "Health": "+300",
+        "AS": "+30"
+      },
+      "traitNumber": "5",
+      "description": "If the holder is a Tank, regenerate 3-21% maximum Health every 2 seconds (based on stage). Otherwise, gain 10%  Attack Damage and  Ability Power every 2 seconds instead."
+    },
+    {
+      "name": "Radiant Dragon's Claw",
+      "stats": {
+        "MagicResist": "+120"
+      },
+      "traitNumber": "5",
+      "description": "Every 2 seconds, heal 5% max Health."
+    },
+    {
+      "name": "Radiant Adaptive Helm",
+      "stats": {
+        "scalemanaregen": "+6",
+        "MagicResist": "+40"
+      },
+      "traitNumber": "5",
+      "description": "Gain an additional 30% Mana from all sources. The wearer gains an additional bonus based on their Role:"
+    },
+    {
+      "name": "Challenger Emblem",
+      "stats": {
+        "AS": "+30"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Challenger trait. On takedown, the holder's next 3 attacks each heal for 5% of max health."
+    },
+    {
+      "name": "Talisman Of Ascension",
+      "stats": {
+        "Health": "+450",
+        "AD": "+20%",
+        "AP": "+20",
+        "scaleDA": "+120%"
+      },
+      "traitNumber": "4",
+      "description": "After 22 seconds gain 100% max Health and 120% Damage Amp for the rest of combat."
+    },
+    {
+      "name": "Dawncore",
+      "stats": {
+        "AP": "+20",
+        "AD": "+20%"
+      },
+      "traitNumber": "5",
+      "description": "Reduce the holder's max Mana by 10. Subsequent spellcasts reduce max Mana by 10%, to a minimum of 10."
+    },
+    {
+      "name": "Arbiter Emblem",
+      "stats": {
+        "MagicResist": "+20",
+        "Armor": "+20",
+        "AS": "+20"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Arbiter trait."
+    },
+    {
+      "name": "Spatula",
+      "stats": {},
+      "traitNumber": "5",
+      "description": null
+    },
+    {
+      "name": "Yasuo's Bladework",
+      "stats": {
+        "AD": "+30%",
+        "AS": "+10"
+      },
+      "traitNumber": null,
+      "description": "Every 3.5 seconds, your next attack is a double attack."
+    },
+    {
+      "name": "Anima Emblem",
+      "stats": {
+        "Health": "+250"
+      },
+      "traitNumber": null,
+      "description": "The holder gains the Anima trait."
+    },
+    {
+      "name": "Kayle's Exaltation",
+      "stats": {
+        "AS": "+15",
+        "AP": "+25",
+        "AD": "+25%"
+      },
+      "traitNumber": null,
+      "description": "After 18 seconds of combat, this and all completed items on the holder become Radiant."
+    }
+  ],
+  "note": "Showing item names, stats (AP/AD, Armor/MR, Health), trait numbers, and descriptions"
+}
