@@ -194,7 +194,8 @@ async def _extract_comp_detail(
             // Extract playstyle and difficulty (lines after comp name)
             let playstyle = '';
             let difficulty = '';
-            const playstyles = ['Cơ Bản', 'Basic', 'Fast 8', 'Fast 9', 'Cấp 6', 'Cấp 7', 'Cấp 8', 'Cấp 9', 'Cấp 10'];
+            const playstyles = ['Cơ Bản', 'Basic', 'Fast 8', 'Fast 9', 'Cấp 6', 'Cấp 7', 'Cấp 8', 'Cấp 9', 'Cấp 10',
+                                'lvl 5', 'lvl 6', 'lvl 7', 'lvl 8', 'lvl 9', 'lvl 10'];
             const difficulties = ['Dễ', 'Trung Bình', 'Khó', 'Easy', 'Medium', 'Hard'];
             for (let i = 1; i < Math.min(5, section.length); i++) {
                 if (playstyles.includes(section[i])) playstyle = section[i];
@@ -270,7 +271,7 @@ async def _extract_comp_detail(
                     while (j < section.length) {
                         const line = section[j];
                         if (line === lc.comp_carousel || line.includes('Ưu Tiên') || line.includes('Carousel')) break;
-                        if (line.startsWith('Cấp') || line.startsWith('Level')) {
+                        if (line.startsWith('Cấp') || line.startsWith('Level') || line.startsWith('Lvl')) {
                             const level = line;
                             const timing = (j + 1 < section.length) ? section[j + 1] : null;
                             let gold = null;
@@ -395,7 +396,7 @@ async def _extract_level_variations(page: Page, lang_config) -> List[Dict]:
         () => {
             const buttons = document.querySelectorAll('button[class*="MuiTab"]');
             return Array.from(buttons)
-                .filter(b => b.offsetHeight > 0 && b.innerText.trim().startsWith('Cấp'))
+                .filter(b => b.offsetHeight > 0 && (b.innerText.trim().startsWith('Cấp') || b.innerText.trim().startsWith('Lvl')))
                 .map(b => {
                     const text = b.innerText.trim();
                     const parts = text.split('\\n');

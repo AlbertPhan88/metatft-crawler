@@ -24,7 +24,6 @@ async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
         Dictionary containing timestamp and all extracted comp data
     """
 
-    # Use the same base URL for all languages - language switching is done via selector
     base_url = "https://www.metatft.com/comps"
 
     async with async_playwright() as p:
@@ -40,147 +39,92 @@ async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
         print("Waiting for page to fully render...")
         await page.wait_for_timeout(5000)
 
-        # Switch language if needed
+        # Scroll to load all lazy-loaded comp rows
+        print("Scrolling to load all comps...")
+        for _ in range(15):
+            await page.evaluate("window.scrollBy(0, 1000)")
+            await page.wait_for_timeout(400)
+        await page.evaluate("window.scrollTo(0, 0)")
+        await page.wait_for_timeout(500)
+
         if language == "vi":
             print("Switching to Vietnamese...")
             await switch_language(page, "vi")
+            await page.wait_for_timeout(2000)
 
-        # Get language configuration
         lang_config = get_language_config(language)
 
-        # Extract comp data from the page
         print("Extracting comp data from page...")
         comps_data = await page.evaluate("""
             (langConfig) => {
                 const comps = [];
 
-                // Get all text content and parse it
-                const pageText = document.body.innerText;
+                // Each comp is in a CompRowWrapper div
+                const rows = document.querySelectorAll('div[class*="CompRowWrapper"]');
 
-                // Find comp sections - they seem to have a pattern of:
-                // CompName
-                // Champions list
-                // Stats (Avg Place, Pick Rate, Win Rate, Top 4 Rate)
+                for (const row of rows) {
+                    // Comp name
+                    const titleEl = row.querySelector('[class*="Comp_Title"]');
+                    if (!titleEl) continue;
+                    const name = titleEl.innerText.trim();
+                    if (!name) continue;
 
-                // Use more sophisticated parsing
-                const root = document.querySelector('#root');
-                if (!root) return [];
+                    // Tier (S/A/B/C/D)
+                    const tierEl = row.querySelector('[class*="CompRowTier"]');
+                    const tier = tierEl ? tierEl.innerText.trim() : '';
 
-                // Try to find all elements that might contain comp info
-                const allElements = root.querySelectorAll('div, section');
-                const compDataPoints = [];
+                    // Tags (playstyle, difficulty)
+                    const tagEls = row.querySelectorAll('[class*="CompRowTag"]');
+                    const tags = Array.from(tagEls).map(el => el.innerText.trim()).filter(t => t);
+                    const playstyle = tags[0] || '';
+                    const difficulty = tags[1] || '';
 
-                allElements.forEach(el => {
-                    const text = el.innerText || '';
+                    // Stats — parse from row innerText
+                    const text = row.innerText;
+                    const lines = text.split('\\n').map(l => l.trim()).filter(l => l);
 
-                    // Look for pattern: unit names and stats together
-                    // Use language-specific labels from config
-                    const hasPlacement = text.includes(langConfig.avg_place);
-                    const hasPickRate = text.includes(langConfig.pick_rate);
+                    const stats = {};
+                    for (let i = 0; i < lines.length; i++) {
+                        if (lines[i] === langConfig.avg_place && i + 1 < lines.length)
+                            stats.avg_placement = parseFloat(lines[i + 1]) || null;
+                        if (lines[i] === langConfig.pick_rate && i + 1 < lines.length)
+                            stats.pick_rate = parseFloat(lines[i + 1]) || null;
+                        if (lines[i] === langConfig.win_rate && i + 1 < lines.length)
+                            stats.win_rate = lines[i + 1];
+                        if (lines[i] === langConfig.top_4_rate && i + 1 < lines.length)
+                            stats.top_4_rate = lines[i + 1];
+                    }
 
-                    if (hasPlacement && hasPickRate) {
-                        const lines = text.split('\\n').filter(l => l.trim());
+                    // Units — from Unit_Wrapper divs (no hardcoded champion list)
+                    const unitWrappers = row.querySelectorAll('div[class*="Unit_Wrapper"]');
+                    const units = [];
+                    for (const uw of unitWrappers) {
+                        const imgs = uw.querySelectorAll('img');
+                        const alts = Array.from(imgs)
+                            .map(i => (i.alt || '').trim())
+                            .filter(a => a.length > 1);
 
-                        // Extract stats - use language-specific regex patterns
-                        const avgPlaceRegex = new RegExp(langConfig.avg_place + '\\\\s*([\\\\d.]+)');
-                        const pickRateRegex = new RegExp(langConfig.pick_rate + '\\\\s*([\\\\d.]+)');
-                        const winRateRegex = new RegExp(langConfig.win_rate + '\\\\s*([\\\\d.%]+)');
-                        const top4Regex = new RegExp(langConfig.top_4_rate + '\\\\s*([\\\\d.]+)');
+                        const isThreeStar = alts.some(a =>
+                            a.includes('Three Star') || a.includes('Tướng 3 Sao'));
+                        const filtered = alts.filter(a =>
+                            !a.includes('Three Star') && !a.includes('Tướng 3 Sao') &&
+                            a !== 'Teambuilder' && !a.includes('Copy') && !a.includes('Open In'));
 
-                        const avgPlaceMatch = text.match(avgPlaceRegex);
-                        const pickRateMatch = text.match(pickRateRegex);
-                        const winRateMatch = text.match(winRateRegex);
-                        const top4Match = text.match(top4Regex);
-
-                        // Unit names are actual TFT champion names
-                        // They typically appear between tier/difficulty and "Avg Place"
-                        const units = [];
-                        let compName = 'Unknown';
-
-                        // Known champion names for better filtering
-                        const knownChamps = ['Swain', 'Ambessa', 'Mel', 'Draven', 'Fiddlesticks', 'Kindred', 'Darius', 'Sion', 'Briar',
-                                           'Aphelios', 'Neeko', 'Bard', 'Nidalee', 'Taric', 'Kalista', 'Thresh', 'Braum', 'Ornn', 'Seraphine', 'Gwen', 'Yorick', 'Veigar', 'Kennen', 'Fizz', 'Ziggs', 'Poppy', 'Teemo', 'Rumble'];
-
-                        // Find all units
-                        lines.forEach(line => {
-                            const trimmed = line.trim();
-                            // Check if this line is a known champion
-                            if (knownChamps.includes(trimmed)) {
-                                units.push({
-                                    name: trimmed,
-                                    rarity: 'unknown',
-                                    stars: 1,
-                                    items: []
-                                });
-                            }
-                            // Look for comp name pattern like "Noxus Ambessa"
-                            // Usually a trait name + champion name
-                            else if (!compName.includes('Unknown') && trimmed.includes(' ') && trimmed.length > 5 && trimmed.length < 30 &&
-                                    !trimmed.includes('Avg') && !trimmed.includes('Pick') && !trimmed.includes('Win') && !trimmed.includes('Top') &&
-                                    !trimmed.match(/^\\d+/) && !trimmed.match(/^[ABC]$/) && !trimmed.match(/^[IVXLCDM]+$/)) {
-                                // This might be the comp name if we haven't found it yet
-                                if (compName === 'Unknown') {
-                                    compName = trimmed;
-                                }
-                            }
-                        });
-
-                        // If we didn't find comp name from pattern, try to construct from first unit
-                        if (compName === 'Unknown' && units.length > 0) {
-                            // Try to find a multi-word entry before units started
-                            for (let i = 0; i < lines.length; i++) {
-                                const line = lines[i].trim();
-                                if (line.length > 5 && line.length < 30 && !knownChamps.includes(line) &&
-                                    !line.match(/^[\\d]$/) && !line.match(/^[ABC]$/) &&
-                                    !line.includes('Avg') && !line.includes('Pick') && !line.includes('Win')) {
-                                    compName = line;
-                                    break;
-                                }
-                            }
+                        if (filtered.length >= 1) {
+                            units.push({
+                                name: filtered[0],
+                                items: filtered.slice(1),
+                                is_three_star: isThreeStar,
+                            });
                         }
-
-                        compDataPoints.push({
-                            name: compName,
-                            rawText: text.substring(0, 150),
-                            stats: {
-                                avg_placement: avgPlaceMatch ? parseFloat(avgPlaceMatch[avgPlaceMatch.length - 1]) : null,
-                                pick_rate: pickRateMatch ? parseFloat(pickRateMatch[pickRateMatch.length - 1]) : null,
-                                win_rate: winRateMatch ? parseFloat(winRateMatch[winRateMatch.length - 1]) : null,
-                                top_4_rate: top4Match ? parseFloat(top4Match[top4Match.length - 1]) : null,
-                            },
-                            units: units
-                        });
                     }
-                });
 
-                // Filter and clean up comps
-                const seen = new Set();
-                const validComps = [];
+                    if (units.length === 0) continue;
 
-                compDataPoints.forEach(comp => {
-                    // Filter out noise entries
-                    // A valid comp should:
-                    // 1. Have a meaningful name (not just single letters or UI text)
-                    // 2. Have actual units
-                    // 3. Have stats
+                    comps.push({ name, tier, playstyle, difficulty, stats, units });
+                }
 
-                    const hasNoiseKeywords = ['Download', 'Want To Win', 'Top TFT', 'MetaTFT', 'Last Updated', 'a few seconds'];
-                    const isNoise = hasNoiseKeywords.some(kw => comp.name.includes(kw));
-                    const isShortName = comp.name.length <= 2 && comp.name.match(/^[0-9]$/);
-                    const hasValidUnits = comp.units.length >= 7; // TFT comps have at least 7-9 units
-                    const hasStats = comp.stats.avg_placement !== null;
-
-                    // Also filter out nav items
-                    const navItems = ['Comps', 'Stats', 'Players', 'Tools', 'Info', 'Team Builder', 'EN', 'Sort', 'Situational', 'Platinum', 'Ranked'];
-                    const isNav = navItems.some(item => comp.name === item);
-
-                    if (!isNoise && !isShortName && hasValidUnits && hasStats && !isNav && !seen.has(comp.name)) {
-                        seen.add(comp.name);
-                        validComps.push(comp);
-                    }
-                });
-
-                return validComps.slice(0, 20); // Limit to top 20 comps
+                return comps;
             }
         """, {
             'avg_place': lang_config.avg_place,
@@ -189,7 +133,6 @@ async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
             'top_4_rate': lang_config.top_4_rate,
         })
 
-        # Print what we found
         print(f"Found {len(comps_data)} comps")
 
         await browser.close()
@@ -197,7 +140,9 @@ async def crawl_tft_meta(language: str = "en") -> Dict[str, Any]:
         return {
             "timestamp": datetime.now().isoformat(),
             "source": "https://www.metatft.com/comps",
-            "total_comps": len(comps_data),
+            "language": language,
+            "total_comps_found": len(comps_data),
+            "total_comps_crawled": len(comps_data),
             "comps": comps_data
         }
 

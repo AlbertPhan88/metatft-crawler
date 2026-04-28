@@ -118,11 +118,11 @@ class EnglishConfig(LanguageConfig):
         ]
 
         # Comp detail page labels
-        self.comp_options_tab = "Options & Quick Guide"
+        self.comp_options_tab = "Options & Quick Start"
         self.comp_counters_tab = "Counters & Vods"
-        self.comp_early_game = "Early Game"
-        self.comp_positioning = "Team Positioning"
+        self.comp_early_game = "Early"
+        self.comp_positioning = "Positioning"
         self.comp_augments = "Augments"
-        self.comp_leveling = "Leveling"
+        self.comp_leveling = "Levelling"
         self.comp_carousel = "Carousel Priority"
         self.comp_round_win_rate = "Round Win Rate"
